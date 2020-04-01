@@ -1,0 +1,406 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{000E1525-6CFC-4690-99A7-6222801D5F5E}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>SD.LLBLGen.Pro.ORMSupportClasses</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SD.LLBLGen.Pro.ORMSupportClasses</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>bin\Debug\SD.LLBLGen.Pro.ORMSupportClasses.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>1699</NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRules>-Microsoft.Globalization#CA1301;-Microsoft.Globalization#CA1302;-Microsoft.Globalization#CA1303;-Microsoft.Globalization#CA1306;-Microsoft.Globalization#CA1304;-Microsoft.Globalization#CA1305;-Microsoft.Globalization#CA1300;-Microsoft.Performance#CA1805</CodeAnalysisRules>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DataDirect|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>bin\Debug\SD.LLBLGen.Pro.ORMSupportClasses.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.EnterpriseServices">
+      <Name>System.EnterpriseServices</Name>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AggregateSetPredicate.cs" />
+    <Compile Include="AssemblyInfoDotNet20.cs" />
+    <Compile Include="Attributes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AuditorBase.cs" />
+    <Compile Include="AuthorizerBase.cs" />
+    <Compile Include="BatchActionQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CollectionCore.cs" />
+    <Compile Include="ComPlusAdapterContextBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConstantsEnums.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Context.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataProjectorToCustomClass.cs" />
+    <Compile Include="DataSourceDesignerConfigurationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataSourceDesignerConfigurationForm.Designer.cs">
+      <DependentUpon>DataSourceDesignerConfigurationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DaoBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccessAdapterBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataProjectorToDataTable.cs" />
+    <Compile Include="DataProjectorToEntityCollection.cs" />
+    <Compile Include="DataSourceDesigner2ConfigurationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataSourceDesigner2ConfigurationForm.Designer.cs">
+      <DependentUpon>DataSourceDesigner2ConfigurationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataValueProjector.cs" />
+    <Compile Include="DbFunctionCall.cs" />
+    <Compile Include="DbSpecificCreatorBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DelegatePredicate.cs" />
+    <Compile Include="DependencyInjectionInfoProvider.cs" />
+    <Compile Include="DependencyInjectionInfoStorage.cs" />
+    <Compile Include="DependencyInjectionScope.cs" />
+    <Compile Include="DependencyInjectionSectionHandler.cs" />
+    <Compile Include="DesignTimeDatabindingClasses.cs" />
+    <Compile Include="DynamicQueryEngineBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityBase2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityCollection.cs" />
+    <Compile Include="EntityCollectionBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityCollectionBase2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityFactoryCore.cs" />
+    <Compile Include="EntityFactorySelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EntityFactorySelector.Designer.cs">
+      <DependentUpon>EntityFactorySelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EntityField.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityField2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityFields.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityFields2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityProperty.cs" />
+    <Compile Include="EntityPropertyDescriptor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityPropertyDescriptor2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityPropertyProjector.cs" />
+    <Compile Include="EntityRelation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntitySyncInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityView.cs">
+    </Compile>
+    <Compile Include="EntityView2.cs">
+    </Compile>
+    <Compile Include="EntityViewBase.cs">
+    </Compile>
+    <Compile Include="EventArgsDelegates.cs" />
+    <Compile Include="Exceptions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Expression.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExpressionElement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExpressionFieldElement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FastDeserializer.cs" />
+    <Compile Include="FastSerializer.cs" />
+    <Compile Include="SerializationHelper.cs" />
+    <Compile Include="SerializationReader.cs" />
+    <Compile Include="SerializationWriter.cs" />
+    <Compile Include="TypedViewBase.cs" />
+    <Compile Include="UniqueList.cs" />
+    <Compile Include="FieldBetweenPredicate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FieldCompareExpressionPredicate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FieldCompareNullPredicate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FieldCompareRangePredicate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FieldCompareSetPredicate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FieldCompareValuePredicate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FieldFullTextSearchPredicate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FieldInfo.cs" />
+    <Compile Include="FieldInfoProviderBase.cs" />
+    <Compile Include="FieldLikePredicate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FieldPersistenceInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GroupByCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InheritanceInfoProviderBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InjectionInfo.cs" />
+    <Compile Include="Interfaces.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LLBLGenProDataSourceClasses.cs" />
+    <Compile Include="MemberPredicate.cs" />
+    <Compile Include="ParameterFieldRelation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ParameterParameterRelation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PersistenceInfoProviderBase.cs" />
+    <Compile Include="Predicate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PredicateExpression.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PredicateExpressionElement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PrefetchPath.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PrefetchPath2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PrefetchPathElement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PrefetchPathElement2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Query.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RelationCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RelationPredicateBucket.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RetrievalQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScalarQueryExpression.cs" />
+    <Compile Include="SequenceRetrievalQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SortClause.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SortExpression.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TraceHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TransactionBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TransactionComPlusBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TransactionResourceManager.cs" />
+    <Compile Include="TypedListBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitOfWork.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitOfWork2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UtilityClasses.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidatorBase.cs" />
+    <Compile Include="ViewProjectionData.cs" />
+    <Compile Include="XmlHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="makefileCF_20" />
+    <None Include="makefile_20" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataSourceDesigner2ConfigurationForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DataSourceDesigner2ConfigurationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EntityFactorySelector.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EntityFactorySelector.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataSourceDesignerConfigurationForm.resx">
+      <DependentUpon>DataSourceDesignerConfigurationForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="License.txt" />
+    <EmbeddedResource Include="ToolBoxImage.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

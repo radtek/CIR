@@ -1,0 +1,24 @@
+﻿<div class="cnt-grid-center" ng-show="!!$ctrl.metadataList && $ctrl.metadataList.length > 0">
+    <label class="red">The first Image will be treated as Plate Type</label>
+    <label class="fa fa-arrow-down fa-lg"></label>
+</div>
+<div class="form-group">
+    <div sortable-container="[$ctrl.metadataList]">
+        <div class="ImageThumbList ui-sortable" ng-repeat="metadata in $ctrl.metadataList" >
+            <image-metadata metadata="metadata"
+                            binary-data = "$ctrl.$rootScope.imageThumbnails[metadata.imageId]"
+                            on-click-image="$ctrl.viewImage($index)"
+                            on-delete="$ctrl.deleteImage($index)"
+                            on-move-up="$ctrl.moveImageUp($index)"
+                            on-move-down="$ctrl.moveImageDown($index)">
+            </image-metadata>
+        </div>
+    </div>
+</div>
+
+<image-preview image-blobs="$ctrl.blobList"
+               image-thumbnails="$ctrl.$rootScope.imageThumbnails"
+               image-metadata-list="$ctrl.metadataList"
+               on-close="$ctrl.closePreview()"
+               ng-show="$ctrl.showImagePreview">
+</image-preview>

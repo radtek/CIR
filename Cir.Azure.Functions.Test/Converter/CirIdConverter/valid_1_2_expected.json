@@ -1,0 +1,14 @@
+﻿{
+  "data": [
+    {
+      "cirGuid": "qwerty",
+      "cirId": 74,
+      "turbineId":  44
+    },
+    {
+      "cirGuid": "abc",
+      "cirId": 123,
+      "turbineId":  23
+    }
+  ]
+}

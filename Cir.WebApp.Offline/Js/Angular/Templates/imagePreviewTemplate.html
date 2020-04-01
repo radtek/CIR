@@ -1,0 +1,18 @@
+﻿<div class="swiper-container swiper-container-horizontal" style="display: block" >
+    <span class="close cursor" title="Close" ng-click="$ctrl.closePreview()">×</span>
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" ng-repeat="metadata in $ctrl.imageMetadataList">
+            <img src="{{$ctrl.imageThumbnails[metadata.imageId]}}" name="{{metadata.fileInfo.name}}" title="{{metadata.fileInfo.name}}">
+            <div class="subtitle">
+                <font color="white">{{ metadata.fileInfo.name }}</font>
+                <br/>
+                <font color="white">{{ metadata.description }}</font>
+            </div>
+            <a class="fullsize" href="{{$ctrl.imageUrls[metadata.imageId]}}" target="_blank" ng-show="$ctrl.imageUrls[metadata.imageId]">
+            </a>
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div>

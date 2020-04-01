@@ -1,0 +1,16 @@
+SOURCES=AssemblyInfoDotNet20.cs DynamicQueryEngine.cs DB2SpecificCreator.cs
+
+REFERENCES=SD.LLBLGen.Pro.ORMSupportClasses.NET20.dll,"C:\Program Files\IBM\SQLLIB_01\BIN\netf20\IBM.Data.DB2.dll"
+REFERENCESv8121=SD.LLBLGen.Pro.ORMSupportClasses.NET20.dll,"C:\Program Files\IBM\SQLLIB\Bin\netf11\IBM.Data.DB2.dll"
+REFDIR=..\ORMSupportClasses\DotNET2.0\bin\
+
+all : $(SOURCES)
+	csc /t:library /out:DotNET2.0\bin\SD.LLBLGen.Pro.DQE.DB2.NET20.dll /doc:DotNET2.0\bin\SD.LLBLGen.Pro.DQE.DB2.NET20.xml /d:TRACE,DOTNET20 /o /lib:$(REFDIR) /r:$(REFERENCES) $(SOURCES)
+	csc /t:library /out:DotNET2.0\bin\v8121\SD.LLBLGen.Pro.DQE.DB2.NET20.dll /d:TRACE,DOTNET20 /o /lib:$(REFDIR) /r:$(REFERENCESv8121) $(SOURCES)
+
+debug : $(SOURCES)
+	csc /t:library /debug /out:DotNET2.0\bin\SD.LLBLGen.Pro.DQE.DB2.NET20.dll /d:TRACE,DEBUG,DOTNET20 /lib:$(REFDIR) /r:$(REFERENCES) $(SOURCES)
+
+clean:
+	del /Q DotNET2.0\bin\SD.LLBLGen.Pro.DQE.DB2.NET20.*
+	del /Q DotNET2.0\binv8121\SD.LLBLGen.Pro.DQE.DB2.NET20.*	

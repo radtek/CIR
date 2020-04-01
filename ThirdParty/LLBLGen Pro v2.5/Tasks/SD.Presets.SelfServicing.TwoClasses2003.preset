@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preset name="SD.Presets.SelfServicing.TwoClasses2003" lastModifiedOn="2006-02-28T15:58:49.8435074+01:00" createdBy="Solutions Design" isSealed="true" xmlns="http://sd/llblgen/pro/presetElementDefinitions.xsd">
+	<supportedPlatforms>
+		<platform name=".NET 1.1" />
+	</supportedPlatforms>
+	<supportedTemplateGroups>
+		<templateGroup name="SelfServicing" />
+	</supportedTemplateGroups>
+	<taskPresets>
+		<taskGroupPreset name="SD.Tasks.Generic.DirectoryCreators">
+			<taskPreset name="SD.Tasks.Generic.EntityClassesDirectoryCreator" />
+			<taskPreset name="SD.Tasks.Generic.FactoryClassesDirectoryCreator" />
+			<taskPreset name="SD.Tasks.Generic.HelperClassesDirectoryCreator" />
+			<taskPreset name="SD.Tasks.Generic.RelationClassesDirectoryCreator" />
+			<taskPreset name="SD.Tasks.Generic.TypedListClassesDirectoryCreator" />
+			<taskPreset name="SD.Tasks.Generic.TypedViewClassesDirectoryCreator" />
+			<taskPreset name="SD.Tasks.Generic.ValidatorClassesDirectoryCreator" />
+		</taskGroupPreset>
+		<taskGroupPreset name="SD.Tasks.SelfServicing">
+			<taskPreset name="SD.Tasks.SelfServicing.EntityBaseClassesDirectoryCreator" />
+			<taskPreset name="SD.Tasks.SelfServicing.EntityBaseClassesGenerator" />
+			<taskPreset name="SD.Tasks.SelfServicing.CollectionClassesDirectoryCreator" />
+			<taskPreset name="SD.Tasks.SelfServicing.DaoClassesDirectoryCreator" />
+			<taskPreset name="SD.Tasks.SelfServicing.StoredProcedureCallerClassesDirectoryCreator" />
+			<taskPreset name="SD.Tasks.SelfServicing.EntityCollectionClassesGenerator" />
+			<taskPreset name="SD.Tasks.SelfServicing.DaoClassesGenerator" />
+			<taskPreset name="SD.Tasks.SelfServicing.TypedListDaoClassGenerator" />
+			<taskPreset name="SD.Tasks.SelfServicing.DaoFactoryClassGenerator" />
+			<taskPreset name="SD.Tasks.SelfServicing.DbUtilsClassGenerator" />
+			<taskPreset name="SD.Tasks.SelfServicing.DbUtilsComPlusClassGenerator" />
+			<taskPreset name="SD.Tasks.SelfServicing.TransactionClassGenerator" />
+			<taskPreset name="SD.Tasks.SelfServicing.TransactionComPlusClassGenerator" />
+			<taskGroupPreset name="SD.Tasks.Generic.FileCreators">
+				<taskPreset name="SD.Tasks.Generic.AssemblyInfoFileGenerator">
+					<parameters>
+						<parameter name="failWhenExistent" value="true" />
+					</parameters>
+				</taskPreset>
+				<taskPreset name="SD.Tasks.Generic.ConstantsEnumsFileGenerator" />
+				<taskPreset name="SD.Tasks.Generic.AppConfigFileGenerator">
+					<parameters>
+						<parameter name="failWhenExistent" value="false" />
+					</parameters>
+				</taskPreset>
+				<taskPreset name="SD.Tasks.Generic.FieldInfoProviderClassGenerator" />
+				<taskPreset name="SD.Tasks.Generic.TypeDefaultValueClassGenerator" />
+				<taskPreset name="SD.Tasks.Generic.InheritanceInfoProviderClassGenerator" />
+				<taskPreset name="SD.Tasks.Generic.EntityRelationsClassGenerator" />
+				<taskPreset name="SD.Tasks.SelfServicing.CommonBaseClassGenerator" />
+				<taskPreset name="SD.Tasks.Generic.EntityClassesGenerator">
+					<parameters>
+						<parameter name="templateID" value="SD_EntityUsingEntityBaseTemplate" />
+					</parameters>
+				</taskPreset>
+				<taskPreset name="SD.Tasks.Generic.EntityFactoryClassesGenerator" />
+				<taskPreset name="SD.Tasks.Generic.EntityFieldFactoryClassGenerator" />
+				<taskPreset name="SD.Tasks.Generic.EntityFieldsFactoryClassGenerator" />
+				<taskPreset name="SD.Tasks.Generic.PredicateFactoryClassGenerator" isEnabled="false" />
+				<taskPreset name="SD.Tasks.Generic.SortClauseFactoryClassGenerator" isEnabled="false" />
+				<taskPreset name="SD.Tasks.Generic.PersistenceInfoProviderClassGenerator" />
+				<taskPreset name="SD.Tasks.Generic.ResultsetFieldsClassGenerator" />
+				<taskPreset name="SD.Tasks.Generic.FieldCreationClassesGenerator" />
+				<taskPreset name="SD.Tasks.Generic.ActionProceduresClassGenerator" />
+				<taskPreset name="SD.Tasks.Generic.RetrievalProceduresClassGenerator" />
+				<taskPreset name="SD.Tasks.Generic.TypedListClassGenerator" />
+				<taskPreset name="SD.Tasks.Generic.TypedViewClassGenerator" />
+				<taskPreset name="SD.Tasks.Generic.ValidatorClassesGenerator" isEnabled="false" />
+			</taskGroupPreset>
+			<taskPreset name="SD.Tasks.SelfServicing.VsNetProjectFileCreator" />
+		</taskGroupPreset>
+	</taskPresets>
+</preset>

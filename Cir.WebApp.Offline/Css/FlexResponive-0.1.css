@@ -1,0 +1,148 @@
+﻿.FlexResponive {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    border: solid #ccc 1px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    font-family: 'trebuchet MS', 'Lucida sans', Arial;
+    font-size: 13px;
+    color: #444;
+}
+
+    .FlexResponive.breakpoint > tbody > tr > td.expand {
+        background: url('img/plus.png') no-repeat 5px center;
+        padding-left: 30px;
+    }
+
+    .FlexResponive.breakpoint > tbody > tr.FlexResponive-detail-show > td.expand {
+        background: url('img/minus.png') no-repeat 5px center;
+    }
+
+    .FlexResponive.breakpoint > tbody > tr.FlexResponive-row-detail {
+        background: #eee;
+    }
+
+    .FlexResponive > tbody > tr:nth-child(even) td {
+        background-color: #EFF2F4;
+    }
+
+    .FlexResponive > tbody > tr:nth-child(odd) td {
+        background-color: #fff;
+    }
+
+   
+    .FlexResponive.breakpoint > tbody > tr:hover:not(.FlexResponive-row-detail) {
+        cursor: pointer;
+    }
+
+    .FlexResponive > tbody > tr > td, .FlexResponive > thead > tr > th {
+        border-left: 1px solid #ccc;
+        border-top: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+    }
+
+        .FlexResponive > tbody > tr > td.FlexResponive-cell-detail {
+            border-left: none;
+        }
+
+        .FlexResponiveError > thead > tr > th, .FlexResponiveError > thead > tr > td {
+        color: #a94442 !important;
+        background-color: #f2dede !important;
+        border-color: #ebccd1 !important;  
+    }
+        .FlexResponiveLocked > thead > tr > th, .FlexResponiveLocked > thead > tr > td {
+        color: #8a6d3b !important;
+        background-color: #fcf8e3 !important;
+        border-color: #faebcc !important;  
+    }
+        .FlexResponiveHistory > thead > tr > th, .FlexResponiveHistory > thead > tr > td {
+        color: #3c763d !important;
+        background-color: #dff0d8 !important;
+        border-color: #d6e9c6 !important;  
+    }
+
+    .clickable {
+    cursor: pointer;
+}
+
+    .FlexResponive > thead > tr > th, .FlexResponive > thead > tr > td {
+        border: 1px solid #aaaaaa;
+        background: #0072BB !important;
+        font-weight: normal;
+        color: #fff;
+        /*background-image: -webkit-gradient(linear, left top, left bottom, from(#37adf8), to(#0072BB));
+  background-image: -webkit-linear-gradient(top, #37adf8, #0072BB);
+  background-image: -moz-linear-gradient(top, #37adf8, #0072BB);
+  background-image: -ms-linear-gradient(top, #37adf8, #0072BB);
+  background-image: -o-linear-gradient(top, #37adf8, #0072BB);
+  background-image: linear-gradient(to bottom, #37adf8, #0072BB);
+  -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+  -moz-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+  box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+  border-top: none;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);*/
+    }
+
+    .FlexResponive > thead > tr:first-child > th.FlexResponive-first-column, .FlexResponive > thead > tr:first-child > td.FlexResponive-first-column {
+        -moz-border-radius: 6px 0 0 0;
+        -webkit-border-radius: 6px 0 0 0;
+        border-radius: 6px 0 0 0;
+    }
+
+    .FlexResponive > thead > tr:first-child > th.FlexResponive-last-column, .FlexResponive > thead > tr:first-child > td.FlexResponive-last-column {
+        -moz-border-radius: 0 6px 0 0;
+        -webkit-border-radius: 0 6px 0 0;
+        border-radius: 0 6px 0 0;
+    }
+
+    .FlexResponive > thead > tr:first-child > th.FlexResponive-first-column.FlexResponive-last-column, .FlexResponive > thead > tr:first-child > td.FlexResponive-first-column.FlexResponive-last-column {
+        -moz-border-radius: 6px 6px 0 0;
+        -webkit-border-radius: 6px 6px 0 0;
+        border-radius: 6px 6px 0 0;
+    }
+
+    .FlexResponive > tbody > tr:last-child > td.FlexResponive-first-column {
+        -moz-border-radius: 0 0 0 6px;
+        -webkit-border-radius: 0 0 0 6px;
+        border-radius: 0 0 0 6px;
+    }
+
+    .FlexResponive > tbody > tr:last-child > td.FlexResponive-last-column {
+        -moz-border-radius: 0 0 6px 0;
+        -webkit-border-radius: 0 0 6px 0;
+        border-radius: 0 0 6px 0;
+    }
+
+    .FlexResponive > tbody > tr:last-child > td.FlexResponive-first-column.FlexResponive-last-column {
+        -moz-border-radius: 0 0 6px 6px;
+        -webkit-border-radius: 0 0 6px 6px;
+        border-radius: 0 0 6px 6px;
+    }
+
+    .FlexResponive > thead > tr > th.FlexResponive-first-column, .FlexResponive > thead > tr > td.FlexResponive-first-column,
+    .FlexResponive > tbody > tr > td.FlexResponive-first-column {
+        border-left: none;
+    }
+
+    .FlexResponive > tbody img {
+        vertical-align: middle;
+    }
+
+    .FlexResponive > tfoot > tr > th, .FlexResponive > tfoot > tr > td {
+        background-color: #dce9f9;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#099dfb), to(#0072BB));
+        background-image: -webkit-linear-gradient(top, #099dfb, #0072BB);
+        background-image: -moz-linear-gradient(top, #099dfb, #0072BB);
+        background-image: -ms-linear-gradient(top, #099dfb, #0072BB);
+        background-image: -o-linear-gradient(top, #099dfb, #0072BB);
+        background-image: linear-gradient(to bottom, #099dfb, #0072BB);
+        -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+        -moz-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+        box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+        border-top: 1px solid #ccc;
+        text-shadow: 0 1px 0 rgba(255,255,255,.5);
+        padding: 10px;
+    }

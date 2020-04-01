@@ -1,0 +1,87 @@
+﻿{
+  "data": [
+    {
+      "turbineId": 44,
+      "cirGuid": "id_1",
+      "cirId": 123,
+      "localTurbineId": "txtLocalturbineId_1",
+      "inspectionDate": "dtInspectionDate_1",
+      "state": "state_1",
+      "commissioningDate": "dtCommissioningdate_1",
+      "bladeSerialNumber": "txtBladeSerialNumber_1",
+      "bladeLength": "AL23,8",
+      "mkVersion": "txtMKversion_1",
+      "sbuRecommendation": "txtSBURecommendation_1",
+      "section4": {
+        "side": "side_1",
+        "images": [
+          {
+            "imageGuid": "imageId_1",
+            "imageNumber": 1,
+            "url": "url_1",
+            "severity": 2,
+            "damageType": "damageType_1",
+            "damageDescription": null
+          }
+        ]
+      },
+      "noSection": {
+        "overallBladeCondition": null,
+        "images": []
+      },
+      "plateImageUrl": null
+    },
+    {
+      "turbineId": 55,
+      "cirGuid": "id_2",
+      "cirId": 4567,
+      "localTurbineId": "txtLocalturbineId_2",
+      "inspectionDate": "dtInspectionDate_2",
+      "state": "state_2",
+      "commissioningDate": "dtCommissioningdate_2",
+      "bladeSerialNumber": "txtBladeSerialNumber_2",
+      "bladeLength": "LM35.0 P2",
+      "mkVersion": "txtMKversion_2",
+      "sbuRecommendation": "txtSBURecommendation_2",
+      "section1": {
+        "side": "side_1",
+        "images": [
+          {
+            "imageGuid": "imageId_1",
+            "imageNumber": 1,
+            "url": "url_1",
+            "severity": 1,
+            "damageType": null,
+            "damageDescription": null
+          },
+          {
+            "imageGuid": "imageId_2",
+            "imageNumber": 2,
+            "url": "url_2",
+            "severity": 2,
+            "damageType": null,
+            "damageDescription": null
+          }
+        ]
+      },
+      "section12": {
+        "side": "side_2",
+        "images": [
+          {
+            "imageGuid": "imageId_3",
+            "imageNumber": 1,
+            "url": "url_3",
+            "severity": 3,
+            "damageType": null,
+            "damageDescription": null
+          }
+        ]
+      },
+      "noSection": {
+        "overallBladeCondition": null,
+        "images": []
+      },
+      "plateImageUrl": null
+    }
+  ]
+}

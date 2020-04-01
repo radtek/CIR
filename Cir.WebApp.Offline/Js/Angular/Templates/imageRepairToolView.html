@@ -1,0 +1,24 @@
+﻿<div class="inspection-tool">
+    <div class="row form-group col-lg-9">
+        <div class="row" style="padding-right: 20px;">
+            <div class="pull-right" ng-if="$ctrl.images && $ctrl.images.length">
+                <i class="glyphicon glyphicon-trash" ng-click="$ctrl.removeSelected()"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div class="files-area-container" droppable-file-area style="padding-bottom:30px" ng-if="!$ctrl.plateImage">
+                <img style="width: 100%; max-height: none; max-width: none;" src="../../../Images/bladeRepairNumberTable.png" />
+                <div class="col-lg-11" style="height:100%">
+                    <div class="title" style="margin-top: 5px">Drag & drop or</div>
+                    <div class="button">
+                        <input ng-show="false" id="choose-images" type="file" accept="{{$ctrl.imageTypes}}" on-file-change="$ctrl.onFilesSelected()" />
+                        <button class="btn select-files-button" ng-click="$ctrl.redirectToFilePicker($event)">SELECT FILES</button>
+                    </div>
+                </div>
+            </div>
+            <div class="files-area-container" ng-if="$ctrl.plateImage">
+                <img style="width: 100%; max-height: none; max-width: none;" ng-src="{{ $ctrl.plateImage }}" ng-click="$ctrl.openPreview($event)" />
+            </div>
+        </div>
+    </div>
+</div>

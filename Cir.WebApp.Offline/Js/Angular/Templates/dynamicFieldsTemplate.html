@@ -1,0 +1,24 @@
+<div class="form-group">
+    <p>{{currentDefinition.TableHeader}}</p>
+    <table class = "table">
+        <thead>
+        <tr>
+            <th scope="col"></th>
+            <th ng-repeat="i in [1,2,3,4,5,6]" scope="col">{{currentDefinition.ColHeaders[i-1]}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="i in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16] track by $index" ng-if="currentDefinition.RowHeaders[i-1]!==''">
+            <th scope="row">{{currentDefinition.RowHeaders[i-1]}}</th>
+            <td><input type="text" name="{{getCellIdent('A',i)}}"  ng-model="$ctrl.data[getCellIdent('A',i)]" ng-if="currentDefinition.ColHeaders[0]!==''"/></td>
+            <td><input type="text" name="{{getCellIdent('B',i)}}"  ng-model="$ctrl.data[getCellIdent('B',i)]" ng-if="currentDefinition.ColHeaders[1]!==''"/></td>
+            <td><input type="text" name="{{getCellIdent('C',i)}}"  ng-model="$ctrl.data[getCellIdent('C',i)]" ng-if="currentDefinition.ColHeaders[2]!==''"/></td>
+            <td><input type="text" name="{{getCellIdent('D',i)}}"  ng-model="$ctrl.data[getCellIdent('D',i)]" ng-if="currentDefinition.ColHeaders[3]!==''"/></td>
+            <td><input type="text" name="{{getCellIdent('E',i)}}"  ng-model="$ctrl.data[getCellIdent('E',i)]" ng-if="currentDefinition.ColHeaders[4]!==''"/></td>
+            <td><input type="text" name="{{getCellIdent('F',i)}}"  ng-model="$ctrl.data[getCellIdent('F',i)]" ng-if="currentDefinition.ColHeaders[5]!==''"/></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+

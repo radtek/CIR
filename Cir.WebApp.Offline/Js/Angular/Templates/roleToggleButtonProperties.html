@@ -1,0 +1,7 @@
+﻿<ng-form>
+    <form-builder-option property="label"></form-builder-option>
+    <div class="form-group">
+        <label for="rolesSelect">Select Roles</label>
+        <select id="rolesSelect" class="form-control ui-select-multiple" name="rolesSelect" ng-model="component.selectedRoles" ng-options="item for item in roles()" multiple="multiple"></select>
+    </div>
+</ng-form>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<License>
+  <Data>
+    <LicensedTo>Vestas Wind Systems A/S</LicensedTo>
+    <LicenseType>Site Enterprise Subscription</LicenseType>
+    <LicenseNote>Limited to a single physical site with 6 - 10 developers</LicenseNote>
+    <OrderID>090121091206</OrderID>
+    <OEM>This is a non-redistributable license.</OEM>
+    <Products>
+      <Product>Aspose.Cells</Product>
+    </Products>
+    <EditionType>Enterprise</EditionType>
+    <SerialNumber>62a765bf-9098-43a8-b1b8-657f307a6f68</SerialNumber>
+    <SubscriptionExpiry>20100121</SubscriptionExpiry>
+    <LicenseVersion>2.2</LicenseVersion>
+  </Data>
+  <Signature>pc/lAsYePSsagdQhFbLOw5YqRBdiIfUL0X5nmZA1CmWvwcC7l4kzPy2gcYlq/JuauIm4NnnM5ORR8+npUSLfv6RLFtmqTU77uG+AfZERhfBhDO4vNu+kFn1XeJHsbjFJPgWSpmeQrSnFE3wNDXUnq2SPngmCaowh29MCAAGEZ8o=</Signature>
+</License>

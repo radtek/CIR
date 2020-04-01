@@ -1,0 +1,21 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE HelpCollection>
+<HelpCollection DTDVersion="1.0" Title="LLBLGen.Pro.v2.Reference.Manual.NET2x Collection">
+
+  <TOCDef File="COL_LLBLGen.Pro.v2.Reference.Manual.NET2x.HxT"/>
+
+  <KeywordIndexDef File="COL_LLBLGen.Pro.v2.Reference.Manual.NET2x_K.HxK"/>
+  <KeywordIndexDef File="COL_LLBLGen.Pro.v2.Reference.Manual.NET2x_F.HxK"/>
+  <KeywordIndexDef File="COL_LLBLGen.Pro.v2.Reference.Manual.NET2x_N.HxK"/>
+  <KeywordIndexDef File="COL_LLBLGen.Pro.v2.Reference.Manual.NET2x_A.HxK"/>
+  <KeywordIndexDef File="COL_LLBLGen.Pro.v2.Reference.Manual.NET2x_D.HxK"/>
+
+  <ItemMoniker Name="!DefaultFullTextSearch" ProgId="HxDs.HxFullTextSearch" InitData="FTS"/>
+  <ItemMoniker Name="!DefaultTOC" ProgId="HxDs.HxHierarchy" InitData="COL_LLBLGen.Pro.v2.Reference.Manual.NET2x"/>
+  <ItemMoniker Name="!DefaultKeywordIndex" ProgId="HxDs.HxIndex" InitData="K"/>
+  <ItemMoniker Name="!DefaultAssociativeIndex" ProgId="HxDs.HxIndex" InitData="A"/>
+  <ItemMoniker Name="!DefaultContextWindowIndex" ProgId="HxDs.HxIndex" InitData="F"/>
+  <ItemMoniker Name="!DefaultDynamicLinkIndex" ProgId="HxDs.HxIndex" InitData="D"/>
+  <ItemMoniker Name="!DefaultNamedUrlIndex" ProgId="HxDs.HxIndex" InitData="NamedUrlIndex"/>
+
+</HelpCollection>

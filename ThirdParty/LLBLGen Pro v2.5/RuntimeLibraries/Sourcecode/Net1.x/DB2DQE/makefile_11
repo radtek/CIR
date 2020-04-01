@@ -1,0 +1,16 @@
+SOURCES=AssemblyInfoDotNet11.cs DynamicQueryEngine.cs DB2SpecificCreator.cs
+
+REFERENCES=SD.LLBLGen.Pro.ORMSupportClasses.NET11.dll,"C:\Program Files\IBM\SQLLIB_01\BIN\netf11\IBM.Data.DB2.dll"
+REFERENCESv8121=SD.LLBLGen.Pro.ORMSupportClasses.NET11.dll,"C:\Program Files\IBM\SQLLIB\Bin\netf11\IBM.Data.DB2.dll"
+REFDIR=..\ORMSupportClasses\DotNET1.1\bin\
+
+all : $(SOURCES)
+	csc /t:library /out:DotNET1.1\bin\SD.LLBLGen.Pro.DQE.DB2.NET11.dll /doc:DotNET1.1\bin\SD.LLBLGen.Pro.DQE.DB2.NET11.xml /d:TRACE /o /lib:$(REFDIR) /r:$(REFERENCES) $(SOURCES)
+	csc /t:library /out:DotNET1.1\bin\v8121\SD.LLBLGen.Pro.DQE.DB2.NET11.dll /d:TRACE /o /lib:$(REFDIR) /r:$(REFERENCESv8121) $(SOURCES)
+
+debug : $(SOURCES)
+	csc /t:library /debug /out:DotNET1.1\bin\SD.LLBLGen.Pro.DQE.DB2.NET11.dll /d:TRACE,DEBUG /lib:$(REFDIR) /r:$(REFERENCES) $(SOURCES)
+
+clean:
+	del /Q DotNET1.1\bin\SD.LLBLGen.Pro.DQE.DB2.NET11.*
+	del /Q DotNET1.1\bin\v8121\SD.LLBLGen.Pro.DQE.DB2.NET11.*

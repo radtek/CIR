@@ -1,0 +1,337 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<!DOCTYPE html>
+<html manifest="/manifest.appcache">
+<head runat="server">
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Add to Home">
+    <link rel="shortcut icon" sizes="16x16" href="../../favicon.ico">
+    <link rel="shortcut icon" sizes="196x196" href="../../AddToHomeImages/icon-196x196.png">
+    <link rel="apple-touch-icon-precomposed" href="../../AddToHomeImages/icon-152x152.png">
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    </title>
+    <%= Styles.Render("~/bundles/css-admin") %>
+    <script src="../Js/jquery-1.10.1.min.js"></script>
+    <script src="../Js/jquery-ui-1.10.3.js"></script>
+    <script src="../Js/jquery-ui-1.10.3.min.js"></script>
+    <script src="../Js/jquery-ui.js"></script>
+    <script src="../Js/bootstrap.min.js"></script>
+    <script src="../Js/jquery.validate.min.js"></script>
+    <script src="../Js/jquery.validate.unobtrusive.min.js"></script>
+    <script src="../Js/ApplicationScripts/modernizr-2.6.2.js"></script>
+    <link href="../../Css/metisMenu.min.css" rel="stylesheet">
+    <script src="../Js/encryption/sjcl.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../Js/metisMenu.min.js"></script>
+    <%--Offline indicator--%>
+    <script src="../Js/OfflineJs/offline.min.js"></script>
+    <script>
+        Offline.options = { checkOnLoad: true, checks: { xhr: { url: function () { return '/Cir/CheckStatus' } } } };
+        var run = function () {
+            if (Offline.state != "down") {
+                Offline.check();
+            }
+        }
+        setInterval(run, 1000);
+    </script>
+    <script src="../Js/Notify/bootstrap-notify.min.js"></script>
+    <script src="../Js/AddToHome/addtohomescreen.js"></script>
+    <script src="../Js/jquery.tokenize.js"></script>
+    <script src="../Js/MobileApp/MobileService.js"></script>
+    <script src="../Js/app.js"></script>
+    <script src="../Js/common.admin.js"></script>
+    <script src="../Js/jTimer.js"></script>
+    <script src="../Js/ApplicationScripts/indexeddb.shim.min.js"></script>
+    <script src="../Js/ApplicationScripts/offlineTransactions.js"></script>
+    <script src="../Js/ApplicationScripts/AzureSync.js"></script>
+    <script src="../Js/ApplicationScripts/AzureSyncCirJson.js"></script>
+    <script src="../Js/ApplicationScripts/CirOfflineApp.js"></script>
+    <script src="../Js/ApplicationScripts/UserCachingController.js"></script>
+    <script src="../Js/ApplicationScripts/CirSyncProcess.js"></script>
+    <script src="../Js/ApplicationScripts/CirSearch.js"></script>
+    <script src="../Js/ApplicationScripts/UserManagement.js"></script>
+    <script src="../Js/ApplicationScripts/common.js"></script>
+    <script src="../Js/ApplicationScripts/azureBlobStorage.js"></script>
+    <script src="../../Scripts/underscore.js"></script>
+    <script type="text/javascript" src="../Js/Excel/xlsx.core.min.js"></script>
+    <script src="../Js/Excel/Blob.js"></script>
+    <script src="../Js/Excel/Export2Excel.js"></script>
+    <script src="../Js/Excel/FileSaver.js"></script>
+    <script src="../Js/ApplicationScripts/MasterData.js"></script>
+    <script src="../Js/ApplicationScripts/ServiceInfoNotify.js"></script>
+    <script src="../Js/ApplicationScripts/CirDataDisplay.js"></script>
+    <link href="../../Css/icon.css" rel="stylesheet">
+    <script src="../../../Js/jquery.bootpag.min.js"></script>
+    <link href="../../Css/jquery-confirm.min.css" rel="stylesheet">
+    <script src="../Js/jquery-confirm.min.js"></script>
+    <style>
+        div.alert-messages {
+            position: fixed;
+            top: 50px;
+            left: 25%;
+            right: 25%;
+            z-index: 7000;
+        }
+        .badge-error {
+            background-color: #b94a48;
+        }
+            .badge-error:hover {
+                background-color: #953b39;
+            }
+        .administrator, .bircreator, .gircreator, .gbxircreator,.cirevaluator, .member, .editor, .contractorturbinetechnicians, .turbineTechnicians, .viewer, .visitor, .reportviewer {
+            display: none;
+        }
+        .dataTables_paginate {
+            float: left !important;
+        }
+        #sticky {
+            padding: 0.5ex;
+            color: #fff;
+            border-radius: 0.5ex;
+        }
+            #sticky.stick {
+                margin-top: 0 !important;
+                position: fixed;
+                top: 0;
+                right: 10px;
+                z-index: 10000;
+                border-radius: 0 0 0.5em 0.5em;
+                -webkit-overflow-scrolling: touch;
+            }
+        .popover-content {
+            text-align: center;
+        }
+        .popover {
+            position: fixed;
+            z-index: 1030;
+            top: 2px;
+        }
+        .new-menu-anchor {          
+            float: left !important;
+        }       
+        .rptinspection a {
+            padding-left: 20px !important;
+        }
+        .rptinspection i {
+            margin-right: 3px !important;
+        }
+        .sidebar .nav-second-level .rptaction li a {
+            padding-left: 20px !important;
+        }
+        .rptaction a:hover {
+            background-color: #0072bb !important;
+            color: #fff;
+        }
+        .manage-create li a {
+            padding-left: 20px !important;
+        }
+        .manage-create > li > a {
+            display: block;
+            padding: 10px 25px;
+            position: unset !important;
+        }
+        @media (min-device-width:223px) {
+            #btnsync {
+                    font-size: 11px !important;
+                }
+                .navbar-brand {
+                padding:15px 5px !important;
+                }
+        }           
+    </style>
+    <script>
+        window.applicationCache.ondownloading = function (e) {
+            window.location.href = '/';
+        };
+        $(document).ready(function () {            
+            if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent)
+    || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(navigator.userAgent.substr(0, 4))) isMobile = true;
+        UserCachingController.RefereshPin();
+  });
+    </script>
+    <script type="text/javascript">
+        jQuery(window).resize(large);
+        function large() {
+            if ($(window).width() < 992) {
+                if ($(".row-offcanvas").hasClass("active")) {
+                    $("#nav-icon1").addClass("open");
+                } else { $("#nav-icon1").removeClass("open"); }
+                $("#spanAppTitle").css("font-size", "x-small");
+                if ($(window).width() < 482) {
+                    $("#spanAppTitle").css("font-size", "55%");
+                }
+            }
+            else {
+                $("#nav-icon1").addClass("open")
+                $("#lichangepin").hide();
+                $("#lichangepindiv").hide();
+                $("#spanAppTitle").css("font-size", "medium");
+            }
+        }
+        jQuery(function ($) {
+            if ($(window).width() < 992) {
+                if ($(".row-offcanvas").hasClass("active"))
+                { $("#nav-icon1").addClass("open"); } else { $("#nav-icon1").removeClass("open"); }
+                $("#spanAppTitle").css("font-size", "x-small");
+                if ($(window).width() < 482) {
+                    $("#spanAppTitle").css("font-size", "xx-small");
+                }
+            }
+            else {
+                $("#nav-icon1").addClass("open")
+                $("#lichangepin").hide();
+                $("#lichangepindiv").hide();
+                $("#spanAppTitle").css("font-size", "medium");
+            }
+            $('.menu-btn').click(function () {
+                $('.responsive-menu').addClass('expand')
+                $('.menu-btn').addClass('btn-none')
+            })
+            $('.close-btn').click(function () {
+                $('.responsive-menu').removeClass('expand')
+                $('.menu-btn').removeClass('btn-none')
+            })
+            $('#nav-icon1').click(function () {
+                $(this).toggleClass('open');
+            });
+            $(".right-side").click(function () {
+                if ($(window).width() <= 992) {
+                    if ($(".row-offcanvas").hasClass("active")) {
+                        $("#nav-icon1").removeClass("open");
+                        $('.row-offcanvas').toggleClass('active');
+                        $(".right-side").removeClass("strech");
+                        $('.left-side').removeClass("collapse-left");
+                        $('.row-offcanvas').toggleClass("relative");
+                    }
+                }
+            });
+            $("#btnSync").click(function () {
+                //debugger;
+                if (Offline.state == "down")
+                    return;
+                else {
+                    LoadUserInfo().done(function () {
+                        $('#hdnUserPrincipal').val(CurrentUserInfo.UserPrincipleName);
+                        azureSync.StartSyncManual().done(function () {
+                        });
+                    });
+                    }
+            });          
+            $(function () {
+                $(window).scroll(azureSync.sticky_relocate);
+                azureSync.sticky_relocate();
+            });           
+        })
+        LoadUserInfo().done(function () {
+            $('#hdnUserPrincipal').val(CurrentUserInfo.UserPrincipleName);
+            azureSync.StartSyncTimer();
+            //debugger;
+            //azureSync.StartImageSync();
+            azureSync.SyncImagesToBlob();
+        });
+        $(document).ready(function () {
+            $('#btnSync2').hide();
+            MasterDataSync.GetSyncStatus(function (status) {
+                if (status == 'done') {
+                    $('#isMasterDataSynced').val(1);
+                }
+            });
+            var t = $('#AppTitle').val();
+            var t = t.split("-");
+            if (t.length > 1)
+                $('#divAppTitle').html(t[0] + "<span class='label label-danger' id='spanAppTitle'> - " + t[1] + "</span>");
+            else
+                $('#divAppTitle').html(t[0]);
+        });
+
+    </script>
+</head>
+<body class="skin-blue">
+    <input type="hidden" id="MobAppURL" value="<%= System.Configuration.ConfigurationManager.AppSettings["MobileAppURL"] %>" />
+    <input type="hidden" id="MobAppID" value="<%= System.Configuration.ConfigurationManager.AppSettings["MobileAppID"] %>" />
+    <input type="hidden" id="FormIOServiceUrl" value="<%= System.Configuration.ConfigurationManager.AppSettings["FormIOServiceUrl"] %>" />
+    <input type="hidden" id="FormIOMobileAppId" value="<%= System.Configuration.ConfigurationManager.AppSettings["FormIOMobileAppId"] %>" />
+    <input type="hidden" id="FormIOMobileAppUrl" value="<%= System.Configuration.ConfigurationManager.AppSettings["FormIOMobileAppUrl"] %>" />
+    <input type="hidden" id="ZumoHeaderName" value="<%= System.Configuration.ConfigurationManager.AppSettings["ZumoHeaderName"] %>" />
+    <input type="hidden" id="ZumoHeaderVersion" value="<%= System.Configuration.ConfigurationManager.AppSettings["ZumoHeaderVersion"] %>" />
+    <input type="hidden" id="ImageTypes" value="<%= System.Configuration.ConfigurationManager.AppSettings["ImageTypes"] %>" />
+    <input type="hidden" id="ImageResolutionWidth" value="<%= System.Configuration.ConfigurationManager.AppSettings["ImageResolutionWidth"] %>" />
+    <input type="hidden" id="DropdownDataTypes" value="<%= System.Configuration.ConfigurationManager.AppSettings["DropdownDataTypes"] %>" />
+    <input type="hidden" id="AppTitle" value="<%= System.Configuration.ConfigurationManager.AppSettings["AppTitle"] %>" />
+    <input type="hidden" id="AppEnv" value="<%= System.Configuration.ConfigurationManager.AppSettings["AppEnv"] %>" />
+    <input type="hidden" id="HostName" value="<%= System.Configuration.ConfigurationManager.AppSettings["HostName"] %>" />
+    <input type="hidden" id="AzureFunctionsBaseUrl" value="<%= System.Configuration.ConfigurationManager.AppSettings["AzureFunctionsBaseUrl"] %>" />
+    <input type="hidden" id="hdnUserPrincipal" />
+    <input type="hidden" id="isMasterDataSynced" value="0" />
+    <header class="header">
+        <a href="/Cir/Index" class="logo">
+            <img src="../Images/vestaslogo.gif" alt="Company Logo" height="45" width="150" title="Vestas" />
+        </a>
+        <nav class="navbar navbar-static-top" role="navigation">
+            <%--Sidebar toggle button--%>
+            <a id="nav-icon1" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span></span> <span></span> <span></span>
+            </a>
+            <div id="divAppTitle" class="navbar-brand">
+            </div>
+            <div id="divAppEnv" class="div-env" style="color: red">
+            </div>
+
+            <div class="navbar-brand pull-right">
+
+                <div id="sticky-anchor"></div>
+                <div id="sticky">
+                    <span id="_saveIndicator" style="display: none">
+                        <img src="../Images/save-icon.png" alt="Saving CIR.." title="Saving CIR.." />
+                    </span>
+                    <button style="cursor: pointer" id="btnSync" class="btn btn-xs btn-default" title="Please refresh your browser to start the Sync Process if it has stopped">
+                        Sync
+                    </button>
+                    <button style="cursor: pointer" id="btnSync2" class="btn btn-xs btn-default" title="Please refresh your browser to start the Sync Process if it has stopped">
+                        Sync Now
+                    </button>
+                </div>
+            </div>
+
+        </nav>
+
+    </header>
+    <%--wrapper--%>
+    <div class="wrapper row-offcanvas row-offcanvas-left">
+        <aside class="left-side sidebar-offcanvas">
+            <section class="sidebar">
+                <% Html.RenderPartial("~/Views/Shared/UserControls/Cir/_SidebarMenu.ascx"); %>
+            </section>
+        </aside>
+        <%--Right side column. Contains the navbar and content of the page --%>
+        <aside class="right-side backgroundPic">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </aside>
+        <%-- /.right-side--%>
+    </div>
+    <%--./wrapper--%>
+    <div class="modal fade" id="MasterDataModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Synchronizing Masterdata</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0"
+                            aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                            Processing...
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE HelpCollection SYSTEM "MS-Help://Hx/Resources/HelpCollection.DTD">
+<HelpCollection DTDVersion = "1.0"
+                LangId = "1033"
+                Title = "LLBLGen.Pro.v2.Reference.Manual.NET2x">
+   <CompilerOptions OutputFile = "..\LLBLGen.Pro.v25.Reference.Manual.NET2x.hxs"
+                    CreateFullTextIndex = "Yes"
+                    CompileResult = "Hxs">
+   		<IncludeFile File = "LLBLGen.Pro.v2.Reference.Manual.NET2x.HxF"/>
+   </CompilerOptions>
+   <TOCDef File = "LLBLGen.Pro.v2.Reference.Manual.NET2x.HxT"/>
+   <KeywordIndexDef File = "LLBLGen.Pro.v2.Reference.Manual.NET2x.HxK"/>
+   <KeywordIndexDef File = "LLBLGen.Pro.v2.Reference.Manual.NET2x_F.HxK"/>
+   <KeywordIndexDef File = "LLBLGen.Pro.v2.Reference.Manual.NET2x_N.HxK"/>
+   <KeywordIndexDef File = "LLBLGen.Pro.v2.Reference.Manual.NET2x_A.HxK"/>
+   <KeywordIndexDef File = "LLBLGen.Pro.v2.Reference.Manual.NET2x_D.HxK"/>
+   <ItemMoniker Name = "!DefaultTOC"
+                ProgId = "HxDs.HxHierarchy"
+                InitData = "LLBLGen.Pro.v2.Reference.Manual.NET2x"/>
+   <ItemMoniker Name = "!DefaultFullTextSearch"
+                ProgId = "HxDs.HxFullTextSearch"
+                InitData = "AnyString"/>
+   <ItemMoniker Name = "!DefaultKeywordIndex"
+                ProgId = "HxDs.HxIndex"
+                InitData = "K"/>
+   <ItemMoniker Name = "!DefaultAssociativeIndex"
+                ProgId = "HxDs.HxIndex"
+                InitData = "A"/>
+   <ItemMoniker Name = "!DefaultContextWindowIndex"
+                ProgId = "HxDs.HxIndex"
+                InitData = "F"/>
+   <ItemMoniker Name = "!DefaultDynamicLinkIndex"
+                ProgId = "HxDs.HxIndex"
+                InitData = "D"/>
+   <ItemMoniker Name = "!DefaultNamedUrlIndex"
+                ProgId = "HxDs.HxIndex"
+                InitData = "NamedUrlIndex"/>
+                
+</HelpCollection>

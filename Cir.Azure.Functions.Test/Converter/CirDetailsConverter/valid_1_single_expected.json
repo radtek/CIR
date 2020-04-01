@@ -1,0 +1,34 @@
+{
+  "data": {
+    "turbineId": 44,
+    "cirGuid": "id_1",
+    "cirId": 123,
+    "localTurbineId": "txtLocalturbineId_1",
+
+    "inspectionDate": "dtInspectionDate_1",
+    "state": "state_1",
+    "commissioningDate": "dtCommissioningdate_1",
+    "bladeSerialNumber": "txtBladeSerialNumber_1",
+    "bladeLength": "AL23,8",
+    "mkVersion": "txtMKversion_1",
+    "sbuRecommendation": "txtSBURecommendation_1",
+    "section4": {
+      "side": "side_1",
+      "images": [
+        {
+          "imageGuid": "imageId_1",
+          "imageNumber": 1,
+          "url": "url_1",
+          "severity": 2,
+          "damageType": "damageType_1",
+          "damageDescription": null
+        }
+      ]
+    },
+    "noSection": {
+      "overallBladeCondition": null,
+      "images": []
+    },
+    "plateImageUrl": null
+  }
+}

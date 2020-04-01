@@ -1,0 +1,96 @@
+{
+  "cirSubmissionData": {
+    "cirId": 345,
+    "id": "id_2",
+    "data": {
+      "txtTurbineNumber": 55,
+      "txtReasonforService": "txtReasonforService_1",
+      "dtInspectionDate": "2019-01-01T10:00:00Z",
+      "imagecomponentKey": {
+        "sections": {
+          "section4": {
+            "side": "side_1",
+            "images": [
+              {
+                "imageId": "imageId_1",
+                "damageSeverity": 1,
+                "damageDescription": "damageDescription_1",
+                "radius": 10,
+                "rootCause": "rootCause_1",
+                "recommendedActivity": "recommendedActivity_1",
+                "damagePlacement": "damagePlacement_1",
+                "damageDetails": [
+                  {
+                    "damageId": "damageId_1",
+                    "damageGuid": "damageGuid_1"
+                  }
+                ],
+                "fileInfo": {
+                  "name": "name_1"
+                },
+                "observations": [
+                  {
+                    "polygons": [
+                      {
+                        "geometry": [
+                          {
+                            "x": 10,
+                            "y": 20
+                          },
+                          {},
+                          {
+                            "x": 40,
+                            "y": 60
+                          },
+                          {}
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "imageId": "imageId_2",
+                "damageSeverity": 1,
+                "damageDescription": "damageDescription_1",
+                "radius": 10,
+                "rootCause": "rootCause_1",
+                "recommendedActivity": "recommendedActivity_1",
+                "damagePlacement": "damagePlacement_1",
+                "damageDetails": [
+                  {
+                    "damageId": "damageId_1",
+                    "damageGuid": "damageGuid_1"
+                  }
+                ],
+                "fileInfo": {
+                  "name": "name_2"
+                }
+              }
+            ]
+          }
+        },
+        "uploadedImagesCache": [
+          {
+            "imageId": "imageId_1",
+            "damageType": "damageType_1"
+          },
+          {
+            "imageId": "imageId_2",
+            "damageType": "damageType_1"
+          }
+        ]
+      }
+    },
+    "imageReferences": [
+      {
+        "imageId": "imageId_1",
+        "url": "url_1"
+      },
+      {
+        "imageId": "imageId_2",
+        "url": "url_2"
+      }
+    ]
+  }
+}

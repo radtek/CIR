@@ -1,0 +1,12 @@
+﻿<div class="switchWrapper">
+    <div class="switchSlider">
+        <label class="switch">
+            <input type="checkbox" ng-required="isRequired(component)" ng-model="data[component.key]"  ng-init="onInit()" value="{{ component.value }}" name="{{ component.key }}" id="{{ component.key }}" ng-disabled="{{ component.disabled }}">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    <div class="switchLabel">
+        <label class="switchLabelText" ng-class="{'field-required': isRequired(component)}">{{ component.label }}</label>
+    </div>
+</div>
+<div class="clearfix"></div>

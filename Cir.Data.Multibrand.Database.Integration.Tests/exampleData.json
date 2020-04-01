@@ -1,0 +1,13 @@
+{
+	"chkLSSNREnd": false,
+	"chkIMSNREnd": false,
+	"chkIMSREnd": false,
+	"chkHSSNREnd": true,
+	"chkHSSREnd": false,
+	"chkPitchTube": true,
+	"chkSpliLines": false,
+	"chkHoseandPiping": false,
+	"chkInputShaft": false,
+	"chkAuxHSSPTO": false,
+	"ddlReportType": "2"
+}

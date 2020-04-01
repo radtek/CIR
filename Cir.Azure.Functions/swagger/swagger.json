@@ -1,0 +1,534 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Swagger for CRUD Operation on CIR data",
+    "description": "Swagger for CRUD Operation on CIR data",
+    "version": "1.0.0"
+  },
+  "host": "cirfunctionapptest.azurewebsites.net",
+  "basePath": "/",
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/api/GetCIRFullJson": {
+      "get": {
+        "operationId": "/api/GetCIRFullJson/get",
+        "description": "Get JSON data of each CIR created with provided turbine Number",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "turbineNumber",
+            "in": "query",
+            "description": "Turbine Number filled by Users",
+            "type": "number",
+            "format": "number",
+            "required": true
+          },
+          {
+            "name": "cirType",
+            "in": "query",
+            "description": "CIR Type (Template Name)",
+            "type": "string",
+            "format": "string",
+            "required": true
+          },
+          {
+            "name": "consumerName",
+            "in": "query",
+            "description": "Name of the requesting Consumer",
+            "type": "string",
+            "format": "string",
+            "required": true
+          },
+          {
+            "name": "consumerKey",
+            "in": "header",
+            "description": "Provided consumer key",
+            "type": "string",
+            "format": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of CIRs created by users with provided turbine number",
+            "x-ms-summary": "CIR Data",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Content": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyQuery": []
+          }
+        ]
+      }
+    },
+    "/api/GetTemplate": {
+      "get": {
+        "operationId": "/api/GetTemplate/get",
+        "description": "Get full schema of a template",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "templateName",
+            "in": "query",
+            "description": "Name of the required CIR template",
+            "type": "string",
+            "format": "string",
+            "required": true
+          },
+          {
+            "name": "consumerName",
+            "in": "query",
+            "description": "Name of the requesting Consumer",
+            "type": "string",
+            "format": "string",
+            "required": true
+          },
+          {
+            "name": "brand",
+            "in": "query",
+            "description": "Name of required Brand Default Value is Vestas",
+            "type": "string",
+            "format": "string",
+            "required": false
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "description": "Version Number Default Value is Latest Verion",
+            "type": "number",
+            "format": "number",
+            "required": false
+          },
+          {
+            "name": "consumerKey",
+            "in": "header",
+            "description": "Provided consumer key",
+            "type": "string",
+            "format": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of CIRs created by users with provided turbine number",
+            "x-ms-summary": "CIR Data",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Content": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyQuery": []
+          }
+        ]
+      }
+    },
+    "/api/GetBIR": {
+      "post": {
+        "operationId": "/api/GetBIR/post",
+        "description": "Get BIR PDF data of all the input turbine numbers",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "lstTurbineNumber",
+            "in": "formData",
+            "description": "List of Turbine Number filled by Users",
+            "type": "array",
+            "format": "array",
+            "items": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "consumerName",
+            "in": "query",
+            "description": "Name of the requesting Consumer",
+            "type": "string",
+            "format": "string",
+            "required": true
+          },
+          {
+            "name": "consumerKey",
+            "in": "header",
+            "description": "Provided consumer key",
+            "type": "string",
+            "format": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "PDF DataStrings of all BIR created by users with provided turbine number",
+            "x-ms-summary": "CIR Data",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Content": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyQuery": []
+          }
+        ]
+      }
+    },
+    "/api/GetVOCIRJson": {
+      "post": {
+        "operationId": "/api/GetVOCIRJson/post",
+        "description": "Get simplified Json data for all the Blade CIRs of the input turbine numbers",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "lstTurbineNumber",
+            "in": "formData",
+            "description": "List of Turbine Number filled by Users",
+            "type": "array",
+            "format": "array",
+            "items": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "consumerName",
+            "in": "query",
+            "description": "Name of the requesting Consumer",
+            "type": "string",
+            "format": "string",
+            "required": true
+          },
+          {
+            "name": "consumerKey",
+            "in": "header",
+            "description": "Provided consumer key",
+            "type": "string",
+            "format": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of simplified Json data of all the Blade CIRs created by users with provided turbine number",
+            "x-ms-summary": "CIR Data",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Content": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyQuery": []
+          }
+        ]
+      }
+    },
+    "/api/GetBIRDetails": {
+      "get": {
+        "operationId": "/api/GetBIRDetails/post",
+        "description": "Get details of all the BIRs created for input turbine number",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "turbineNumber",
+            "in": "query",
+            "description": "Turbine Number filled by Users",
+            "type": "number",
+            "format": "number",
+            "required": true
+          },
+          {
+            "name": "isAnnual",
+            "in": "query",
+            "description": "whether require Annual or non-Annual records (expected values true or false)",
+            "type": "boolean",
+            "format": "boolean",
+            "required": true
+          },
+          {
+            "name": "modifiedYear",
+            "in": "query",
+            "description": "Year for which records are required",
+            "type": "number",
+            "format": "number",
+            "required": true
+          },
+          {
+            "name": "consumerName",
+            "in": "query",
+            "description": "Name of the requesting Consumer",
+            "type": "string",
+            "format": "string",
+            "required": true
+          },
+          {
+            "name": "consumerKey",
+            "in": "header",
+            "description": "Provided consumer key",
+            "type": "string",
+            "format": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of details of all the BIRs created by users with provided turbine number in particular year",
+            "x-ms-summary": "BIR Details",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Content": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyQuery": []
+          }
+        ]
+      }
+    },
+    "/api/GetBIRPdf": {
+      "get": {
+        "operationId": "/api/GetBIRPdf/post",
+        "description": "Get BIR PDF datastring of input turbine number and BIR Guid",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "turbineNumber",
+            "in": "query",
+            "description": "Turbine Number filled by Users",
+            "type": "number",
+            "format": "number",
+            "required": true
+          },
+          {
+            "name": "birGuid",
+            "in": "query",
+            "description": "Guid of requested BIR PDF file",
+            "type": "string",
+            "format": "string",
+            "required": true
+          },
+          {
+            "name": "consumerName",
+            "in": "query",
+            "description": "Name of the requesting Consumer",
+            "type": "string",
+            "format": "string",
+            "required": true
+          },
+          {
+            "name": "consumerKey",
+            "in": "header",
+            "description": "Provided consumer key",
+            "type": "string",
+            "format": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "BIR PDF datastring of input turbine number and provided BIR Guid",
+            "x-ms-summary": "BIR Details",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Content": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyQuery": []
+          }
+        ]
+      }
+    },
+    "/api/CreateConsumer": {
+      "post": {
+        "operationId": "/api/CreateConsumer/post",
+        "description": "Add a new Consumer",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "consumerName",
+            "in": "query",
+            "description": "Name of the requesting Consumer",
+            "type": "string",
+            "format": "string",
+            "required": true
+          },
+          {
+            "name": "adminKey",
+            "in": "header",
+            "description": "Admin key for Admin access to create Consumer",
+            "type": "string",
+            "format": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Information stating weather Consumer created successfully",
+            "x-ms-summary": "Consumer creation Information",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Content": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyQuery": []
+          }
+        ]
+      }
+    },
+    "/api/ManageConsumer": {
+      "post": {
+        "operationId": "/api/ManageConsumer/post",
+        "description": "Manage existing Consumer",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "consumerName",
+            "in": "query",
+            "description": "Consumer Name for enable disable Consumer",
+            "type": "string",
+            "format": "string",
+            "required": true
+          },
+          {
+            "name": "isActive",
+            "in": "query",
+            "description": "Allowed value True or False",
+            "type": "string",
+            "format": "string",
+            "required": true
+          },
+          {
+            "name": "adminKey",
+            "in": "header",
+            "description": "Admin key for Admin access to create Consumer",
+            "type": "string",
+            "format": "string",
+            "required": true
+          },
+          {
+            "name": "consumerKey",
+            "in": "header",
+            "description": "Consumer key for enable disable Consumer",
+            "type": "string",
+            "format": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Information stating weather Consumer created successfully",
+            "x-ms-summary": "Consumer creation Information",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Content": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyQuery": []
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {},
+  "securityDefinitions": {
+    "apikeyQuery": {
+      "type": "apiKey",
+      "name": "code",
+      "in": "query"
+    }
+  }
+}

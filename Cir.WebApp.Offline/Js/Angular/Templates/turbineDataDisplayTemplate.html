@@ -1,0 +1,13 @@
+﻿<div>
+    <div class="form-group">
+        <label for="validationType">Turbine Number control</label>
+        <select class="form-control"
+                ng-model="$ctrl.model.controlId"
+                ng-options="item for item in $ctrl.existedComponents"></select>
+    </div>
+
+    <div class="form-group">
+        <label for="validationApi">Api URL</label>
+        <input id="validationApi" ng-model="$ctrl.model.apiUrl" class="form-control">
+    </div>
+</div>

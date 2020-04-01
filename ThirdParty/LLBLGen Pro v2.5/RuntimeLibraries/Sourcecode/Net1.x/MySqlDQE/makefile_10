@@ -1,0 +1,17 @@
+SOURCES=AssemblyInfoDotNet10.cs DynamicQueryEngine.cs MySqlSpecificCreator.cs
+	
+REFERENCES355=SD.LLBLGen.Pro.ORMSupportClasses.NET10.dll,"C:\Program Files\CoreLab\MySQLDirect.NET355\CoreLab.MySql.dll"
+REFERENCES40=SD.LLBLGen.Pro.ORMSupportClasses.NET10.dll,"C:\Program Files\CoreLab\MySQLDirect.NET\CoreLab.MySql.dll","C:\Program Files\CoreLab\MySQLDirect.NET\CoreLab.Data.dll"
+REFDIR=..\ORMSupportClasses\DotNET1.0\bin\
+
+all : $(SOURCES)
+	csc /t:library /out:DotNET1.0\bin\SD.LLBLGen.Pro.DQE.MySql.NET10.dll /d:TRACE /o /lib:$(REFDIR) /r:$(REFERENCES40) $(SOURCES)
+
+all355 : $(SOURCES)
+	csc /t:library /out:DotNET1.0\bin\v355\SD.LLBLGen.Pro.DQE.MySql.NET10.dll /d:TRACE /o /lib:$(REFDIR) /r:$(REFERENCES355) $(SOURCES)
+	
+debug : $(SOURCES)
+	csc /t:library /debug /out:DotNET1.0\bin\SD.LLBLGen.Pro.DQE.MySql.NET10.dll /d:TRACE,DEBUG /lib:$(REFDIR) /r:$(REFERENCES40) $(SOURCES)
+
+clean:
+	del DotNET1.0\bin\SD.LLBLGen.Pro.DQE.MySql.NET10.dll

@@ -1,0 +1,23 @@
+﻿<div class="row form-group">
+    <label class="col-lg-3 control-label">{{ $ctrl.component.label }}</label>
+    <div class="col-lg-9">
+        <div file-drop-area>
+            <p>{{ $ctrl.component.description }}</p>
+            <input type="file"
+                   id="{{$ctrl.component.key}}"
+                   multiple="true"
+                   accept="{{$ctrl.imageTypes}}"
+                   class="image-droppable"
+                   file-model
+                   file-metadata-model="$ctrl.data"
+                   file-blob-model="$ctrl.blobModel"
+                   cir-template-id="$ctrl.templateId"/>
+        </div>
+        <hr />
+        <p>Preview</p>
+        <image-metadata-list 
+                    metadata-list="$ctrl.data" 
+                    blob-list="$ctrl.blobModel"
+                    thumbnails ="$ctrl.imageThubmnails"></image-metadata-list>
+    </div>
+</div>

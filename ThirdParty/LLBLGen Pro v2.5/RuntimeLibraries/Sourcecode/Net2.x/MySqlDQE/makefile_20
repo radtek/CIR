@@ -1,0 +1,17 @@
+SOURCES=AssemblyInfoDotNet20.cs DynamicQueryEngine.cs MySqlSpecificCreator.cs
+
+REFERENCES355=SD.LLBLGen.Pro.ORMSupportClasses.NET20.dll,"C:\Program Files\CoreLab\MySQLDirect.NET2_355\CoreLab.MySql.dll"
+REFERENCES40=SD.LLBLGen.Pro.ORMSupportClasses.NET20.dll,"C:\Program Files\CoreLab\MySQLDirect.NET2\CoreLab.MySql.dll","C:\Program Files\CoreLab\MySQLDirect.NET2\CoreLab.Data.dll"
+REFDIR=..\ORMSupportClasses\DotNET2.0\bin\
+
+all : $(SOURCES)
+	csc /t:library /out:DotNET2.0\bin\SD.LLBLGen.Pro.DQE.MySql.NET20.dll /doc:DotNET2.0\bin\SD.LLBLGen.Pro.DQE.MySql.NET20.xml /d:TRACE /o /lib:$(REFDIR) /r:$(REFERENCES40) $(SOURCES)
+
+all355 : $(SOURCES)
+	csc /t:library /out:DotNET2.0\bin\v355\SD.LLBLGen.Pro.DQE.MySql.NET20.dll /doc:DotNET2.0\bin\v355\SD.LLBLGen.Pro.DQE.MySql.NET20.xml /d:TRACE /o /lib:$(REFDIR) /r:$(REFERENCES355) $(SOURCES)
+
+debug : $(SOURCES)
+	csc /t:library /debug /out:DotNET2.0\bin\SD.LLBLGen.Pro.DQE.MySql.NET20.dll /d:TRACE,DEBUG /lib:$(REFDIR) /r:$(REFERENCES40) $(SOURCES)
+
+clean:
+	del /Q DotNET2.0\bin\SD.LLBLGen.Pro.DQE.MySql.NET20.*

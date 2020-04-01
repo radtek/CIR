@@ -1,0 +1,13 @@
+SOURCES=AssemblyInfoDotNet11.cs DynamicQueryEngine.cs FirebirdSpecificCreator.cs
+
+REFERENCES=SD.LLBLGen.Pro.ORMSupportClasses.NET11.dll,"C:\Program Files\FirebirdNETProvider1.7\FirebirdSql.Data.Firebird.dll"
+REFDIR=..\ORMSupportClasses\DotNET1.1\bin\
+
+all : $(SOURCES)
+	csc /t:library /out:DotNET1.1\bin\SD.LLBLGen.Pro.DQE.Firebird.NET11.dll /doc:DotNET1.1\bin\SD.LLBLGen.Pro.DQE.Firebird.NET11.xml /d:TRACE /o /lib:$(REFDIR) /r:$(REFERENCES) $(SOURCES)
+
+debug : $(SOURCES)
+	csc /t:library /debug /out:DotNET1.1\bin\SD.LLBLGen.Pro.DQE.Firebird.NET11.dll /d:TRACE,DEBUG /lib:$(REFDIR) /r:$(REFERENCES) $(SOURCES)
+
+clean:
+	del /Q DotNET1.1\bin\SD.LLBLGen.Pro.DQE.Firebird.NET11.*

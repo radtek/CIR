@@ -1,0 +1,43 @@
+﻿{
+  "cirSubmissionData": {
+    "cirId": 123,
+    "id": "id_1",
+    "state": "state_1",
+    "imageReferences": [
+      {
+        "imageId": "imageId_1",
+        "url": "url_1"
+      }
+    ],
+    "data": {
+      "txtTurbineNumber": 44,
+      "txtLocalturbineId": "txtLocalturbineId_1",
+      "ddlBladeLength": "8",
+      "txtBladeSerialNumber": "txtBladeSerialNumber_1",
+      "dtCommissioningdate": "dtCommissioningdate_1",
+      "dtInspectionDate": "dtInspectionDate_1",
+      "txtMKversion": "txtMKversion_1",
+      "txtSBURecommendation": "txtSBURecommendation_1",
+      "imagecomponentKey": {
+        "uploadedImagesCache": [
+          {
+            "imageId": "imageId_1",
+            "damageSeverity": 2,
+            "damageType":  "damageType_1"
+          }
+        ],
+        "sections": {
+          "section4": {
+            "side": "side_1",
+            "images": [
+              {
+                "imageId": "imageId_1",
+                "number": 1
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

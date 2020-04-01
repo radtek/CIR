@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<License Key="WuKYyMRJek8wIInTbQEAE5rpz4YKLNd4KbTozDNiCtQtl2JkWW+mdpVhkqd5MWOGJP10MGpHI2n9phwoKSu0BUQ59uDghj0kaWNVg8jqOJcOtuu8VEBArkOPo750PvB/LZdy0eYTXoPj/l0x7/TiP/xpL1kVnl9m9VUMCXFQ95dS5Qyti3x/3zT/gqUiK8b3t1Y8hr62vCePq5t6IZddJd/BXu9laqOA2JkjtwPY0bkYe/TpTQAxTqDHDNa3owILdwmmBv0BfHJyDAITOttrICu4cBTr8cbn+atwUudO72NVm9pS8jral9jAfg/xEydukHnzKyozePWlOFljQpOqWqGX2lE22YybfS0aJnYa2whO7wyIFSkbbrUb3smMliG4dDsLrBnVUZvCQEO4XjMRbKVB+DPo7r7Ws7JGb4ozEUsYcBSOIPAfRxiLEwckapQCPykcli53rpIQUTX91YAcUqulaAN3M8CNyqDSs7ohaS8UQEJGaiSN229+Xa2dldcnghgi7yDD9UQZUanFA1RWKD/m64U7VW1NIHvUCQSsF3nyLucnDsWu6iB5gYBhsJW4IPyeIpcZmDa0zc4lDuLLb+sDRUHUXpOWjcGxTmvb8XfqlH7+JTIV0cA2jkvAl2UkLBtuT3+Z4l2psKy4r/rZZctpitJflk/edxe8+1d/PBiGsB1bwbN2W33k1UQ1/kWNW434y3cpAz22jEZfehCpP1c5OJL6bcLDFpllwcF5VMngFXkq93ThImNnn0tA4Mf9u+VSshSPBoNsPr/yfZal5r3jXzAPMOSUUveTlWhpDwg+T/olKaYdhNLUFgtlM9s50zcYqm9azSF9NG5VsmX5600aCgyTikG+HfziShhqq4FT34OYWitcSoq/HU6X7synu0TQK/lFxF24STk+GfjO7oxrrGtq5KxEhOWZdBSwaTUG2rvV/d3K4f33gIEPjQELEEdSxYDyON9xmIaVBjiWkXJW9tyAyNHsgDUfFNaefKnWbIAEDA4ufj/PBsTEgI97FKk8uRHLDty+pVZdBin0b6+AjuI8zDEqFJHnvV7sYF1WoGs0nA27hKCzg61OnxBVjsdpHnpLc5b7iOdqSONNUR1bpouEucffkV54LDsHvDFVGrGukmF3iDO/WYMghZiQs8TJ8Ak8vxjH7sS3FhbPTlBmDNoxmGdLjh1EoSRg5E+jdILPCAFAXbr+PBVPLzk98rcJaQs883E3O8iNoLpt6Wruv3chG50ky+/+91q+WcnWAv08GmTI/5AgpBL3Xb3pqY+RE0L945Y3aFWnH9TH+8J7dWDfHbSlPlsD56n6s8JuOLyntMIyMgsUSv6GAYqHl8TbFzSPSUNdDndOPR3DbVWNjjjQgzZ/P2QZkuf4KSBvzVBPfZxjzescFrlu47MNAjFZugfcaxIr9/1g2HGLEKKHR11vLv7FK5UffutZ5qHmhkNUlPh9jb9UsajJCDu24EF4gTHhJN3SbI43WJbJXk88ZfzP0ybIcpggiyoy/Qk=" Version="1.3">
+    <Type>Runtime</Type>
+    <Username>Vestas Global IT</Username>
+    <Email>chdam@vestas.com</Email>
+    <Organization>Vestas Global IT</Organization>
+    <LicensedDate>2015-03-28T00:00:00Z</LicensedDate>
+    <ExpiredDate>2016-03-28T00:00:00Z</ExpiredDate>
+    <Products>
+        <Product>
+            <Name>Spire.Doc Pro Edition</Name>
+            <Version>5.3</Version>
+            <Subscription>
+                <NumberOfPermittedDeveloper>1</NumberOfPermittedDeveloper>
+                <NumberOfPermittedSite>1</NumberOfPermittedSite>
+            </Subscription>
+        </Product>
+    </Products>
+    <Issuer>
+        <Name>e-iceblue</Name>
+        <Email>sales@e-iceblue.com</Email>
+        <Url>http://www.e-iceblue.com</Url>
+    </Issuer>
+</License>

@@ -1,0 +1,1780 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dkrdstowerdt01/Cir.Sync.Services/SyncService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.AdvanceSearch" />
+  <xs:import schemaLocation="http://dkrdstowerdt01/Cir.Sync.Services/SyncService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.CIR" />
+  <xs:import schemaLocation="http://dkrdstowerdt01/Cir.Sync.Services/SyncService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" />
+  <xs:import schemaLocation="http://dkrdstowerdt01/Cir.Sync.Services/SyncService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.Models" />
+  <xs:import schemaLocation="http://dkrdstowerdt01/Cir.Sync.Services/SyncService.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://dkrdstowerdt01/Cir.Sync.Services/SyncService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DAL" />
+  <xs:import schemaLocation="http://dkrdstowerdt01/Cir.Sync.Services/SyncService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.ErrorHandling" />
+  <xs:element name="DoAdvanceSearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.AdvanceSearch" minOccurs="0" name="advanceSearchModel" nillable="true" type="q1:AdvanceSearchModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoAdvanceSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.AdvanceSearch" minOccurs="0" name="DoAdvanceSearchResult" nillable="true" type="q2:AdvanceSearchModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProfileId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadProfileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.AdvanceSearch" minOccurs="0" name="LoadProfileResult" nillable="true" type="q3:AdvanceSearchModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProfileId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteProfileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.AdvanceSearch" minOccurs="0" name="DeleteProfileResult" nillable="true" type="q4:AdvanceSearchModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.AdvanceSearch" minOccurs="0" name="advanceSearchModel" nillable="true" type="q5:AdvanceSearchModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveProfileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.AdvanceSearch" minOccurs="0" name="SaveProfileResult" nillable="true" type="q6:AdvanceSearchModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateTurbineNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TurbineNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateTurbineNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidateTurbineNumberResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateGetTurbineData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TurbineNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateGetTurbineDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.CIR" minOccurs="0" name="ValidateGetTurbineDataResult" nillable="true" type="q7:TurbineProperties" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateCIMCaseNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CIMCaseNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateCIMCaseNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidateCIMCaseNumberResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateServiceReportNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ServiceReportNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TurbineNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateServiceReportNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidateServiceReportNumberResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateServiceNotificationNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ServiceNotificationNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TurbineNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateServiceNotificationNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidateServiceNotificationNumberResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnlockCirDataByCirID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CirID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnlockCirDataByCirIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UnlockCirDataByCirIDResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LockCirDataByCirID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CirID" type="xs:long" />
+        <xs:element minOccurs="0" name="modifiedby" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LockCirDataByCirIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LockCirDataByCirIDResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCirStateByCirIDs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.CIR" minOccurs="0" name="CirIDs" nillable="true" type="q8:ArrayOfCirStateResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCirStateByCirIDsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.CIR" minOccurs="0" name="GetCirStateByCirIDsResult" nillable="true" type="q9:ArrayOfCirStateResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetManufacturer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="type" type="xs:int" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetManufacturerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetManufacturerResult" nillable="true" type="q10:Manufacturer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetManufacturerList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="type" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetManufacturerListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetManufacturerListResult" nillable="true" type="q11:ManufacturerList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteManufacturer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="type" type="xs:int" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteManufacturerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteManufacturerResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveManufacturer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="m" nillable="true" type="q12:Manufacturer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveManufacturerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveManufacturerResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHotlist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHotlistResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetHotlistResult" nillable="true" type="q13:Hotlist" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllHotlist">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllHotlistResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetAllHotlistResult" nillable="true" type="q14:ArrayOfHotlist" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveHotList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="hotlist" nillable="true" type="q15:Hotlist" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveHotListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveHotListResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteHotList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteHotListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteHotListResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadDefectCategotization">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="dc" nillable="true" type="q16:CirDefectCategorization" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadDefectCategotizationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="UploadDefectCategotizationResult" nillable="true" type="q17:CirDefectCategorization" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveAttachment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="attachment" nillable="true" type="q18:CirAttachments" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveAttachmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveAttachmentResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAttachments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cirId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAttachmentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetAttachmentsResult" nillable="true" type="q19:ArrayOfCirAttachments" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAttachment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cirAttachmentId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAttachmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteAttachmentResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAttachment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cirAttachmentId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAttachmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetAttachmentResult" nillable="true" type="q20:CirAttachments" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SqlToCosmosDBMigrationLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="objMigrationLogging" nillable="true" type="q21:MigrationStepLogging" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SqlToCosmosDBMigrationLogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SqlToCosmosDBMigrationLogResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBirMigrationData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBirMigrationDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetBirMigrationDataResult" nillable="true" type="q22:ArrayOfBir" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGirMigrationData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGirMigrationDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetGirMigrationDataResult" nillable="true" type="q23:ArrayOfGir" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveGirDataDetailstoCosmosDb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="objGirDataDetails" nillable="true" type="q24:GirDataDetails" />
+        <xs:element minOccurs="0" name="strGirDataDocumentId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveGirDataDetailstoCosmosDbResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveGirDataDetailstoCosmosDbResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateNewGIRReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GirDataID" type="xs:long" />
+        <xs:element minOccurs="0" name="languageId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateNewGIRReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GenerateNewGIRReportResult" nillable="true" type="q25:GirFile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGBXirMigrationData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGBXirMigrationDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetGBXirMigrationDataResult" nillable="true" type="q26:ArrayOfGbx" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveGBXirDataDetailstoCosmosDb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="objGirDataDetails" nillable="true" type="q27:GBXirDataDetails" />
+        <xs:element minOccurs="0" name="strGirDataDocumentId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveGBXirDataDetailstoCosmosDbResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveGBXirDataDetailstoCosmosDbResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateNewGBXIRReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GbxirDataID" type="xs:long" />
+        <xs:element minOccurs="0" name="languageId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateNewGBXIRReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GenerateNewGBXIRReportResult" nillable="true" type="q28:GbxFile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNotifications">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNotificationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.Models" minOccurs="0" name="GetNotificationsResult" nillable="true" type="q29:ArrayOfFirstNotificationDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveFirstNotificationDataDetailstoCosmosDb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.Models" minOccurs="0" name="objFN" nillable="true" type="q30:FirstNotificationDetails" />
+        <xs:element minOccurs="0" name="fnDataDocumentId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveFirstNotificationDataDetailstoCosmosDbResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveFirstNotificationDataDetailstoCosmosDbResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSecondNotificationList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSecondNotificationListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.Models" minOccurs="0" name="GetSecondNotificationListResult" nillable="true" type="q31:ArrayOfSecondNotificationDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveSecondNotificationDataDetailstoCosmosDb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.Models" minOccurs="0" name="objSN" nillable="true" type="q32:SecondNotificationDetails" />
+        <xs:element minOccurs="0" name="fnDataDocumentId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveSecondNotificationDataDetailstoCosmosDbResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveSecondNotificationDataDetailstoCosmosDbResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRejectNotificationList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRejectNotificationListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.Models" minOccurs="0" name="GetRejectNotificationListResult" nillable="true" type="q33:ArrayOfRejectNotificationDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveRejectNotificationDataDetailstoCosmosDb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.Models" minOccurs="0" name="objRN" nillable="true" type="q34:RejectNotificationDetails" />
+        <xs:element minOccurs="0" name="fnDataDocumentId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveRejectNotificationDataDetailstoCosmosDbResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveRejectNotificationDataDetailstoCosmosDbResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cirName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cirId" type="xs:long" />
+        <xs:element minOccurs="0" name="CurrentUser" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="type" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMailResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ToEmail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CcEmail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="body" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="subject" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMailsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendCirNotificationMails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ToEmails" nillable="true" type="q35:ArrayOfstring" />
+        <xs:element xmlns:q36="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CCEmails" nillable="true" type="q36:ArrayOfstring" />
+        <xs:element minOccurs="0" name="json" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendCirNotificationMailsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMasterData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMasterDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetMasterDataResult" nillable="true" type="q37:ArrayOfCirMasterData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMasterDataForCIRReport">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMasterDataForCIRReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DAL" minOccurs="0" name="GetMasterDataForCIRReportResult" nillable="true" type="q38:ArrayOfMasterKeyData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCirPDFData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cirId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCirPDFDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetCirPDFDataResult" nillable="true" type="q39:PDFModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMasterDataByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMasterDataByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetMasterDataByNameResult" nillable="true" type="q40:ArrayOfCirMasterTable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCIMCaseData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCIMCaseDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetCIMCaseDataResult" nillable="true" type="q41:ArrayOfCirCIMCaseTable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCIRData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.CIR" minOccurs="0" name="strJsnCir" nillable="true" type="q42:ComponentInspectionReport" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCIRDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.CIR" minOccurs="0" name="SaveCIRDataResult" nillable="true" type="q43:CirResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePDFData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePDFDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.CIR" minOccurs="0" name="UpdatePDFDataResult" nillable="true" type="q44:CirResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCIRDatabyCIRID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CIRID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCIRDatabyCIRIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.CIR" minOccurs="0" name="GetCIRDatabyCIRIDResult" nillable="true" type="q45:ComponentInspectionReport" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CirQuickSearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.CIR" minOccurs="0" name="SearchItem" nillable="true" type="q46:CirQuickSearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CirQuickSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.CIR" minOccurs="0" name="CirQuickSearchResult" nillable="true" type="q47:ArrayOfComponentInspectionReport" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetComponentInspectionReportType">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetComponentInspectionReportTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetComponentInspectionReportTypeResult" nillable="true" type="q48:ArrayOfComponentInspectionReportType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStandardText">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CommonInspectionReportID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStandardTextResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetStandardTextResult" nillable="true" type="q49:ArrayOfStandardTexts" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStandardTextbyID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStandardTextbyIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetStandardTextbyIDResult" nillable="true" type="q50:StandardTexts" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveStandardTextData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="strJsnStrTxt" nillable="true" type="q51:StandardTexts" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveStandardTextDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="SaveStandardTextDataResult" nillable="true" type="q52:StandardTexts" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BirSearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="bir" nillable="true" type="q53:Bir" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BirSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="BirSearchResult" nillable="true" type="q54:ArrayOfBir" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBir">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BirID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBirResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteBirResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BirFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BirID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BirFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="BirFileResult" nillable="true" type="q55:Bir" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBirDataByCirID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CirIDs" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBirDataByCirIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetBirDataByCirIDResult" nillable="true" type="q56:Bir" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRelatedCirsByCirId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cirId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRelatedCirsByCirIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetRelatedCirsByCirIdResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveBirData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="bir" nillable="true" type="q57:Bir" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveBirDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="SaveBirDataResult" nillable="true" type="q58:Bir" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCirDataIdByCirID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CirIDs" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCirDataIdByCirIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetCirDataIdByCirIDResult" nillable="true" type="q59:ArrayOfKeyValueOfstringstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GirSearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="gir" nillable="true" type="q60:Gir" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GirSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GirSearchResult" nillable="true" type="q61:ArrayOfGir" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteGir">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GirID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteGirResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteGirResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GirFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GirID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GirFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GirFileResult" nillable="true" type="q62:Gir" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGirDataByCirID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CirIDs" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGirDataByCirIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetGirDataByCirIDResult" nillable="true" type="q63:Gir" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveGirData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="gir" nillable="true" type="q64:Gir" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveGirDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="SaveGirDataResult" nillable="true" type="q65:Gir" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GBXirSearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="gbx" nillable="true" type="q66:Gbx" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GBXirSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GBXirSearchResult" nillable="true" type="q67:ArrayOfGbx" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteGBXir">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GBXirID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteGBXirResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteGBXirResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GBXirFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GBXirID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GBXirFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GBXirFileResult" nillable="true" type="q68:Gbx" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGBXirDataByCirID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CirIDs" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGBXirDataByCirIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetGBXirDataByCirIDResult" nillable="true" type="q69:Gbx" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveGBXirData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="gbx" nillable="true" type="q70:Gbx" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveGBXirDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="SaveGBXirDataResult" nillable="true" type="q71:Gbx" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Log">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="detail" nillable="true" type="xs:string" />
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.ErrorHandling" minOccurs="0" name="type" type="q72:LogType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LogResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="log" nillable="true" type="q73:LogList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetLogResult" nillable="true" type="q74:LogList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFeedbackType">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFeedbackTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetFeedbackTypeResult" nillable="true" type="q75:ArrayOfFeedbackType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveFeedback">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="strJsnFeedback" nillable="true" type="q76:Feedback" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveFeedbackResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="SaveFeedbackResult" nillable="true" type="q77:Feedback" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllFeedbacks">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllFeedbacksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetAllFeedbacksResult" nillable="true" type="q78:ArrayOfFeedback" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteFeedback">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteFeedbackResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteFeedbackResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSeverity">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSeverityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetSeverityResult" nillable="true" type="q79:ArrayOfSeverity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServiceInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="All" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServiceInformationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetServiceInformationResult" nillable="true" type="q80:ArrayOfServiceInformations" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServiceInformationbyID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServiceInformationbyIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetServiceInformationbyIDResult" nillable="true" type="q81:ServiceInformations" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveServiceInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="strJsnServiceInformations" nillable="true" type="q82:ServiceInformations" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveServiceInformationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="SaveServiceInformationResult" nillable="true" type="q83:ServiceInformations" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllView">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllViewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetAllViewResult" nillable="true" type="q84:ArrayOfCirViewData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllViewList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="initials" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllViewListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetAllViewListResult" nillable="true" type="q85:CirViewData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetView">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ViewId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetViewResult" nillable="true" type="q86:CirViewData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateView">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="cirViewData" nillable="true" type="q87:CirViewData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateViewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateViewResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteView">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ViewId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteViewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteViewResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCirList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="cirList" nillable="true" type="q88:CIRList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCirListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetCirListResult" nillable="true" type="q89:CIRList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CirProcess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="cirDataDetail" nillable="true" type="q90:CirDataDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CirProcessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="CirProcessResult" nillable="true" type="q91:CirDataActionResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetApproved">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cirDataId" type="xs:long" />
+        <xs:element minOccurs="0" name="State" type="xs:int" />
+        <xs:element minOccurs="0" name="Progress" type="xs:int" />
+        <xs:element minOccurs="0" name="modifiedBy" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetApprovedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetApprovedResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LockUnlockCir">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="cirDataDetail" nillable="true" type="q92:CirDataDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LockUnlockCirResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="LockUnlockCirResult" nillable="true" type="q93:CirDataActionResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCirDataDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CirDataId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCirDataDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetCirDataDetailsResult" nillable="true" type="q94:CirDataDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCIRLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CirDataId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCIRLogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetCIRLogResult" nillable="true" type="q95:ArrayOfCirLogs" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCirDataDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CirDataId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCirDataDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetCirDataDetailResult" nillable="true" type="q96:CirDataDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCirCommentHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="CirCommentHistory" nillable="true" type="q97:CirCommentHistorys" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCirCommentHistoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="SaveCirCommentHistoryResult" nillable="true" type="q98:CirCommentHistorys" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCirCommentHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CirDataId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCirCommentHistoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetCirCommentHistoryResult" nillable="true" type="q99:ArrayOfCirCommentHistorys" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCirCommentHistoryByCirId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CirId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCirCommentHistoryByCirIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetCirCommentHistoryByCirIdResult" nillable="true" type="q100:ArrayOfCirCommentHistorys" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateBIRReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BirDataID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateBIRReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GenerateBIRReportResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateNewBIRReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BirDataID" type="xs:long" />
+        <xs:element minOccurs="0" name="languageId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateNewBIRReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GenerateNewBIRReportResult" nillable="true" type="q101:BirFile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateGIRReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GirDataID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateGIRReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GenerateGIRReportResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateGBXIRReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GBXirDataID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateGBXIRReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GenerateGBXIRReportResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBirPDF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BirDataID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBirPDFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetBirPDFResult" nillable="true" type="q102:Bir" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGirPDF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GirDataID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGirPDFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetGirPDFResult" nillable="true" type="q103:Gir" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGBXirPDF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GBXirDataID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGBXirPDFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetGBXirPDFResult" nillable="true" type="q104:Gbx" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendFirstNotification">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CirDataID" type="xs:long" />
+        <xs:element minOccurs="0" name="CirId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendFirstNotificationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendFirstNotificationResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsValidServiceReportNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="serviceReportNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="turbineNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsValidServiceReportNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsValidServiceReportNumberResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsValidNotificationNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="notificationNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="turbineNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsValidNotificationNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsValidNotificationNumberResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCIRPdf">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="state" type="xs:int" />
+        <xs:element minOccurs="0" name="html" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCIRPdfResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveCIRPdfResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCIRPdfGIR">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="state" type="xs:int" />
+        <xs:element minOccurs="0" name="html" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCIRPdfGIRResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveCIRPdfGIRResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCIRPdfGBX">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="state" type="xs:int" />
+        <xs:element minOccurs="0" name="html" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCIRPdfGBXResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveCIRPdfGBXResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCIRPdf">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CirDataId" type="xs:long" />
+        <xs:element minOccurs="0" name="CirId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCIRPdfResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetCIRPdfResult" nillable="true" type="q105:Bir" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCIRPdfForSQL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CirId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCIRPdfForSQLResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetCIRPdfForSQLResult" nillable="true" type="q106:CirPDFResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCIRPdfGIR">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CirDataId" type="xs:long" />
+        <xs:element minOccurs="0" name="CirId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCIRPdfGIRResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetCIRPdfGIRResult" nillable="true" type="q107:Gir" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCIRPdfGBX">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CirDataId" type="xs:long" />
+        <xs:element minOccurs="0" name="CirId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCIRPdfGBXResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetCIRPdfGBXResult" nillable="true" type="q108:Gbx" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCIRPdfZip">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CirDataIds" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCIRPdfZipResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetCIRPdfZipResult" nillable="true" type="q109:Bir" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCIRPdfZipGIR">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CirDataIds" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCIRPdfZipGIRResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetCIRPdfZipGIRResult" nillable="true" type="q110:Gir" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCIRPdfZipGBX">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CirDataIds" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCIRPdfZipGBXResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q111="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetCIRPdfZipGBXResult" nillable="true" type="q111:Gbx" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RenderCirReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CirID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RenderCirReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RenderCirReportResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBIRViewId">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBIRViewIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetBIRViewIdResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGIRViewId">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGIRViewIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetGIRViewIdResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGBXIRViewId">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGBXIRViewIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetGBXIRViewIdResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResendSecondMails">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResendSecondMailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ResendSecondMailsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMigrationCirList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMigrationCirListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q112="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetMigrationCirListResult" nillable="true" type="q112:ArrayOfCirDataDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveBirDataDetailstoCosmosDb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q113="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="oBirDetails" nillable="true" type="q113:BirDataDetails" />
+        <xs:element minOccurs="0" name="birDataDocumentId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveBirDataDetailstoCosmosDbResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCirRevision">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CirDataId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCirRevisionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q114="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="GetCirRevisionResult" nillable="true" type="q114:ArrayOfCirRevision" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCirRevisionData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CirDataId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCirRevisionDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q115="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.CIR" minOccurs="0" name="GetCirRevisionDataResult" nillable="true" type="q115:ComponentInspectionReport" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBrandList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBrandListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q116="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.AdvanceSearch" minOccurs="0" name="GetBrandListResult" nillable="true" type="q116:ArrayOfBrand" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

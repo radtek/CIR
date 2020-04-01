@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8FF0E94C-E925-4020-84B0-A5F23C77E3D1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cir.Data.Access</RootNamespace>
+    <AssemblyName>Cir.Data.Access</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PreProduction|AnyCPU'">
+    <OutputPath>bin\PreProduction\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Cir.SapIntegrator">
+      <HintPath>..\Cir.Sync.Services\dll\Cir.SapIntegrator.dll</HintPath>
+    </Reference>
+    <Reference Include="DocX">
+      <HintPath>..\ThirdParty\NovaCode\DocX.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.84.0.0, Culture=neutral, PublicKeyToken=1b03e6acf1164f73">
+      <HintPath>..\packages\NetSword.Common.ICSharpCode.SharpZipLib.0.84.0\lib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="LightInject, Version=5.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.5.1.1\lib\net46\LightInject.dll</HintPath>
+    </Reference>
+    <Reference Include="LightInject.WebApi, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.WebApi.2.0.0\lib\net46\LightInject.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.6.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.6.1\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Documents.Client, Version=1.19.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.DocumentDB.1.19.1\lib\net45\Microsoft.Azure.Documents.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Services.AppAuthentication, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.Services.AppAuthentication.1.1.0-preview\lib\net452\Microsoft.Azure.Services.AppAuthentication.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.8.2\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.8.2\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.8.2\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory, Version=3.19.2.6005, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.3.19.2\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory.Platform, Version=3.19.2.6005, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.3.19.2\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=4.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WindowsAzure.Storage.8.7.0\lib\net45\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Polly, Version=5.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Polly.5.8.0\lib\net45\Polly.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.2.6.0\lib\net46\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.ApplicationInsights, Version=2.6.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.ApplicationInsights.2.6.0\lib\net45\Serilog.Sinks.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Doc">
+      <HintPath>..\ThirdParty\Spire\Spire.Doc.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.License">
+      <HintPath>..\ThirdParty\Spire\Spire.License.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf">
+      <HintPath>..\ThirdParty\Spire\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.3.1\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.40306.1554, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.4.403061554\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Spatial, Version=5.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.8.2\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CompositionRoot.cs" />
+    <Compile Include="DataAccessDynamic\CirSubmissionDataDynamicRepository.cs" />
+    <Compile Include="DataAccess\BlobPDFStorageBaseRepository.cs" />
+    <Compile Include="DataAccess\CirLogRepository.cs" />
+    <Compile Include="DataAccess\CirPDFStorageRepository.cs" />
+    <Compile Include="DataAccess\CirSubmissionHistoricDataRepository.cs" />
+    <Compile Include="DataAccessDynamic\ICirSubmissionDataDynamicRepository.cs" />
+    <Compile Include="DataAccess\CirSyncLogRepository.cs" />
+    <Compile Include="DataAccess\CreateCirPDF.cs" />
+    <Compile Include="DataAccess\HotlistRepository.cs" />
+    <Compile Include="DataAccess\ICirLogRepository.cs" />
+    <Compile Include="DataAccess\ICirPDFStorageRepository.cs" />
+    <Compile Include="DataAccess\ICirSubmissionHistoricDataRepository.cs" />
+    <Compile Include="DataAccess\BirDetailsDataRepository.cs" />
+    <Compile Include="DataAccess\BlobStorageBaseRepository.cs" />
+    <Compile Include="DataAccess\BrandDataRepository.cs" />
+    <Compile Include="DataAccess\CirIdRepository.cs" />
+    <Compile Include="DataAccess\CirTemplateRepository.cs" />
+    <Compile Include="DataAccess\GroupUserBrandRepository.cs" />
+    <Compile Include="DataAccess\IBrandDataRepository.cs" />
+    <Compile Include="DataAccess\IBirDetailsDataRepository.cs" />
+    <Compile Include="DataAccess\ICirIdRepository.cs" />
+    <Compile Include="DataAccess\ICirSyncLogRepository.cs" />
+    <Compile Include="DataAccess\ICirTemplateRepository.cs" />
+    <Compile Include="DataAccess\IGroupUserBrandRepository.cs" />
+    <Compile Include="DataAccess\IHotlistRepository.cs" />
+    <Compile Include="DataAccess\IIntegrationRequestsDataRepository.cs" />
+    <Compile Include="DataAccess\IntegrationRequestsDataRepository.cs" />
+    <Compile Include="Enumerations\Enumeration.cs" />
+    <Compile Include="Enumerations\NotificationEnumerations.cs" />
+    <Compile Include="Helpers\CirNotification.cs" />
+    <Compile Include="Helpers\CirSubmissionDataExtensions.cs" />
+    <Compile Include="Helpers\GetStorageHash.cs" />
+    <Compile Include="Helpers\ICirNotification.cs" />
+    <Compile Include="Helpers\TaskHelper.cs" />
+    <Compile Include="DataAccess\IMessageDataRepository.cs" />
+    <Compile Include="DataAccess\MessageDataRepository.cs" />
+    <Compile Include="Models\Authorization\UserInformation.cs" />
+    <Compile Include="Models\CirIdModel.cs" />
+    <Compile Include="Models\CirLogDetails.cs" />
+    <Compile Include="Models\CirMailStatus.cs" />
+    <Compile Include="Models\CirMasterKeyModel.cs" />
+    <Compile Include="Models\CirRevisionDetailsItem.cs" />
+    <Compile Include="Models\CirSqlProcessStatus.cs" />
+    <Compile Include="Models\CirTemplateShortDataModel.cs" />
+    <Compile Include="Models\CirUserData.cs" />
+    <Compile Include="Models\GroupUserBrand.cs" />
+    <Compile Include="Models\HotlistDataModel.cs" />
+    <Compile Include="Models\ICirPDFBlobStorageData.cs" />
+    <Compile Include="Models\ImageProcessStatus.cs" />
+    <Compile Include="Models\MessageData.cs" />
+    <Compile Include="Models\Integration\OperationType.cs" />
+    <Compile Include="Models\Integration\RequestModel.cs" />
+    <Compile Include="Models\Integration\RequestState.cs" />
+    <Compile Include="Models\PDFModel.cs" />
+    <Compile Include="Models\SyncResponse.cs" />
+    <Compile Include="Models\UserData.cs" />
+    <Compile Include="Models\CirRevisionDetails.cs" />
+    <Compile Include="Notification\RejectNotificationData.cs" />
+    <Compile Include="Notification\SBURejectNotificationData.cs" />
+    <Compile Include="Notification\SecondNotificationData.cs" />
+    <Compile Include="Notification\FirstNotificationData.cs" />
+    <Compile Include="Notification\Notification.cs" />
+    <Compile Include="Notification\NotificationData.cs" />
+    <Compile Include="Services\CimCaseService.cs" />
+    <Compile Include="Services\CirBrandService.cs" />
+    <Compile Include="Services\CirDelegationService.cs" />
+    <Compile Include="Services\CirIdGeneratorService.cs" />
+    <Compile Include="Services\CirLockService.cs" />
+    <Compile Include="Services\CirTosLockService.cs" />
+    <Compile Include="Services\CirTemplateService.cs" />
+    <Compile Include="Services\HotlistService.cs" />
+    <Compile Include="Services\ICimCaseService.cs" />
+    <Compile Include="Services\ICirBrandService.cs" />
+    <Compile Include="Services\ICirDelegationService.cs" />
+    <Compile Include="Services\ICirIdGeneratorService.cs" />
+    <Compile Include="Services\ICirLockService.cs" />
+    <Compile Include="Services\ICirTosLockService.cs" />
+    <Compile Include="Services\ICirTemplateService.cs" />
+    <Compile Include="Services\IHotlistService.cs" />
+    <Compile Include="Services\IMessageService.cs" />
+    <Compile Include="Helpers\HttpHelpers.cs" />
+    <Compile Include="Services\Integration\IInspecToolsIntegrationService.cs" />
+    <Compile Include="Services\Integration\InspecToolsAuthorization.cs" />
+    <Compile Include="Services\Integration\InspecToolsHttpClient.cs" />
+    <Compile Include="Services\Integration\InspecToolsIntegrationConfig.cs" />
+    <Compile Include="Services\Integration\InspecToolsIntegrationService.cs" />
+    <Compile Include="Services\IUserTable.cs" />
+    <Compile Include="Models\BirDetailsData.cs" />
+    <Compile Include="Models\BlobStorageConfig.cs" />
+    <Compile Include="Models\BrandDataModel.cs" />
+    <Compile Include="Models\CirSubmissionSyncData.cs" />
+    <Compile Include="Models\CirTemplateDataModel.cs" />
+    <Compile Include="Models\DataModel.cs" />
+    <Compile Include="Models\DataRepositoryConfig.cs" />
+    <Compile Include="Connected Services\CirSyncService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\BaseRepository.cs" />
+    <Compile Include="DataAccess\CirImageStorageRepository.cs" />
+    <Compile Include="DataAccess\ICirImageStorageRepository.cs" />
+    <Compile Include="Models\CirState.cs" />
+    <Compile Include="Models\ICosmosDbIDataModel.cs" />
+    <Compile Include="Models\ImageDataModel.cs" />
+    <Compile Include="Models\CirSubmissionData.cs" />
+    <Compile Include="Models\ICirBlobStorageData.cs" />
+    <Compile Include="Models\IDataModel.cs" />
+    <Compile Include="Models\SapValidationConfig.cs" />
+    <Compile Include="Models\ValidationMethodsModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\BirDataService.cs" />
+    <Compile Include="Services\CirBlobImageService.cs" />
+    <Compile Include="Services\CirSubmissionService.cs" />
+    <Compile Include="Services\IBirDataService.cs" />
+    <Compile Include="Services\ICirBlobImageService.cs" />
+    <Compile Include="Services\ICirSubmissionService.cs" />
+    <Compile Include="Services\CirValidationService.cs" />
+    <Compile Include="Services\ICirValidationService.cs" />
+    <Compile Include="Services\IUserDataService.cs" />
+    <Compile Include="Services\MessageService.cs" />
+    <Compile Include="Services\UrlHelper.cs" />
+    <Compile Include="Services\UserDataService.cs" />
+    <Compile Include="Validation\CIMCaseValidation.cs" />
+    <Compile Include="Validation\IValidation.cs" />
+    <Compile Include="Validation\IValidationService.cs" />
+    <Compile Include="Validation\ServiceNotificationNumberValidation.cs" />
+    <Compile Include="Validation\ServiceReportNumberValidation.cs" />
+    <Compile Include="Validation\TurbineNumberValidation.cs" />
+    <Compile Include="Validation\ValidationFactory.cs" />
+    <Compile Include="Validation\ValidationService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.AdvanceSearchModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.Bir.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.BirFile1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.Brand1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.CirAttachments.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.CirCIMCaseTable.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.CirCommentHistorys.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.CirDataActionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.CirDataDetail.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.CirDataDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.CirDefectCategorization.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.CIRList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.CirLogs.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.CirMasterData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.CirMasterTable.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.CirPDFResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.CirResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.CirRevision.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.CirStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.CirViewData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.ComponentInspectionReport.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.ComponentInspectionReportType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.Feedback.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.FeedbackType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.FirstNotificationDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.Gbx.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.GbxFile.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.Gir.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.GirFile.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.Hotlist.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.LogList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.Manufacturer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.ManufacturerList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.MasterKeyData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.PDFModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.RejectNotificationDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.SecondNotificationDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.ServiceInformations.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.Severity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.StandardTexts.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\Cir.Data.Access.CirSyncService.TurbineProperties.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CirSyncService\SyncService.wsdl" />
+    <None Include="Connected Services\CirSyncService\SyncService1.wsdl" />
+    <None Include="Connected Services\CirSyncService\SyncService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CirSyncService\SyncService311.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CirSyncService\SyncService312.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CirSyncService\SyncService313.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CirSyncService\SyncService314.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CirSyncService\SyncService315.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CirSyncService\SyncService316.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CirSyncService\SyncService317.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CirSyncService\SyncService318.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CirSyncService\SyncService319.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CirSyncService\SyncService320.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CirSyncService\SyncService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CirSyncService\SyncService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CirSyncService\SyncService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CirSyncService\SyncService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CirSyncService\SyncService9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\CirSyncService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CirSyncService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CirSyncService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CirSyncService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cir.CloudConvert.Wrapper\Cir.CloudConvert.Wrapper.csproj">
+      <Project>{ff4093b6-88e9-45eb-8503-d25e9bf46aa1}</Project>
+      <Name>Cir.CloudConvert.Wrapper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CirSyncService\SyncService.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Azure.DocumentDB.1.19.1\build\Microsoft.Azure.DocumentDB.targets" Condition="Exists('..\packages\Microsoft.Azure.DocumentDB.1.19.1\build\Microsoft.Azure.DocumentDB.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Azure.DocumentDB.1.19.1\build\Microsoft.Azure.DocumentDB.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Azure.DocumentDB.1.19.1\build\Microsoft.Azure.DocumentDB.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Azure.Services.AppAuthentication.1.1.0-preview\build\Microsoft.Azure.Services.AppAuthentication.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Azure.Services.AppAuthentication.1.1.0-preview\build\Microsoft.Azure.Services.AppAuthentication.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Azure.Services.AppAuthentication.1.1.0-preview\build\Microsoft.Azure.Services.AppAuthentication.targets" Condition="Exists('..\packages\Microsoft.Azure.Services.AppAuthentication.1.1.0-preview\build\Microsoft.Azure.Services.AppAuthentication.targets')" />
+</Project>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dkrdstowerdd01/Cir.Sync.Services/SyncService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/" />
+  <xs:complexType name="ArrayOfFirstNotificationDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FirstNotificationDetails" nillable="true" type="tns:FirstNotificationDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFirstNotificationDetails" nillable="true" type="tns:ArrayOfFirstNotificationDetails" />
+  <xs:complexType name="FirstNotificationDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CirDataId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="CommisioningDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ComponentInspectionReportId" type="xs:long" />
+      <xs:element minOccurs="0" name="ComponentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryISOId" type="xs:long" />
+      <xs:element minOccurs="0" name="EditDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EditInitials" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FailureDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FirstNotificationId" type="xs:long" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ManufacturerID" type="xs:int" />
+      <xs:element minOccurs="0" name="QueuedOn" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SBUId" type="xs:long" />
+      <xs:element minOccurs="0" name="SendOn" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SerialNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sitename" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TurbineMatrixId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TurbineNumber" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="WordBytesUrl" nillable="true" type="xs:anyURI" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="cirAttachments" nillable="true" type="q1:CirAttachmentsDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FirstNotificationDetails" nillable="true" type="tns:FirstNotificationDetails" />
+  <xs:complexType name="ArrayOfSecondNotificationDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SecondNotificationDetails" nillable="true" type="tns:SecondNotificationDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSecondNotificationDetails" nillable="true" type="tns:ArrayOfSecondNotificationDetails" />
+  <xs:complexType name="SecondNotificationDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CIMCaseNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="CIRTemplate" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="CirDataId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ComponentInspectionReportId" type="xs:long" />
+      <xs:element minOccurs="0" name="ComponentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ManufacturerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SBUId" type="xs:long" />
+      <xs:element minOccurs="0" name="SecondNotificationId" type="xs:long" />
+      <xs:element minOccurs="0" name="SendOn" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TurbineMatrixId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TurbineNumber" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="WordBytesUrl" nillable="true" type="xs:anyURI" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="cirAttachments" nillable="true" type="q2:CirAttachmentsDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SecondNotificationDetails" nillable="true" type="tns:SecondNotificationDetails" />
+  <xs:complexType name="ArrayOfRejectNotificationDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RejectNotificationDetails" nillable="true" type="tns:RejectNotificationDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRejectNotificationDetails" nillable="true" type="tns:ArrayOfRejectNotificationDetails" />
+  <xs:complexType name="RejectNotificationDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CIMCaseNo" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ComponentInspectionReportId" type="xs:long" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InfoPathFilename" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Received" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RejectNotificationId" type="xs:long" />
+      <xs:element minOccurs="0" name="RejectedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SBUId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SendOn" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SendTo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TurbineNumber" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="WordBytesUrl" nillable="true" type="xs:anyURI" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="cirAttachments" nillable="true" type="q3:CirAttachmentsDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RejectNotificationDetails" nillable="true" type="tns:RejectNotificationDetails" />
+</xs:schema>

@@ -1,0 +1,48 @@
+{
+  "data": {
+    "turbineId": 44,
+    "cirId": 123,
+    "cirGuid": "id_1",
+    "description": "txtReasonforService_1",
+    "inspectionDate": "2019-01-01T10:00:00Z",
+    "damages": [
+      {
+        "damageId": "damageId_1",
+        "damageGuid": "damageGuid_1",
+        "severity": 1,
+        "imageName": "name_1",
+        "imageId": "imageId_1",
+        "damageImage": "url_1",
+        "description": "damageDescription_1",
+        "side": "side_1",
+        "damagePlacement": "damagePlacement_1",
+        "damageType": "damageType_1",
+        "radius": 10,
+        "rootCause": "rootCause_1",
+        "recommendedActivity": "recommendedActivity_1",
+        "boundingBox": {
+          "left": 10,
+          "top": 20,
+          "width": 30,
+          "height": 40
+        }
+      },
+      {
+        "damageId": "damageId_2",
+        "damageGuid": "damageGuid_2",
+        "severity": 2,
+        "imageName": "name_2",
+        "imageId": "imageId_2",
+        "damageImage": "url_2",
+        "description": "damageDescription_2",
+        "side": "side_2",
+        "damagePlacement": "damagePlacement_2",
+        "damageType": "damageType_2",
+        "radius": 20,
+        "rootCause": "rootCause_2",
+        "recommendedActivity": "recommendedActivity_2",
+        "boundingBox": null
+      }
+    ]
+  }
+}

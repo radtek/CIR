@@ -1,0 +1,16 @@
+SOURCES=AssemblyInfoMSDotNet11.cs DynamicQueryEngine.cs OracleSpecificCreator.cs
+
+REFERENCES=SD.LLBLGen.Pro.ORMSupportClasses.NET11.dll,System.Data.OracleClient.dll
+REFDIR=..\ORMSupportClasses\DotNET1.1\bin\
+
+REFERENCESDEBUG=SD.LLBLGen.Pro.ORMSupportClasses.dll,System.Data.OracleClient.dll
+REFDIRDEBUG=..\ORMSupportClasses\bin\debug\
+
+all : $(SOURCES)
+	csc /t:library /out:DotNET1.1\bin\SD.LLBLGen.Pro.DQE.OracleMS.NET11.dll /doc:DotNET1.1\bin\SD.LLBLGen.Pro.DQE.OracleMS.NET11.xml /o /d:MS,TRACE /lib:$(REFDIR) /r:$(REFERENCES) $(SOURCES)
+
+debug : $(SOURCES)
+	csc /t:library /debug /out:DotNET1.1\bin\SD.LLBLGen.Pro.DQE.OracleMS.NET11.dll /d:MS,TRACE,DEBUG /lib:$(REFDIRDEBUG) /r:$(REFERENCESDEBUG) $(SOURCES)
+
+clean:
+	del /Q DotNET1.1\bin\SD.LLBLGen.Pro.DQE.OracleMS.NET11.*

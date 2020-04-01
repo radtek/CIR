@@ -1,0 +1,13 @@
+SOURCES=AssemblyInfoDotNet20.cs DynamicQueryEngine.cs AccessSpecificCreator.cs
+
+REFERENCES=SD.LLBLGen.Pro.ORMSupportClasses.NET20.dll
+REFDIR=..\ORMSupportClasses\DotNET2.0\bin\
+
+all : $(SOURCES)
+	csc /t:library /out:DotNET2.0\bin\SD.LLBLGen.Pro.DQE.Access.NET20.dll /doc:DotNET2.0\bin\SD.LLBLGen.Pro.DQE.Access.NET20.xml /d:TRACE /o /lib:$(REFDIR) /r:$(REFERENCES) $(SOURCES)
+
+debug : $(SOURCES)
+	csc /t:library /debug /out:DotNET2.0\bin\SD.LLBLGen.Pro.DQE.Access.NET20.dll /d:TRACE,DEBUG /lib:$(REFDIR) /r:$(REFERENCES) $(SOURCES)
+
+clean:
+	del /Q DotNET2.0\bin\SD.LLBLGen.Pro.DQE.Access.NET20.*

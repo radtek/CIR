@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{20D4826A-C6FA-45DB-90F4-C717570B9F32}") = "SqlServerCeDQE", "SqlServerCeDQE.csdproj", "{077F3B2D-1CFE-4D76-A566-AB090FF5C426}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{077F3B2D-1CFE-4D76-A566-AB090FF5C426}.Debug.ActiveCfg = Debug|Windows CE
+		{077F3B2D-1CFE-4D76-A566-AB090FF5C426}.Debug.Build.0 = Debug|Windows CE
+		{077F3B2D-1CFE-4D76-A566-AB090FF5C426}.Debug.Deploy.0 = Debug|Windows CE
+		{077F3B2D-1CFE-4D76-A566-AB090FF5C426}.Release.ActiveCfg = Release|Windows CE
+		{077F3B2D-1CFE-4D76-A566-AB090FF5C426}.Release.Build.0 = Release|Windows CE
+		{077F3B2D-1CFE-4D76-A566-AB090FF5C426}.Release.Deploy.0 = Release|Windows CE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

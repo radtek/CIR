@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.CIR" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.CIR" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dkrdstowerdd01/Cir.Sync.Services/SyncService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" />
+  <xs:complexType name="ComponentInspectionReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalComments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AfterInspectionTurbineRunStatusId" type="xs:long" />
+      <xs:element minOccurs="0" name="AlarmLogNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BeforeInspectionTurbineRunStatusId" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeData" nillable="true" type="tns:ComponentInspectionReportBlade" />
+      <xs:element minOccurs="0" name="CIMCaseNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="CIRID" type="xs:long" />
+      <xs:element minOccurs="0" name="CIRTemplateGUID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CirDataID" type="xs:long" />
+      <xs:element minOccurs="0" name="CirName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommisioningDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ComponentInspectionReportId" type="xs:long" />
+      <xs:element minOccurs="0" name="ComponentInspectionReportName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ComponentInspectionReportStateId" type="xs:long" />
+      <xs:element minOccurs="0" name="ComponentInspectionReportTypeId" type="xs:long" />
+      <xs:element minOccurs="0" name="ComponentInspectionReportVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ComponentUpTowerSolutionID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ConductedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryISOId" type="xs:long" />
+      <xs:element minOccurs="0" name="Created" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CurrentUser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deleted" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DeletedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescriptionConsquential" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DynamicTableInputs" nillable="true" type="tns:DynamicTable" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FailureDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Gearbox" nillable="true" type="tns:ComponentInspectionReportGearbox" />
+      <xs:element minOccurs="0" name="General" nillable="true" type="tns:CommonInspectionGeneral" />
+      <xs:element minOccurs="0" name="Generator" nillable="true" type="tns:ComponentInspectionReportGenerator" />
+      <xs:element minOccurs="0" name="Generator1Hrs" type="xs:long" />
+      <xs:element minOccurs="0" name="Generator2Hrs" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="HideLock" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HideProgress" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="HideTemplateVer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HtmlStr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImageData" nillable="true" type="tns:ArrayOfImageData" />
+      <xs:element minOccurs="0" name="ImageDataInfo" nillable="true" type="tns:ImageDataInfo" />
+      <xs:element minOccurs="0" name="InspectionDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="InstallationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="InternalComments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocalTurbineId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocationTypeId" type="xs:long" />
+      <xs:element minOccurs="0" name="MainBearing" nillable="true" type="tns:ComponentInspectionReportMainBearing" />
+      <xs:element minOccurs="0" name="Modified" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MountedOnMainComponentBooleanAnswerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="NotificationNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:long" />
+      <xs:element minOccurs="0" name="ReasonForService" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReconstructionBooleanAnswerId" type="xs:long" />
+      <xs:element minOccurs="0" name="ReportTypeId" type="xs:long" />
+      <xs:element minOccurs="0" name="RunHours" type="xs:long" />
+      <xs:element minOccurs="0" name="SBUId" type="xs:long" />
+      <xs:element minOccurs="0" name="SBUName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SBURecomendation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondGeneratorBooleanAnswerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ServiceEngineer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceReportNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceReportNumberTypeId" type="xs:long" />
+      <xs:element minOccurs="0" name="SiteName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Skiip" nillable="true" type="tns:ComponentInspectionReportSkiiP" />
+      <xs:element minOccurs="0" name="TemplateVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalAcceptedRecords" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalProduction" type="xs:long" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalRejectedRecords" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalUnApprovedRecords" type="xs:int" />
+      <xs:element minOccurs="0" name="Transformer" nillable="true" type="tns:ComponentInspectionReportTransformer" />
+      <xs:element minOccurs="0" name="TurbineData" nillable="true" type="tns:TurbineProperties" />
+      <xs:element minOccurs="0" name="TurbineMatrixId" type="xs:long" />
+      <xs:element minOccurs="0" name="TurbineNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="TurbineType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VestasItemNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strCommisioningDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strFailureDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strInspectionDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strInstallationDate" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComponentInspectionReport" nillable="true" type="tns:ComponentInspectionReport" />
+  <xs:complexType name="ComponentInspectionReportBlade">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BladeClaimRelevantBooleanAnswerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeColorId" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeDamageIdentified" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BladeFaultCodeAreaId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeFaultCodeCauseId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeFaultCodeClassificationId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeFaultCodeTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeInspectionReportDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BladeLengthId" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeLsCalibrationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BladeLsLeewardSidePostRepair2" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeLsLeewardSidePostRepair3" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeLsLeewardSidePostRepair4" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeLsLeewardSidePostRepair5" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeLsLeewardSidePostRepairTip" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeLsLeewardSidePreRepair2" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeLsLeewardSidePreRepair3" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeLsLeewardSidePreRepair4" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeLsLeewardSidePreRepair5" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeLsLeewardSidePreRepairTip" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeLsVtNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BladeLsWindwardSidePostRepair2" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeLsWindwardSidePostRepair3" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeLsWindwardSidePostRepair4" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeLsWindwardSidePostRepair5" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeLsWindwardSidePostRepairTip" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeLsWindwardSidePreRepair2" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeLsWindwardSidePreRepair3" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeLsWindwardSidePreRepair4" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeLsWindwardSidePreRepair5" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeLsWindwardSidePreRepairTip" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeManufacturerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeOtherSerialNumber1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BladeOtherSerialNumber2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BladePicturesIncludedBooleanAnswerId" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeSerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ComponentInspectionReportBladeId" type="xs:long" />
+      <xs:element minOccurs="0" name="ComponentInspectionReportId" type="xs:long" />
+      <xs:element minOccurs="0" name="DamageData" nillable="true" type="tns:ArrayOfComponentInspectionReportBladeDamage" />
+      <xs:element minOccurs="0" name="VestasUniqueIdentifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strBladeLsCalibrationDate" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComponentInspectionReportBlade" nillable="true" type="tns:ComponentInspectionReportBlade" />
+  <xs:complexType name="ArrayOfComponentInspectionReportBladeDamage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ComponentInspectionReportBladeDamage" nillable="true" type="tns:ComponentInspectionReportBladeDamage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComponentInspectionReportBladeDamage" nillable="true" type="tns:ArrayOfComponentInspectionReportBladeDamage" />
+  <xs:complexType name="ComponentInspectionReportBladeDamage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BladeDamagePlacementId" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BladeEdgeId" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeInspectionDataId" type="xs:long" />
+      <xs:element minOccurs="0" name="BladePictureNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BladeRadius" type="xs:double" />
+      <xs:element minOccurs="0" name="ComponentInspectionReportBladeDamageId" type="xs:long" />
+      <xs:element minOccurs="0" name="ComponentInspectionReportBladeId" type="xs:long" />
+      <xs:element minOccurs="0" name="PictureOrder" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComponentInspectionReportBladeDamage" nillable="true" type="tns:ComponentInspectionReportBladeDamage" />
+  <xs:complexType name="DynamicTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CirId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Row10Col1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row10Col2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row10Col3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row10Col4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row1Col1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row1Col2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row1Col3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row1Col4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row2Col1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row2Col2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row2Col3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row2Col4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row3Col1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row3Col2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row3Col3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row3Col4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row4Col1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row4Col2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row4Col3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row4Col4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row5Col1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row5Col2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row5Col3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row5Col4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row6Col1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row6Col2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row6Col3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row6Col4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row7Col1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row7Col2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row7Col3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row7Col4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row8Col1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row8Col2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row8Col3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row8Col4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row9Col1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row9Col2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row9Col3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Row9Col4" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DynamicTable" nillable="true" type="tns:DynamicTable" />
+  <xs:complexType name="ComponentInspectionReportGearbox">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ComponentInspectionReportGearboxId" type="xs:long" />
+      <xs:element minOccurs="0" name="ComponentInspectionReportId" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxActionToBeTakenOnGearboxId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxAirBreather" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GearboxAuxEquipmentId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxAuxStageHousingErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxBearingDecision1DamageDecisionId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GearboxBearingDecision2DamageDecisionId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GearboxBearingDecision3DamageDecisionId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GearboxBearingDecision4DamageDecisionId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GearboxBearingDecision5DamageDecisionId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GearboxBearingDecision6DamageDecisionId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GearboxBearingsDamage1BearingErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxBearingsDamage2BearingErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxBearingsDamage3BearingErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxBearingsDamage4BearingErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxBearingsDamage5BearingErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxBearingsDamage6BearingErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxBearingsLocation1BearingTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxBearingsLocation2BearingTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxBearingsLocation3BearingTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxBearingsLocation4BearingTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxBearingsLocation5BearingTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxBearingsLocation6BearingTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxBearingsPosition1BearingPosId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxBearingsPosition2BearingPosId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxBearingsPosition3BearingPosId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxBearingsPosition4BearingPosId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxBearingsPosition5BearingPosId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxBearingsPosition6BearingPosId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxBrokenBolts" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GearboxChipDetector" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GearboxClaimRelevantBooleanAnswerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxCouplingId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxCrackedTorqueArm" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GearboxDebrisGearBoxId" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxDebrisOnMagnetId" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxDebrisStagesMagnetPosId" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxDefectCategorizationScore" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GearboxDefectDamperElements" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GearboxDrainValve" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GearboxElectricalPumpId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxExactLocation10GearTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxExactLocation11GearTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxExactLocation12GearTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxExactLocation13GearTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxExactLocation14GearTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxExactLocation15GearTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxExactLocation1GearTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxExactLocation2GearTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxExactLocation3GearTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxExactLocation4GearTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxExactLocation5GearTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxExactLocation6GearTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxExactLocation7GearTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxExactLocation8GearTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxExactLocation9GearTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxFilterBlockTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxFilterIndicator" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GearboxFrontPlateHousingErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxGearDamageClass10DamageId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GearboxGearDamageClass11DamageId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GearboxGearDamageClass12DamageId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GearboxGearDamageClass13DamageId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GearboxGearDamageClass14DamageId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GearboxGearDamageClass15DamageId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GearboxGearDamageClass1DamageId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GearboxGearDamageClass2DamageId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GearboxGearDamageClass3DamageId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GearboxGearDamageClass4DamageId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GearboxGearDamageClass5DamageId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GearboxGearDamageClass6DamageId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GearboxGearDamageClass7DamageId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GearboxGearDamageClass8DamageId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GearboxGearDamageClass9DamageId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GearboxGearDecision10DamageDecisionId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxGearDecision11DamageDecisionId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxGearDecision12DamageDecisionId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxGearDecision13DamageDecisionId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxGearDecision14DamageDecisionId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxGearDecision15DamageDecisionId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxGearDecision1DamageDecisionId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxGearDecision2DamageDecisionId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxGearDecision3DamageDecisionId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxGearDecision4DamageDecisionId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxGearDecision5DamageDecisionId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxGearDecision6DamageDecisionId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxGearDecision7DamageDecisionId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxGearDecision8DamageDecisionId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxGearDecision9DamageDecisionId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxGeneratorManufacturerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxGeneratorManufacturerId2" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxHSSNRend" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GearboxHSSPTO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GearboxHSSRend" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GearboxHSStageHousingErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxHelicalStageHousingErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxHoseAndPiping" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GearboxIMSNRend" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GearboxIMSRend" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GearboxImmersionHeater" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GearboxInLineFilterId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxInputShaft" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GearboxLSSNRend" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GearboxLastOilChangeDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GearboxLooseBolts" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GearboxManufacturerId" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxMaxTempResetDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GearboxMechanicalOilPumpId" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxNeedsToBeAligned" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GearboxNoiseId" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxOffLineFilterId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxOilLevelId" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxOilLevelSensor" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GearboxOilPressure" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GearboxOilTemperature" type="xs:decimal" />
+      <xs:element minOccurs="0" name="GearboxOilTypeId" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxOtherManufacturer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GearboxOverallGearboxConditionId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxPT100Bearing1" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GearboxPT100Bearing2" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GearboxPT100Bearing3" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GearboxPT100OilSump" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GearboxPitchTube" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GearboxPlanetStage1HousingErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxPlanetStage2HousingErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxProduction" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxRevisionId" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxRunHours" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxSerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GearboxShaftsExactLocation1ShaftTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxShaftsExactLocation2ShaftTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxShaftsExactLocation3ShaftTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxShaftsExactLocation4ShaftTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxShaftsTypeofDamage1ShaftErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxShaftsTypeofDamage2ShaftErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxShaftsTypeofDamage3ShaftErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxShaftsTypeofDamage4ShaftErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxShrinkElementId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxShrinkElementSerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GearboxSightGlass" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GearboxSoftwareRelease" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GearboxSplitLines" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GearboxTempBearing1" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="GearboxTempBearing2" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="GearboxTempBearing3" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="GearboxTempOilSump" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="GearboxTooMuchClearance" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GearboxTypeId" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxTypeofDamage10GearErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxTypeofDamage11GearErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxTypeofDamage12GearErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxTypeofDamage13GearErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxTypeofDamage14GearErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxTypeofDamage15GearErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxTypeofDamage1GearErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxTypeofDamage2GearErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxTypeofDamage3GearErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxTypeofDamage4GearErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxTypeofDamage5GearErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxTypeofDamage6GearErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxTypeofDamage7GearErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxTypeofDamage8GearErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxTypeofDamage9GearErrorId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxVibrationsId" type="xs:long" />
+      <xs:element minOccurs="0" name="OtherGearboxType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VestasUniqueIdentifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strGearboxLastOilChangeDate" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComponentInspectionReportGearbox" nillable="true" type="tns:ComponentInspectionReportGearbox" />
+  <xs:complexType name="CommonInspectionGeneral">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ComponentInspectionReportGeneralId" type="xs:long" />
+      <xs:element minOccurs="0" name="ComponentInspectionReportId" type="xs:long" />
+      <xs:element minOccurs="0" name="GeneralBlade1SerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralBlade2SerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralBlade3SerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralClaimRelevantBooleanAnswerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GeneralComponentGroupId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GeneralComponentManufacturer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralComponentSerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralComponentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralControllerTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GeneralExecutedBy1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralExecutedBy2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralExecutedBy3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralExecutedBy4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralGearboxManufacturerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GeneralGeneratorManufacturerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GeneralInitiatedBy1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralInitiatedBy2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralInitiatedBy3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralInitiatedBy4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralMeasurementsConducted1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralMeasurementsConducted2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralMeasurementsConducted3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralMeasurementsConducted4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralOtherGearboxManufacturer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralOtherGearboxType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralPicturesIncludedBooleanAnswerId" type="xs:long" />
+      <xs:element minOccurs="0" name="GeneralPositionOfFailedItem" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralRamDumpNumber" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GeneralSoftwareRelease" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralTowerHeightId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GeneralTowerTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GeneralTransformerManufacturerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GeneralVDFTrackNumber" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="VestasUniqueIdentifier" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CommonInspectionGeneral" nillable="true" type="tns:CommonInspectionGeneral" />
+  <xs:complexType name="ComponentInspectionReportGenerator">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionToBeTakenOnGeneratorId" type="xs:long" />
+      <xs:element minOccurs="0" name="AirToAirCoolerExternalId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="AirToAirCoolerInternalId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ComponentInspectionReportGeneratorId" type="xs:long" />
+      <xs:element minOccurs="0" name="ComponentInspectionReportId" type="xs:long" />
+      <xs:element minOccurs="0" name="CouplingId" type="xs:long" />
+      <xs:element minOccurs="0" name="GeneratorClaimRelevantBooleanAnswerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GeneratorComments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneratorCoverId" type="xs:long" />
+      <xs:element minOccurs="0" name="GeneratorDriveEndId" type="xs:long" />
+      <xs:element minOccurs="0" name="GeneratorInsulationComments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneratorManufacturerId" type="xs:long" />
+      <xs:element minOccurs="0" name="GeneratorMaxTemperature" type="xs:decimal" />
+      <xs:element minOccurs="0" name="GeneratorMaxTemperatureResetDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GeneratorNonDriveEndId" type="xs:long" />
+      <xs:element minOccurs="0" name="GeneratorRewoundLocally" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GeneratorRotorId" type="xs:long" />
+      <xs:element minOccurs="0" name="GeneratorSerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InsulationComments" type="xs:boolean" />
+      <xs:element minOccurs="0" name="K1L1" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="K1M1" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="K2L2" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="K2M2" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="KGround" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="KGroundOhmUnitId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="L1M1" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="L2M2" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="LGround" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LGroundOhmUnitId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="MGround" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MGroundOhmUnitId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="OtherManufacturer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="U1U2" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="UGround" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UGroundOhmUnitId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="UV" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UVOhmUnitId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="UW" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UWOhmUnitId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="V1V2" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="VGround" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="VGroundOhmUnitId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="VW" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="VWOhmUnitId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="VestasUniqueIdentifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="W1W2" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="WGround" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="WGroundOhmUnitId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="strGeneratorMaxTemperatureResetDate" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComponentInspectionReportGenerator" nillable="true" type="tns:ComponentInspectionReportGenerator" />
+  <xs:complexType name="ArrayOfImageData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ImageData" nillable="true" type="tns:ImageData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfImageData" nillable="true" type="tns:ArrayOfImageData" />
+  <xs:complexType name="ImageData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ImageDataString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImageDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImageId" type="xs:int" />
+      <xs:element minOccurs="0" name="ImageOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="InspectionDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsPlateType" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImageData" nillable="true" type="tns:ImageData" />
+  <xs:complexType name="ImageDataInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsPlateTypeNotPossible" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PlateTypeNotPossibleReason" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImageDataInfo" nillable="true" type="tns:ImageDataInfo" />
+  <xs:complexType name="ComponentInspectionReportMainBearing">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ComponentInspectionReportId" type="xs:long" />
+      <xs:element minOccurs="0" name="ComponentInspectionReportMainBearingId" type="xs:long" />
+      <xs:element minOccurs="0" name="MainBearingClaimRelevantBooleanAnswerId" type="xs:long" />
+      <xs:element minOccurs="0" name="MainBearingErrorLocationId" type="xs:long" />
+      <xs:element minOccurs="0" name="MainBearingGrease" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MainBearingLastLubricationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MainBearingLubricationOilTypeId" type="xs:long" />
+      <xs:element minOccurs="0" name="MainBearingLubricationRunHours" type="xs:long" />
+      <xs:element minOccurs="0" name="MainBearingManufacturerId" type="xs:long" />
+      <xs:element minOccurs="0" name="MainBearingMechanicalOilPump" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainBearingOilTemperature" type="xs:long" />
+      <xs:element minOccurs="0" name="MainBearingRevision" type="xs:long" />
+      <xs:element minOccurs="0" name="MainBearingRunHours" type="xs:long" />
+      <xs:element minOccurs="0" name="MainBearingSerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainBearingTemperature" type="xs:long" />
+      <xs:element minOccurs="0" name="MainBearingTypeId" type="xs:long" />
+      <xs:element minOccurs="0" name="VestasUniqueIdentifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strMainBearingLastLubricationDate" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComponentInspectionReportMainBearing" nillable="true" type="tns:ComponentInspectionReportMainBearing" />
+  <xs:complexType name="ComponentInspectionReportSkiiP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ComponentInspectionReportId" type="xs:long" />
+      <xs:element minOccurs="0" name="ComponentInspectionReportSkiiPId" type="xs:long" />
+      <xs:element minOccurs="0" name="SkiiP2MWV521BooleanAnswerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SkiiP2MWV522BooleanAnswerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SkiiP2MWV523BooleanAnswerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SkiiP2MWV524BooleanAnswerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SkiiP2MWV525BooleanAnswerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SkiiP2MWV526BooleanAnswerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SkiiP3MWV521BooleanAnswerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SkiiP3MWV522BooleanAnswerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SkiiP3MWV523BooleanAnswerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SkiiP3MWV524xBooleanAnswerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SkiiP3MWV524yBooleanAnswerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SkiiP3MWV525xBooleanAnswerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SkiiP3MWV525yBooleanAnswerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SkiiP3MWV526xBooleanAnswerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SkiiP3MWV526yBooleanAnswerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SkiiP850KWV520BooleanAnswerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SkiiP850KWV524BooleanAnswerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SkiiP850KWV525BooleanAnswerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SkiiP850KWV526BooleanAnswerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SkiiPCauseId" type="xs:long" />
+      <xs:element minOccurs="0" name="SkiiPClaimRelevantBooleanAnswerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SkiiPNumberofComponents" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SkiiPOtherDamagedComponentsReplaced" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SkiiPQuantityOfFailedModules" type="xs:long" />
+      <xs:element minOccurs="0" name="SkiipFailedComp" nillable="true" type="tns:ArrayOfComponentInspectionReportSkiiPFailedComponent" />
+      <xs:element minOccurs="0" name="SkiipNewComp" nillable="true" type="tns:ArrayOfComponentInspectionReportSkiiPNewComponent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComponentInspectionReportSkiiP" nillable="true" type="tns:ComponentInspectionReportSkiiP" />
+  <xs:complexType name="ArrayOfComponentInspectionReportSkiiPFailedComponent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ComponentInspectionReportSkiiPFailedComponent" nillable="true" type="tns:ComponentInspectionReportSkiiPFailedComponent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComponentInspectionReportSkiiPFailedComponent" nillable="true" type="tns:ArrayOfComponentInspectionReportSkiiPFailedComponent" />
+  <xs:complexType name="ComponentInspectionReportSkiiPFailedComponent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ComponentInspectionReportSkiiPFailedComponentId" type="xs:long" />
+      <xs:element minOccurs="0" name="ComponentInspectionReportSkiiPId" type="xs:long" />
+      <xs:element minOccurs="0" name="SkiiPFailedComponentSerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SkiiPFailedComponentVestasItemNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SkiiPFailedComponentVestasUniqueIdentifier" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComponentInspectionReportSkiiPFailedComponent" nillable="true" type="tns:ComponentInspectionReportSkiiPFailedComponent" />
+  <xs:complexType name="ArrayOfComponentInspectionReportSkiiPNewComponent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ComponentInspectionReportSkiiPNewComponent" nillable="true" type="tns:ComponentInspectionReportSkiiPNewComponent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComponentInspectionReportSkiiPNewComponent" nillable="true" type="tns:ArrayOfComponentInspectionReportSkiiPNewComponent" />
+  <xs:complexType name="ComponentInspectionReportSkiiPNewComponent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ComponentInspectionReportSkiiPId" type="xs:long" />
+      <xs:element minOccurs="0" name="ComponentInspectionReportSkiiPNewComponentId" type="xs:long" />
+      <xs:element minOccurs="0" name="SkiiPNewComponentSerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SkiiPNewComponentVestasItemNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SkiiPNewComponentVestasUniqueIdentifier" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComponentInspectionReportSkiiPNewComponent" nillable="true" type="tns:ComponentInspectionReportSkiiPNewComponent" />
+  <xs:complexType name="ComponentInspectionReportTransformer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionOnTransformerId" type="xs:long" />
+      <xs:element minOccurs="0" name="BracketsId" type="xs:long" />
+      <xs:element minOccurs="0" name="ClimateId" type="xs:long" />
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ComponentInspectionReportId" type="xs:long" />
+      <xs:element minOccurs="0" name="ComponentInspectionReportTransformerId" type="xs:long" />
+      <xs:element minOccurs="0" name="ConnectionBarsId" type="xs:long" />
+      <xs:element minOccurs="0" name="HVCableConditionId" type="xs:long" />
+      <xs:element minOccurs="0" name="HVCoilConditionId" type="xs:long" />
+      <xs:element minOccurs="0" name="LVCableConditionId" type="xs:long" />
+      <xs:element minOccurs="0" name="LVCoilConditionId" type="xs:long" />
+      <xs:element minOccurs="0" name="MaxTemp" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MaxTempResetDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SurgeArrestorId" type="xs:long" />
+      <xs:element minOccurs="0" name="TransformerArcDetectionId" type="xs:long" />
+      <xs:element minOccurs="0" name="TransformerClaimRelevantBooleanAnswerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TransformerManufacturerId" type="xs:long" />
+      <xs:element minOccurs="0" name="TransformerSerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VestasUniqueIdentifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strMaxTempResetDate" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComponentInspectionReportTransformer" nillable="true" type="tns:ComponentInspectionReportTransformer" />
+  <xs:complexType name="TurbineProperties">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryIsoId" type="xs:long" />
+      <xs:element minOccurs="0" name="Frequency" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="LocalTurbineId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Manufacturer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarkVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NominelPower" type="xs:int" />
+      <xs:element minOccurs="0" name="NominelPowerId" type="xs:long" />
+      <xs:element minOccurs="0" name="Placement" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PowerRegulation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RotorDiameter" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Site" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SmallGenerator" type="xs:int" />
+      <xs:element minOccurs="0" name="TemperatureVariant" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Turbine" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TurbineMatrixId" type="xs:long" />
+      <xs:element minOccurs="0" name="Voltage" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TurbineProperties" nillable="true" type="tns:TurbineProperties" />
+  <xs:complexType name="CirResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CIMCaseNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CirDataId" type="xs:long" />
+      <xs:element minOccurs="0" name="CirID" type="xs:long" />
+      <xs:element minOccurs="0" name="CirName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StatusDetailMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Turbine" nillable="true" type="tns:TurbineItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CirResponse" nillable="true" type="tns:CirResponse" />
+  <xs:complexType name="TurbineItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Frequency" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Manufacturer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarkVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NominelPower" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PowerRegulation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RotorDiameter" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Site" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SmallGenerator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TemperatureVariant" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TurbineID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TurbineType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Voltage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TurbineItem" nillable="true" type="tns:TurbineItem" />
+  <xs:complexType name="CirQuickSearch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CIMCaseNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="CirID" type="xs:long" />
+      <xs:element minOccurs="0" name="ComponentInspectionReportTypeId" type="xs:long" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportTypeId" type="xs:long" />
+      <xs:element minOccurs="0" name="RunStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SBU" type="xs:long" />
+      <xs:element minOccurs="0" name="SBUName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" minOccurs="0" name="Search" nillable="true" type="q1:SearchAttributes" />
+      <xs:element minOccurs="0" name="State" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="TurbineNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="TurbineType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CirQuickSearch" nillable="true" type="tns:CirQuickSearch" />
+  <xs:complexType name="ArrayOfComponentInspectionReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ComponentInspectionReport" nillable="true" type="tns:ComponentInspectionReport" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComponentInspectionReport" nillable="true" type="tns:ArrayOfComponentInspectionReport" />
+  <xs:complexType name="ArrayOfCirStateResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CirStateResponse" nillable="true" type="tns:CirStateResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCirStateResponse" nillable="true" type="tns:ArrayOfCirStateResponse" />
+  <xs:complexType name="CirStateResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CIRId" type="xs:long" />
+      <xs:element minOccurs="0" name="CIRState" type="xs:int" />
+      <xs:element minOccurs="0" name="CirDataLocalID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CirStateResponse" nillable="true" type="tns:CirStateResponse" />
+</xs:schema>

@@ -1,0 +1,24 @@
+.FlexResponive > thead > tr > th > span.FlexResponive-sort-indicator {
+  width: 16px;
+  height: 16px;
+  display: block;
+  float:right;
+  background: url('img/sorting_sprite.png') no-repeat top left;
+}
+
+.FlexResponive > thead > tr > th.FlexResponive-sortable:hover {
+  cursor:pointer;
+}
+
+.FlexResponive > thead > tr > th.FlexResponive-sortable > span {
+  
+}
+
+.FlexResponive > thead > tr > th.FlexResponive-sorted > span.FlexResponive-sort-indicator {
+  background-position: 0 -16px;
+}
+
+.FlexResponive > thead > tr > th.FlexResponive-sorted-desc > span.FlexResponive-sort-indicator {
+  background-position: 0 -32px;
+}
+

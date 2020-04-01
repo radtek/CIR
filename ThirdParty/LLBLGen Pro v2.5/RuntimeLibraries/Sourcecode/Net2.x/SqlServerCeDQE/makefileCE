@@ -1,0 +1,13 @@
+SOURCES=AssemblyInfoCE.cs DynamicQueryEngineCe.cs SqlServerCeSpecificCreator.cs
+
+REFERENCES=SD.LLBLGen.Pro.ORMSupportClasses.NET20.dll,"C:\Program Files\Microsoft SQL Server Compact Edition\v3.1\System.Data.SqlServerCe.dll"
+REFDIR=..\ORMSupportClasses\DotNET2.0\bin\
+
+all : $(SOURCES)
+	csc /t:library /out:DotNET2.0\bin\SD.LLBLGen.Pro.DQE.SqlServerCE.NET20.dll /doc:DotNET2.0\bin\SD.LLBLGen.Pro.DQE.SqlServerCE.NET20.xml /d:TRACE,CEDesktop /o /lib:$(REFDIR) /r:$(REFERENCES) $(SOURCES)
+
+debug : $(SOURCES)
+	csc /t:library /debug /out:DotNET2.0\bin\SD.LLBLGen.Pro.DQE.SqlServerCE.NET20.dll /doc:DotNET2.0\bin\SD.LLBLGen.Pro.DQE.SqlServerCE.NET20.xml /d:TRACE,DEBUG,CEDesktop /o /lib:$(REFDIR) /r:$(REFERENCES) $(SOURCES)
+
+clean:
+	del /Q DotNET2.0\bin\SD.LLBLGen.Pro.DQE.SqlServerCE.NET20.*

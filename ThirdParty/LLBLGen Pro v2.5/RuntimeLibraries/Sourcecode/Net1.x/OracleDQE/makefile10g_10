@@ -1,0 +1,13 @@
+SOURCES=AssemblyInfo10gDotNet10.cs DynamicQueryEngine.cs OracleSpecificCreator.cs
+
+REFERENCES=SD.LLBLGen.Pro.ORMSupportClasses.NET10.dll,"C:\Oracle\product\10.1.0\Client_1\bin\Oracle.DataAccess.dll"
+REFDIR=..\ORMSupportClasses\DotNET1.0\bin\
+
+all : $(SOURCES)
+	csc /t:library /out:DotNET1.0\bin\SD.LLBLGen.Pro.DQE.Oracle10g.NET10.dll /o /d:ODPNET,TRACE,ANSI /lib:$(REFDIR) /r:$(REFERENCES) $(SOURCES)
+
+debug : $(SOURCES)
+	csc /t:library /debug /out:DotNET1.0\bin\SD.LLBLGen.Pro.DQE.Oracle10g.NET10.dll /d:ODPNET,TRACE,DEBUG,ANSI /lib:$(REFDIR) /r:$(REFERENCES) $(SOURCES)
+
+clean:
+	del DotNET1.0\bin\SD.LLBLGen.Pro.DQE.Oracle10g.NET10.dll

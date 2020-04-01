@@ -1,0 +1,14 @@
+{
+  "cirSubmissionData": {
+    "id": "id1",
+    "data": {
+      "txtTurbineNumber": 112,
+      "txtBladeSerialNumber": "blade_serial_number_2",
+      "dtInspectionDate": "2019-11-05",
+      "imagecomponentKey": {
+        "damageId": "damage_id_2",
+        "damageGuid": "damage_guide_2"
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+﻿<div class="inspection-tool">
+    <div class="row form-group">
+        <div class="col-lg-6">
+            <div class="row">
+                <label class="col-lg-5 control-label">{{ component.leftLabel }}</label>
+                <div class="col-lg-4 pull-right">
+                    <i class="glyphicon glyphicon-trash"></i>
+                    <i class="glyphicon glyphicon-option-vertical"></i>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-11 files-area-container">
+                    <div class="title">Drag & drop or</div>
+                    <div class="button">
+                        <button class="btn btn-primary">SELECT FILES</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="row">
+                <label class="col-lg-12 control-label">{{ component.rightLabel }}</label>
+            </div>
+            <div class="row">
+                <div class="col-lg-11 droppable-area-container">
+                    <div class="plate"></div>
+                    <div class="slider-checkbox-wrapper">
+                        <div class="slider-checkbox">
+                            <div class="bullet"></div>
+                        </div>
+                        <span>Plate Type picture not possible</span>
+                    </div>
+                    <div>
+                        <div class="template-upload">
+                            <input id="files-picker" type="file" accept=".png,image/png" value="Pick component shape" on-file-change="onFilesSelected" />
+                            <span class="btn btn-primary" ng-click="redirectToFilePicker()">Upload component template</span>
+                        </div>
+                        <div ng-show="filePresent">
+                            <div class="buttons-wrapper">
+                                <img class="buttons" src="/Images/curve.png" ng-show="!drawingMode" ng-click="toggleDrawingMode()" alt="Start drawing curve" />
+                                <img class="buttons" src="/Images/curve-active.png" ng-show="drawingMode" ng-click="toggleDrawingMode()" alt="Draw curve" />
+                                <img class="buttons" src="/Images/undo.png" ng-click="canvasController.removeBezier()" alt="Undo" />
+                                <img class="buttons" src="/Images/label.png" ng-show="!labelingMode" ng-click="toggleLabelMode()" alt="Put label" />
+                                <img class="buttons" src="/Images/label-active.png" ng-show="labelingMode" ng-click="toggleLabelMode()" alt="Put label" />
+                                <img class="buttons" src="/Images/sides.png" ng-show="!sidesMode" ng-click="toggleSidesMode()" alt="Put side info" />
+                                <img class="buttons" src="/Images/sides-active.png" ng-show="sidesMode" ng-click="toggleSidesMode()" alt="Put side info" />
+                                <img class="buttons" src="/Images/debug.png" ng-click="canvasController.debugRegions()" alt="Debug" />
+                            </div>
+                            <div id="canvas-wrapper">
+                                <canvas id="component-canvas"
+                                        ng-click="onCanvasClick($event)"
+                                        ng-mousemove="canvasController.canvasHoverIn($event)"></canvas>
+                                <div class="component-canvas-modal" id="labels-modal">
+                                    <input type="text" placeholder="Label name" ng-model="labelingController.currentLabel" />&nbsp;
+                                    <span class="btn btn-primary save" ng-click="labelingController.saveLabel()"></span>&nbsp;
+                                    <span class="btn btn-primary discard" ng-click="labelingController.discardModal()"></span>&nbsp;
+                                    <span class="btn btn-primary delete" ng-click="labelingController.removeLabel($event)"></span>
+                                </div>
+                                <div class="component-canvas-modal" id="sides-modal">
+                                    <select ng-model="sidesController.currentSide">
+                                        <option value="0">Choose side</option>
+                                        <option value="N/A">N/A</option>
+                                        <option value="Leading edge">Leading edge</option>
+                                        <option value="Leeward side">Leeward side</option>
+                                        <option value="Trailing edge">Trailing edge</option>
+                                        <option value="Windward side">Windward side</option>
+                                        <option value="Tip">Tip</option>
+                                    </select>
+                                    <div>
+                                        <input type="text" placeholder="X coord" ng-model="sidesController.currentX" />&nbsp;
+                                        <input type="text" placeholder="Y coord" ng-model="sidesController.currentY" />
+                                    </div>
+                                    <div style="clear: both;"></div>
+                                    <span class="btn btn-primary save" ng-click="sidesController.saveSide()"></span>&nbsp;
+                                    <span class="btn btn-primary discard" ng-click="sidesController.discardModal()"></span>&nbsp;
+                                    <span class="btn btn-primary delete" ng-click="sidesController.removeSide($event)"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

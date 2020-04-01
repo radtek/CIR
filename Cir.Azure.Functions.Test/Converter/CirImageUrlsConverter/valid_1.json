@@ -1,0 +1,19 @@
+{
+  "cirSubmissionData": {
+    "cirId": 123,
+    "id": "id_1",
+    "data": {
+      "txtTurbineNumber": 44
+    },
+    "imageReferences": [
+      {
+        "imageId": "imageId_1",
+        "url": "url_1"
+      },
+      {
+        "imageId": "imageId_2",
+        "url": "url_2"
+      }
+    ]
+  }
+}

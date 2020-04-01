@@ -1,0 +1,38 @@
+﻿{
+  "data": [
+    {
+      "turbineId": 44,
+      "cirId": 123,
+      "cirGuid": "id_1",
+      "imageUrls": [
+        {
+          "id": "imageId_1",
+          "url": "url_1"
+        },
+        {
+          "id": "imageId_2",
+          "url": "url_2"
+        }
+      ]
+    },
+    {
+      "turbineId": 55,
+      "cirId": 234,
+      "cirGuid": "id_2",
+      "imageUrls": [
+        {
+          "id": "imageId_1",
+          "url": "url_1"
+        },
+        {
+          "id": "imageId_2",
+          "url": "url_2"
+        },
+        {
+          "id": "imageId_3",
+          "url": "url_3"
+        }
+      ]
+    }
+  ]
+}

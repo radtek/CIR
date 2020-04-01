@@ -1,0 +1,364 @@
+﻿/*common float label classes*/
+.float-label-focused {
+    top: 3px !important;
+    font-size: 14px;
+    color: dodgerblue !important;
+    font-size: 12px;
+}
+
+.field-required::after, .field-required-inline::after {
+    color: #ff0000;
+    font-size: 16px;
+    font-weight:bold;
+}
+
+.field-required::before, .field-required-inline::before {
+    color: #ff0000;
+    font-size: 16px;
+    font-weight: bold;
+    font-family:'Source Sans Pro', sans-serif;
+}
+/*formio fieldset legend styling*/
+
+.form-field-type-fieldset legend {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+/*formio text field input material ui styling*/
+
+.form-field-type-textfield .control-label {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    color: rgb(204, 204, 204);
+    top: 30px;
+    position: relative;
+    pointer-events: none;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+    text-align: left;
+    padding-left:0 !important;
+}
+
+.form-field-type-textfield input {
+    font-size: 18px;
+    width: 100%;
+    background: none !important;
+    position: relative;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid rgb(204, 204, 204);
+    text-align: left;
+    padding-left:0 !important;
+    text-wrap:normal;
+    font-weight: 400 !important;
+}
+
+    .form-field-type-textfield input.focused {
+        border-bottom: 1px solid dodgerblue;
+    }
+
+    .form-field-type-textfield input[disabled] {
+        cursor: not-allowed;      
+        color: #aaa !important;       
+    }
+/*formio number field input material ui styling*/
+
+.form-field-type-number .control-label {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    color: rgb(204, 204, 204);
+    top: 30px;
+    position: relative;
+    pointer-events: none;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+    text-align: left;
+    padding-left:0 !important;
+}
+
+.form-field-type-number input {
+    font-size: 18px;
+    width: 100%;
+    background: none !important;
+    position: relative;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid rgb(204, 204, 204);
+    text-align: left;
+    padding-left:0 !important;
+    text-wrap:normal;
+}
+
+    .form-field-type-number input.focused {
+        border-bottom: 1px solid dodgerblue;
+    }
+
+/*formio textarea field input material ui styling*/
+
+.form-field-type-textarea .control-label {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    color: rgb(204, 204, 204);
+    top: 30px;
+    position: relative;
+    pointer-events: none;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+    text-align: left;
+    padding-left:0 !important;
+}
+
+.form-field-type-textarea textarea {
+    font-size: 18px;
+    width: 100%;
+    background: none !important;
+    position: relative;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid rgb(204, 204, 204);
+    height: 40px;
+    overflow: hidden;
+    text-align: left;
+    padding-left:0 !important;
+    text-wrap:normal;
+}
+
+    .form-field-type-textarea textarea.focused {
+        border-bottom: 1px solid dodgerblue;
+    }
+
+/*formio radio input material ui styling*/
+
+.form-field-type-radio > div > .control-label,
+.material-ui-radios > div > .control-label {
+    color: #333333;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.form-field-type-radio div.input-group .control-label,
+.material-ui-radios div.input-group .control-label {
+    color: rgba(51, 51, 51, 0.537254901960784);
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.form-field-type-radio div.radio-inline label > input,
+.material-ui-radios div.radio-inline label > input {
+    visibility: hidden;
+    position: absolute;
+}
+
+.form-field-type-radio div.radio-inline input + div.radioImage,
+.material-ui-radios div.radio-inline input + div.radioImage {
+    position: relative;
+    top: 7px;
+    left: 5px;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-size: 24px 24px;
+    background-image: url(../../Images/radio.svg);
+}
+
+.form-field-type-radio div.radio-inline input:checked + div.radioImage,
+.material-ui-radios div.radio-inline input:checked + div.radioImage {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-size: 24px 24px;
+    background: url(../../Images/radioChecked.svg);
+}
+
+.material-ui-radios .control-label {
+    display: block;
+}
+
+.material-ui-radios .radio-inline {
+    padding-left: 0;
+}
+
+    .material-ui-radios .radio-inline .radioImage {
+        margin-right: 15px;
+    }
+
+/*formio select component styling*/
+
+.form-field-type-select label.control-label {
+    font-size: 16px;
+    font-weight: 300;
+    width: 40%;
+    float: left;
+}
+
+    .form-field-type-select label.control-label + div {
+        float: left;
+        width: 40%;
+    }
+  
+  .form-field-type-select .ui-select-bootstrap .ui-select-choices-row>span
+   {
+      height:20px;
+   }
+.form-field-type-select input[type=search] {
+    width: 87%;
+}
+.form-field-type-dynamicDropdown .ui-select-bootstrap .ui-select-choices-row>span
+   {
+      min-height:20px;
+   }
+
+/*formio datetime component styling*/
+
+.form-field-type-datetime label.control-label {
+    font-size: 16px;
+    font-weight: 300;
+    width: 40%;
+    float: left;
+}
+
+.form-field-type-datetime input {
+     pointer-events:none;
+}
+
+    .form-field-type-datetime label.control-label + div {
+        width: 40%;
+        float: left;
+        margin-bottom: 15px;
+    }
+
+/*formio dynamic dropdown component styling*/
+
+.form-field-type-dynamicDropdown label.control-label {
+    font-size: 16px;
+    font-weight: 300;
+    width: 40%;
+    float: left;
+}
+
+    .form-field-type-dynamicDropdown label.control-label + div {
+        width: 40%;
+        float: left;
+        margin-bottom: 15px;
+    }
+
+.form-field-type-dynamicDropdown input[type=search] {
+    width: 87% !important;
+}
+.ui-select-bootstrap .ui-select-choices-row>span{
+    white-space: normal !important;
+}
+
+/*fix for form wizard on small resolution (copied from original formio wizard example at https://codepen.io/travist/full/xVyMjo) */
+
+@media (max-width: 767px) {
+    .col-sm-1.bs-wizard-step,
+    .col-sm-2.bs-wizard-step,
+    .col-sm-3.bs-wizard-step,
+    .col-sm-4.bs-wizard-step,
+    .col-sm-5.bs-wizard-step,
+    .col-sm-6.bs-wizard-step,
+    .col-sm-7.bs-wizard-step,
+    .col-sm-8.bs-wizard-step,
+    .col-sm-9.bs-wizard-step,
+    .col-sm-10.bs-wizard-step,
+    .col-sm-11.bs-wizard-step,
+    .col-sm-12.bs-wizard-step {
+        float: left !important;
+    }
+
+    .col-sm-2.bs-wizard-step {
+        width: 16.66667%;
+    }
+
+    .col-sm-1.bs-wizard-step {
+        width: 8.33333%;
+    }
+}
+
+.material-button {
+    text-align: center;
+}
+
+    .material-button.add-button {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        color: white;
+        font-size: 36px;
+    }
+
+        .material-button.add-button:after {
+            content: ' \002B';
+        }
+
+    .material-button.blue {
+        background-color: #2196F3 !important;
+    }
+
+
+
+
+.form-field-type-table .table > tbody > tr > td {
+    padding: 8px;
+    line-height: 1.428571429;
+    vertical-align: top;
+    border-top: none;
+}
+
+/*progress bar*/
+
+.progress {
+    margin-top: 42px !important;
+    height: 1px !important;
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+.bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot {
+    background-color: rgba(0, 0, 0, 0.38);
+    opacity: unset;
+}
+
+.bs-wizard-dot {
+    background-color: #3c8dbc;
+    pointer-events: all !important;
+}
+
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot {
+    width: 24px;
+    height: 24px;
+    margin-left: -10px;
+}
+
+    .bs-wizard > .bs-wizard-step > .bs-wizard-dot > .bs-wizard-dot-inner {
+        color: white;
+        top: 5px;
+        left: 7.5px;
+        opacity: 1;
+    }
+
+@media (max-width: 450px) {
+    .progress {
+        margin-top: 62px !important;
+    }
+
+    .bs-wizard.hasTitles > .bs-wizard-step > .bs-wizard-dot {
+        margin-top: 5px;
+    }
+}
+
+.bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot > .bs-wizard-dot-inner {
+    opacity: 1;
+}
+
+/*107422 bugfixes*/
+.form-field-type-table .table > tbody > tr > td {
+    padding-left: 0px;
+}

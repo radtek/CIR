@@ -1,0 +1,259 @@
+﻿<div>
+    <div class="modal-courtain"
+         ng-class="{ 'open': $ctrl.active }"
+         ng-click="$ctrl.closeModal($event)"></div>
+
+    <div class="modal-contents">
+        <div class="col-xs-12 contents-center">
+            <div id="divcanvas" class="pull-left" style="width: 49%" ng-show="$ctrl.editMode">
+                <canvas id="damage-markers"></canvas>
+                <div class="image-display"
+                     ng-repeat="image in $ctrl.images track by $index"
+                     ng-show="$ctrl.activeImgId === image.imageId">
+                    <img ng-class="{ 'active': $ctrl.activeImgId === image.imageId }"
+                         ng-src="{{ image.src }}"
+                         data-id="{{ $index }}" />
+                    <div class="prev-image"
+                         ng-class="{ 'active': $ctrl.activeImgId === image.imageId }"
+                         ng-click="$ctrl.showPrevImage()"
+                         ng-if="$ctrl.canShowPrevImage()">
+                        <i class="glyphicon glyphicon-chevron-left"></i>
+                    </div>
+                    <div class="next-image"
+                         ng-class="{ 'active': $ctrl.activeImgId === image.imageId }"
+                         ng-click="$ctrl.showNextImage()"
+                         ng-if="$ctrl.canShowNextImage()">
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                    </div>
+                    <a class="fullscreen" href="#" ng-click="$ctrl.showFullImg($event)">
+                        <img src="../../../Images/fullscreen.png" />
+                    </a>
+                </div>
+            </div>
+            <div id="dveditimageModel" class="pull-right blade-details-form" style="width: 49%" ng-show="$ctrl.editMode">
+                <ng-form name="imageForm" ng-submit="$ctrl.submitForm($event)" novalidate>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <i class="pull-right glyphicon glyphicon-remove" ng-click="$ctrl.closeModal($event)"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-7">
+                            <div class="row">
+                                <div class="col-xs-12 section-title main-section-title">Image information</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6 form-group"
+                                     ng-class="{ 'field-active': $ctrl.activeField === 'image-name', 'field-inactive': $ctrl.activeField !== 'image-name', 'has-error': imageForm.imageName.$error.required && imageForm.imageName.$dirty }">
+                                    <label for="image-name">Image name</label>
+                                    <input type="text"
+                                           class="form-control"
+                                           id="image-name"
+                                           placeholder="Image name *"
+                                           name="imageName"
+                                           ng-model="$ctrl.model.imageName"
+                                           ng-focus="$ctrl.markActive('image-name')"
+                                           ng-blur="$ctrl.removeActive()"
+                                           readonly="readonly" />
+                                    <span class="text-danger" ng-show="imageForm.imageName.$dirty && imageForm.imageName.$error.required">Image name field is required.</span>
+                                </div>
+                                <div class="col-xs-6 form-group"
+                                     ng-class="{ 'field-active': $ctrl.activeField === 'image-number', 'field-inactive': $ctrl.activeField !== 'image-number', 'has-error': imageForm.imageNumber.$error.required && imageForm.imageNumber.$dirty }">
+                                    <label for="image-number">Image number</label>
+                                    <input type="text"
+                                           class="form-control"
+                                           id="image-number"
+                                           placeholder="Image number *"
+                                           name="imageNumber"
+                                           ng-model="$ctrl.model.imageNumber"
+                                           ng-focus="$ctrl.markActive('image-number')"
+                                           ng-blur="$ctrl.removeActive()"
+                                           readonly="readonly" />
+                                    <span class="text-danger" ng-show="imageForm.imageNumber.$dirty && imageForm.imageNumber.$error.required">Image number field is required.</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-2">
+                                    <div class="slider-checkbox-wrapper">
+                                        <div class="slider-checkbox"
+                                             ng-if="!$ctrl.model.damageIdentified"
+                                             ng-click="$ctrl.toggleDamageIdentified()">
+                                            <div class="bullet"></div>
+                                        </div>
+                                        <div class="slider-checkbox alternate-slider"
+                                             ng-if="$ctrl.model.damageIdentified"
+                                             ng-click="$ctrl.toggleDamageIdentified()">
+                                            <div class="bullet alternate-bullet"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-10">
+                                    Damage identified *
+                                </div>
+                            </div>
+                            <div class="row" ng-if="!$ctrl.model.damageIdentified">
+                                <div class="col-xs-12 section-title main-section-title" style="font-weight:bold;">Image Description</div>
+                            </div>
+                            <div class="row" ng-if="!$ctrl.model.damageIdentified">
+                                <div class="col-xs-12">
+                                    <div class="input-group" style="margin:-10px; border:solid; border-color:darkgray; margin-top:5px;margin-left:2px;border-width: thin;">
+
+                                        <input type="text" class="lblBladeEdge" ng-bind="$ctrl.model.lblImageareaside" ng-model="$ctrl.model.lblImageareaside" disabled />
+                                        <input class="form-control txtBladeEdgeNoDamage" type="text" ng-model="$ctrl.model.txtdamageDescription" id="txtdamagedescription" placeholder="No Damage" autofocus>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" ng-if="$ctrl.model.damageIdentified">
+                                <div class="col-xs-12 section-title main-section-title">Damage placement *</div>
+                            </div>
+                            <div class="row" ng-if="$ctrl.model.damageIdentified">
+                                <div class="col-xs-6">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio"
+                                                   name="damagePlacement"
+                                                   ng-model="$ctrl.model.damagePlacement"
+                                                   required
+                                                   value="internal" />&nbsp;Internal
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio"
+                                                   name="damagePlacement"
+                                                   ng-model="$ctrl.model.damagePlacement"
+                                                   required
+                                                   value="external" />&nbsp;External
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <span class="text-danger" ng-show="imageForm.damagePlacement.$error.required">Damage placement field is required.</span>
+                                </div>
+                            </div>
+                            <div class="row" ng-if="$ctrl.model.damageIdentified">
+                                <div class="col-xs-6 section-title main-section-title damage-type-header">Damage type *</div>
+                                <div class="col-xs-6 damage-type">
+                                    <select class="form-control"
+                                            name="damageType"
+                                            ng-model="$ctrl.model.damageType"
+                                            required>
+                                        <option value=""></option>
+                                        <option value="N/A">N/A</option>
+                                        <option value="Bad bonding - knocking test">Bad bonding - knocking test</option>
+                                        <option value="Bubbles">Bubbles</option>
+                                        <option value="Cast">Cast</option>
+                                        <option value="Chipped coat">Chipped coat</option>
+                                        <option value="Coat fault">Coat fault</option>
+                                        <option value="Cracks">Cracks</option>
+                                        <option value="Damaged laminate">Damaged laminate</option>
+                                        <option value="Erosion">Erosion</option>
+                                        <option value="LE tape damaged">LE tape damaged</option>
+                                        <option value="LE tape sealer damaged">LE tape sealer damaged</option>
+                                        <option value="Lightning damage - comment">Lightning damage - comment</option>
+                                        <option value="Lightning hit - receptor - comment">Lightning hit - receptor - comment</option>
+                                        <option value="Noise">Noise</option>
+                                        <option value="Oil in blade">Oil in blade</option>
+                                        <option value="Rub mark">Rub mark</option>
+                                        <option value="Scratch">Scratch</option>
+                                        <option value="Tip break damage">Tip break damage</option>
+                                        <option value="Tip wire">Tip wire</option>
+                                        <option value="Water in blade tip">Water in blade tip</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-6">
+                                    <span class="text-danger" ng-show="imageForm.damageType.$dirty && imageForm.damageType.$error.required">Damage type field is required.</span>
+                                </div>
+                            </div>
+                            <div class="row" ng-if="$ctrl.model.damageIdentified">
+                                <div class="col-xs-6 section-title main-section-title damage-type-header">Blade edge *</div>
+                                <div class="col-xs-6 damage-type">
+                                    <select class="form-control"
+                                            name="side"
+                                            ng-model="$ctrl.model.side"
+                                            required>
+                                        <option value="N/A">N/A</option>
+                                        <option value="Leading edge">Leading edge</option>
+                                        <option value="Leeward side">Leeward side</option>
+                                        <option value="Trailing edge">Trailing edge</option>
+                                        <option value="Windward side">Windward side</option>
+                                        <option value="Tip">Tip</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-5">
+                            <div class="row">
+                                <div class="col-xs-12 section-title text-center main-section-title">Position on a blade</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <img class="component-template" ng-src="{{ $ctrl.template }}" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" ng-if="$ctrl.model.damageIdentified">
+                        <div class="col-xs-4 form-group"
+                             ng-class="{ 'field-active': $ctrl.activeField === 'radius', 'field-inactive': $ctrl.activeField !== 'radius', 'has-error': imageForm.radius.$error.required && imageForm.radius.$dirty }">
+                            <label for="radius">Radius (m) *</label>
+                            <input type="number"
+                                   class="form-control"
+                                   id="radius"
+                                   placeholder="Radius (m) *"
+                                   name="radius"
+                                   ng-model="$ctrl.model.radius"
+                                   ng-focus="$ctrl.markActive('radius')"
+                                   ng-blur="$ctrl.removeActive()"
+                                   required />
+                            <span class="text-danger" ng-show="imageForm.radius.$dirty && imageForm.radius.$error.required">Radius field is required.</span>
+                        </div>
+                    </div>
+                    <div class="row" ng-if="$ctrl.model.damageIdentified">
+                        <div class="col-xs-12 section-title main-section-title">Damage description *</div>
+                    </div>
+                    <div class="row" ng-if="$ctrl.model.damageIdentified">
+                        <div class="col-xs-4 form-group">
+                            <filterable-select items="$ctrl.damageDescriptions"
+                                               value="$ctrl.model.damageDescription"
+                                               onvaluechosen="$ctrl.damageDescriptionSelected(newValue)"></filterable-select>
+                        </div>
+                        <div class="col-xs-8 form-group"
+                             ng-class="{ 'field-active': $ctrl.activeField === 'damage-description-text', 'field-inactive': $ctrl.activeField !== 'damage-description-text', 'has-error': imageForm.damageDescriptionText.$error.required && imageForm.damageDescriptionText.$dirty }">
+                            <input type="text"
+                                   class="form-control"
+                                   placeholder="Specify, if none of the predefined applies *"
+                                   name="damageDescriptionText"
+                                   ng-model="$ctrl.model.damageDescriptionText"
+                                   ng-focus="$ctrl.markActive('damage-description-text')"
+                                   ng-blur="$ctrl.removeActive()"
+                                   required />
+                            <span class="text-danger" ng-show="imageForm.damageDescriptionText.$dirty && imageForm.damageDescriptionText.$error.required">Damage description field is required.</span>
+                        </div>
+                    </div>
+                    <div class="row" ng-if="$ctrl.model.damageIdentified">
+                        <div class="col-xs-4 section-title main-section-title" style="padding-top: 40px;">Damage severity</div>
+                        <div class="col-xs-8 custom-slider-wrapper">
+                            <custom-slider component="$ctrl.component"
+                                           data="$ctrl.data"
+                                           value="$ctrl.model.damageSeverity"
+                                           showLabel="false"></custom-slider>
+                        </div>
+                    </div>
+                    <div class="row" style="position: absolute; bottom: 10px; right: 10px;">
+                        <div class="col-xs-12" ng-click="$ctrl.submitForm($event)">
+                            <a href="#"
+                               class="pull-right save-button">Save</a>
+                        </div>
+                    </div>
+                </ng-form>
+            </div>
+            <div class="full-img" ng-show="!$ctrl.editMode">
+                <img ng-src="{{ $ctrl.viewedImage }}" />
+            </div>
+        </div>
+    </div>
+</div>

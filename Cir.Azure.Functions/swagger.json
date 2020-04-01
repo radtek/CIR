@@ -1,0 +1,1455 @@
+﻿{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "CIR for VO",
+    "version": "0.1.0"
+  },
+  "servers": [
+    {
+      "url": "https://cirfunctionappdev.azurewebsites.net",
+      "description": "Development server"
+    },
+    {
+      "url": "https://cirfunctionapptest.azurewebsites.net",
+      "description": "Test server"
+    }
+  ],
+  "paths": {
+    "/V1/AiDamages": {
+      "post": {
+        "description": "Add damage from AI.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref":"#/components/schemas/AiDamages"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Damage has been stored"
+          },
+          "400": {
+            "description": "Data not found. Please pass valid turbineNumber and cirId"
+          },
+          "401": {
+            "description": "Authorization information is missing or invalid."
+          },
+          "500": {
+            "description": "Damage could not be stored"
+          }
+        }
+      }
+    },
+    "/V1/Birs": {
+      "get": {
+        "description": "Get a list of birs.",
+        "parameters": [
+          {
+            "name": "turbineId",
+            "description": "",
+            "in": "query",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "isAnnual",
+            "description": "",
+            "in": "query",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "modifiedYears",
+            "description": "",
+            "in": "query",
+            "style": "form",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            }
+          },
+          {
+            "name": "format",
+            "description": "Used to decide format of result. Defaults to full.",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "metadata",
+                "full"
+              ]
+            }
+          },
+          {
+            "name": "X-Consumer-Name",
+            "description": "Used for authorizing request.",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Consumer-Key",
+            "description": "Used for authorizing request.",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Bir response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BirList"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authorization information is missing or invalid."
+          }
+        }
+      }
+    },
+    "/V1/Birs/{birGuid}": {
+      "get": {
+        "description": "Get a single bir.",
+        "parameters": [
+          {
+            "name": "birGuid",
+            "description": "",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "turbineId",
+            "description": "",
+            "in": "query",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "isAnnual",
+            "description": "",
+            "in": "query",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "modifiedYears",
+            "description": "",
+            "in": "query",
+            "style": "form",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            }
+          },
+          {
+            "name": "format",
+            "description": "Used to decide format of result. Defaults to full.",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "metadata",
+                "full"
+              ]
+            }
+          },
+          {
+            "name": "X-Consumer-Name",
+            "description": "Used for authorizing request.",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Consumer-Key",
+            "description": "Used for authorizing request.",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Bir response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BirSingle"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authorization information is missing or invalid."
+          },
+          "404": {
+            "description": "A bir with the given birGuid could not be found."
+          }
+        }
+      }
+    },
+    "/V1/Cirs": {
+      "get": {
+          "description": "Get a list of cirs. To get around query string length limitation, it is possible to tunnel this call through a POST call. To do so, make a POST call with the 'X-HTTP-Method-Override' header set to 'GET' and the 'Content-Type' header set to 'application/x-www-form-urlencoded'. When using this method, the ENTIRE query string must be provided as the request body.",
+        "parameters": [
+          {
+            "name": "format",
+            "description": "Used to decide which output to return",
+            "in": "query",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "images",
+                "ids",
+                "details",
+                "damages"
+              ]
+            }
+          },
+          {
+            "name": "turbineId",
+            "description": "",
+            "in": "query",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "hasDamages",
+            "description": "Only fetch cirs with damage",
+            "in": "query",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "X-Consumer-Name",
+            "description": "Used for authorizing request.",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Consumer-Key",
+            "description": "Used for authorizing request.",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Cir information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CirListResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authorization information is missing or invalid."
+          }
+        }
+      }
+    },
+    "/V1/Cirs/{cirGuid}": {
+      "get": {
+        "description": "Get a single cir.",
+        "parameters": [
+          {
+            "name": "cirGuid",
+            "description": "Fetch the cir with this guid",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "format",
+            "description": "Used to decide wich output to return.",
+            "in": "query",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "images",
+                "ids",
+                "details",
+                "damages"
+              ]
+            }
+          },
+          {
+            "name": "turbineId",
+            "description": "",
+            "in": "query",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "hasDamages",
+            "description": "Only fetch cirs with damages",
+            "in": "query",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "X-Consumer-Name",
+            "description": "Used for authorizing request.",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Consumer-Key",
+            "description": "Used for authorizing request.",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Cir information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CirSingleResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authorization information is missing or invalid."
+          }
+        }
+      }
+    },
+    "/V1/GetRepairList": {
+      "get": {
+        "description": "Get all repairs for a set of turbines.",
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Turbine ids for which to get repairs. If ommited, repairs for **all** turbines will be returned.",
+            "in": "query",
+            "style": "form",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "X-Consumer-Name",
+            "description": "Used for authorizing request.",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Consumer-Key",
+            "description": "Used for authorizing request.",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of repairs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RepairList"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authorization information is missing or invalid."
+          }
+        }
+      }
+    },
+    "/V1/GetRepairDetails": {
+      "get": {
+        "description": "Get details for a repair.<br/>The response contains a list of repair steps. Each step contains a type, which determines what properties are available for that step.<br/>A full list of the possible steps can be found here (TODO: link).",
+        "parameters": [
+          {
+            "name": "repairId",
+            "description": "Repair id for which to get details.",
+            "in": "query",
+            "style": "form",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "turbineId",
+            "description": "Turbine id associated with the repair. This is purely for performance, allowing the server to limit the places to search for the repair.",
+            "in": "query",
+            "style": "form",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Consumer-Name",
+            "description": "Used for authorizing request.",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Consumer-Key",
+            "description": "Used for authorizing request.",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Repair details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Repair"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The specified repair could not be found."
+          },
+          "401": {
+            "description": "Authorization information is missing or invalid."
+          }
+        }
+      }
+    },
+    "/V1/GetRepairBrrs": {
+      "get": {
+        "description": "Get pdf for a set of blade repair reports.",
+        "parameters": [
+          {
+            "name": "repairId",
+            "description": "Repair ids for which to get pdf.",
+            "in": "query",
+            "style": "form",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "turbineId",
+            "description": "Turbine ids associated with the repairs. This is purely for performance, allowing the server to limit the places to search for the repair. This array should contain the turbine ids for each of the repair ids.",
+            "in": "query",
+            "style": "form",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "X-Consumer-Name",
+            "description": "Used for authorizing request.",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Consumer-Key",
+            "description": "Used for authorizing request.",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Blade Repair Report.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BladeRepairReportList"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authorization information is missing or invalid."
+          }
+        }
+      }
+    },
+    "/V1/AiDamagesForCir": {
+      "get": {
+        "description": "Get AI detected damages.",
+        "parameters": [
+          {
+            "name": "cirId",
+            "in": "query",
+            "style": "form",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "turbineId",
+            "in": "query",
+            "style": "form",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "X-Consumer-Name",
+            "description": "Used for authorizing request.",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Consumer-Key",
+            "description": "Used for authorizing request.",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Blade Repair Report.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AIDamagesForCir"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authorization information is missing or invalid."
+          }
+        }
+      }
+    },
+    "/V1/UploadBladeTag": {
+      "post": {
+        "description": "Send image for OCR",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "image/jpeg": {
+              "schema": {
+                "type": "string",
+                "format": "binary"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cirId",
+            "in": "query",
+            "style": "form",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "turbineId",
+            "in": "query",
+            "style": "form",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Consumer-Name",
+            "description": "Used for authorizing request.",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Consumer-Key",
+            "description": "Used for authorizing request.",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Blade Repair Report.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OCRResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authorization information is missing or invalid."
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Repair": {
+        "type": "object",
+        "properties": {
+          "turbineId": {
+            "type": "string",
+            "example": "12345"
+          },
+          "bladeId": {
+            "type": "string",
+            "example": "BIN344190"
+          },
+          "damageId": {
+            "type": "string",
+            "example": "22-WWRoot-2"
+          },
+          "damageGuid": {
+            "type": "string",
+            "example": "74c4e60d-f896-42de-b187-72b18fbbd9af"
+          },
+          "repairId": {
+            "type": "string",
+            "example": "ce579064-67f2-480e-a34a-ab19f750091e"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "steps": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RepairStep"
+            }
+          }
+        }
+      },
+      "RepairList": {
+        "type": "object",
+        "properties": {
+          "repairs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Repair"
+            }
+          }
+        }
+      },
+      "RepairStep": {
+        "type": "object",
+        "discriminator": {
+          "propertyName": "type"
+        },
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/LaminationRepairStep"
+          }
+        ]
+      },
+      "LaminationRepairStep": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "example": "LaminationRepairStep"
+          },
+          "minPostcureSurfaceTemperature": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxPostcureSurfaceTemperature": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "heatersInsulationCoverAndVacuumOff": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "totalCureTime": {
+            "type": "string"
+          },
+          "laminatType": {
+            "type": "string"
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "BladeRepairReportList": {
+        "type": "object",
+        "properties": {
+          "brrs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BladeRepairReport"
+            }
+          }
+        }
+      },
+      "BladeRepairReport": {
+        "type": "object",
+        "properties": {
+          "repairId": {
+            "type": "string"
+          },
+          "fileName": {
+            "type": "string"
+          },
+          "brrDataString": {
+            "type": "string",
+            "format": "byte"
+          }
+        }
+      },
+      "CirListResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/CirImageUrlsData"
+                },
+                {
+                  "$ref": "#/components/schemas/CirIdData"
+                },
+                {
+                  "$ref": "#/components/schemas/CirDetailsData"
+                },
+                {
+                  "$ref": "#/components/schemas/CirDamagesData"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "CirSingleResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/CirImageUrlsData"
+              },
+              {
+                "$ref": "#/components/schemas/CirIdData"
+              },
+              {
+                "$ref": "#/components/schemas/CirDetailsData"
+              },
+              {
+                "$ref": "#/components/schemas/CirDamagesData"
+              }
+            ]
+          }
+        }
+      },
+      "CirImageUrlsData": {
+        "type": "object",
+        "properties": {
+          "cirId": {
+            "type": "integer",
+            "nullable": true
+          },
+          "cirGuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "turbineId": {
+            "type": "integer",
+            "nullable": true
+          },
+          "imageUrls": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CirImageUrl"
+            }
+          }
+        }
+      },
+      "CirImageUrl": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "url": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "CirIdData": {
+        "type": "object",
+        "properties": {
+          "cirGuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "cirId": {
+            "type": "integer",
+            "nullable": true
+          },
+          "turbineId": {
+            "type": "integer",
+            "nullable": true
+          }
+        }
+      },
+      "CirDetailsData": {
+        "type": "object",
+        "properties": {
+          "cirGuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "cirId": {
+            "type": "integer",
+            "nullable": true
+          },
+          "turbineId": {
+            "type": "integer",
+            "nullable": true
+          },
+          "localTurbineId": {
+            "type": "string",
+            "nullable": true
+          },
+          "inspectionDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "state": {
+            "type": "string",
+            "nullable": true
+          },
+          "commissioningDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "bladeSerialNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "bladeLength": {
+            "type": "string",
+            "nullable": true
+          },
+          "mkVersion": {
+            "type": "string",
+            "nullable": true
+          },
+          "sbuRecommendation": {
+            "type": "string",
+            "nullable": true
+          },
+          "section1": {
+            "nullable": true,
+            "type": "object",
+            "$ref": "#/components/schemas/Section"
+          },
+          "section2": {
+            "nullable": true,
+            "type": "object",
+            "$ref": "#/components/schemas/Section"
+          },
+          "section3": {
+            "nullable": true,
+            "type": "object",
+            "$ref": "#/components/schemas/Section"
+          },
+          "section4": {
+            "nullable": true,
+            "type": "object",
+            "$ref": "#/components/schemas/Section"
+          },
+          "section5": {
+            "nullable": true,
+            "type": "object",
+            "$ref": "#/components/schemas/Section"
+          },
+          "section6": {
+            "nullable": true,
+            "type": "object",
+            "$ref": "#/components/schemas/Section"
+          },
+          "section7": {
+            "nullable": true,
+            "type": "object",
+            "$ref": "#/components/schemas/Section"
+          },
+          "section8": {
+            "nullable": true,
+            "type": "object",
+            "$ref": "#/components/schemas/Section"
+          },
+          "section9": {
+            "nullable": true,
+            "type": "object",
+            "$ref": "#/components/schemas/Section"
+          },
+          "section10": {
+            "nullable": true,
+            "type": "object",
+            "$ref": "#/components/schemas/Section"
+          },
+          "section11": {
+            "nullable": true,
+            "type": "object",
+            "$ref": "#/components/schemas/Section"
+          },
+          "section12": {
+            "nullable": true,
+            "type": "object",
+            "$ref": "#/components/schemas/Section"
+          },
+          "noSection": {
+            "nullable": true,
+            "typ": "object",
+            "$ref": "#/components/schemas/NoSection"
+          },
+          "plateImageUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "Section": {
+        "type": "object",
+        "properties": {
+          "side": {
+            "type": "string",
+            "nullable": true
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Image"
+            }
+          }
+        }
+      },
+      "NoSection": {
+        "type": "object",
+        "properties": {
+          "overallBladeCondition": {
+            "type": "integer",
+            "nullable": true
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Image"
+            }
+          }
+        }
+      },
+      "Image": {
+        "type": "object",
+        "properties": {
+          "imageGuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "imageNumber": {
+            "type": "integer",
+            "nullable": true
+          },
+          "url": {
+            "type": "string",
+            "nullable": true
+          },
+          "severity": {
+            "type": "integer",
+            "nullable": true
+          },
+          "damageType": {
+            "type": "string",
+            "nullable": true
+          },
+          "damageDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "side": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "CirDamagesData": {
+        "type": "object",
+        "properties": {
+          "cirId": {
+            "type": "integer",
+            "nullable": true
+          },
+          "cirGuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "turbineId": {
+            "type": "integer",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "inspectionDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "damages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CirDamage"
+            }
+          }
+        }
+      },
+      "CirDamage": {
+        "type": "object",
+        "properties": {
+          "damageId": {
+            "type": "string",
+            "nullable": true
+          },
+          "damageGuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "severity": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "imageName": {
+            "type": "string",
+            "nullable": true
+          },
+          "imageId": {
+            "type": "string",
+            "nullable": true
+          },
+          "damageImage": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "side": {
+            "type": "string",
+            "nullable": true
+          },
+          "damagePlacement": {
+            "type": "string",
+            "nullable": true
+          },
+          "damageType": {
+            "type": "string",
+            "nullable": true
+          },
+          "radius": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "rootCause": {
+            "type": "string",
+            "nullable": true
+          },
+          "recommendedActivity": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "AiDamages": {
+        "type": "object",
+        "properties": {
+          "workflow_id": {
+            "type": "string"
+          },
+          "cir_id": {
+            "type": "string"
+          },
+          "turbine_id": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "output_body": {
+            "$ref": "#/components/schemas/AiDamagesOutputBody"
+          }
+        }
+      },
+      "AiDamagesOutputBody": {
+        "type": "object",
+        "properties": {
+          "spec_version": {
+            "type": "string"
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AiDamagesImage"
+            }
+          }
+        }
+      },
+      "AiDamagesImage": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "defects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AiDamagesDefect"
+            }
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/AiDamagesMetadata"
+          }
+        }
+      },
+      "AiDamagesDefect": {
+        "type": "object",
+        "properties": {
+          "confidence": {
+            "type": "number"
+          },
+          "id": {
+            "type": "string"
+          },
+          "hub_distance_cm": {
+            "type": "integer"
+          },
+          "qualification": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AiDamagesQualification"
+            }
+          },
+          "geometry": {
+            "$ref": "#/components/schemas/AiDamageGeometry"
+          }
+        }
+      },
+      "AiDamagesMetadata": {
+        "type": "object",
+        "properties": {
+          "side": {
+            "type": "string"
+          },
+          "hub_distance_cm": {
+            "type": "integer"
+          },
+          "hub_to_tip_order_in_blade": {
+            "type": "integer"
+          }
+        }
+      },
+      "AiDamagesQualification": {
+        "type": "object",
+        "properties": {
+          "confidence": {
+            "type": "number"
+          },
+          "damage_level": {
+            "type": "integer"
+          },
+          "damage_category": {
+            "type": "string"
+          }
+        }
+      },
+      "AiDamageGeometry": {
+        "type": "object",
+        "properties": {
+          "bounding_box": {
+            "$ref": "#/components/schemas/AiDamagesBoundingBox"
+          },
+          "polygon": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AiDamagesPolygon"
+            }
+          }
+        }
+      },
+      "AiDamagesBoundingBox": {
+        "type": "object",
+        "properties": {
+          "width": {
+            "type": "integer"
+          },
+          "height": {
+            "type": "integer"
+          },
+          "top": {
+            "type": "integer"
+          },
+          "left": {
+            "type": "integer"
+          }
+        }
+      },
+      "AiDamagesPolygon": {
+        "type": "object",
+        "properties": {
+          "x": {
+            "type": "integer"
+          },
+          "y": {
+            "type": "integer"
+          }
+        }
+      },
+      "AIDamagesForCir": {
+        "type": "object",
+        "properties": {
+          "images": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AiDamagesForCirImage"
+            }
+          }
+        }
+      },
+      "AiDamagesForCirImage": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "damageSeverity": {
+            "type": "integer"
+          },
+          "damagePlacement": {
+            "type": "string"
+          },
+          "radius": {
+            "type": "integer"
+          },
+          "side": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "number"
+          },
+          "boundingBox": {
+            "$ref": "#/components/schemas/AiDamagesBoundingBox"
+          }
+        }
+      },
+      "BirList": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Bir"
+            }
+          }
+        }
+      },
+      "BirSingle": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Bir"
+          }
+        }
+      },
+      "Bir": {
+        "type": "object",
+        "nullable": true,
+        "properties": {
+          "turbineId": {
+            "type": "string",
+            "nullable": true
+          },
+          "birGuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "isAnnual": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "lastModified": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "fileName": {
+            "type": "string",
+            "nullable": true
+          },
+          "birDataString": {
+            "type": "string",
+            "nullable": true
+          },
+          "relatedCirs": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "integer"
+            }
+          }
+        }
+      },
+      "OCRResponse": {
+        "type": "object",
+        "properties": {
+          "bladeId": {
+            "type": "string"
+          },
+          "bladeSerialNumber": {
+            "type": "string"
+          },
+          "bladeColor": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

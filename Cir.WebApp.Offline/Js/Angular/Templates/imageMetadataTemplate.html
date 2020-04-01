@@ -1,0 +1,22 @@
+﻿<div class="csr-grab">
+    <img class="thumb" 
+         src="{{$ctrl.binaryData}}" 
+         title="{{$ctrl.metadata.fileInfo.name}}" ng-click="$ctrl.viewImage()">
+    <textarea class="imageDescription" 
+              title="Image description" 
+              maxlength="1000" 
+              placeholder="Image description" 
+              ng-model="$ctrl.metadata.description">
+    </textarea>
+
+    <button type="button" class="del" title="Remove this image" ng-click="$ctrl.deleteImage()">
+        <i class="glyphicon glyphicon-remove red"></i>
+    </button>
+    <button type="button" class="up" title="Move Up" ng-click="$ctrl.moveUp()">
+        <i class="glyphicon glyphicon-chevron-up"></i>
+    </button>
+    <button type="button" class="dn" title="Move Down" ng-click="$ctrl.moveDown()">
+        <i class="glyphicon glyphicon-chevron-down"></i>
+    </button>
+    <div class="imageName">File Name: {{$ctrl.metadata.fileInfo.name}}</div>
+</div>

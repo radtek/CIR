@@ -1,0 +1,242 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Generate CIM dummy data</title>
+    <script src="Js/jquery-1.10.1.min.js"></script>
+    <script src="/Js/encryption/sjcl.js"></script>
+    <script src="Js/ApplicationScripts/offlineTransactions.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#btnDummy').click(function () {
+
+                dbtransaction.deleteAllItemfromTable('tComponentReportTypes', function () { console.log('tComponentReportTypes truncated'); });
+                //Add Cir types
+                dbtransaction.addItemIntoTable({ text: "Blade", tComponentReportTypesID: "1" }, 'tComponentReportTypes', function () { console.log('tComponentReportTypes inserted'); });
+                dbtransaction.addItemIntoTable({ text: "Gearbox", tComponentReportTypesID: "2" }, 'tComponentReportTypes', function () { console.log('tComponentReportTypes inserted'); });
+                dbtransaction.addItemIntoTable({ text: "General", tComponentReportTypesID: "3" }, 'tComponentReportTypes', function () { console.log('tComponentReportTypes inserted'); });
+                dbtransaction.addItemIntoTable({ text: "Generator", tComponentReportTypesID: "4" }, 'tComponentReportTypes', function () { console.log('tComponentReportTypes inserted'); });
+                dbtransaction.addItemIntoTable({ text: "Transformer", tComponentReportTypesID: "5" }, 'tComponentReportTypes', function () { console.log('tComponentReportTypes inserted'); });
+
+                //Report types
+                dbtransaction.deleteAllItemfromTable('ReportType', function () { console.log('ReportType truncated'); });
+                dbtransaction.addItemIntoTable({ text: "Inspection", ReportTypeID: "1" }, 'ReportType', function () { console.log('ReportType inserted'); });
+                dbtransaction.addItemIntoTable({ text: "Failure", ReportTypeID: "2" }, 'ReportType', function () { console.log('ReportType inserted'); });
+                dbtransaction.addItemIntoTable({ text: "Repair", ReportTypeID: "3" }, 'ReportType', function () { console.log('ReportType inserted'); });
+                dbtransaction.addItemIntoTable({ text: "Replacement", ReportTypeID: "4" }, 'ReportType', function () { console.log('ReportType inserted'); });
+                dbtransaction.addItemIntoTable({ text: "Retrofit", ReportTypeID: "5" }, 'ReportType', function () { console.log('ReportType inserted'); });
+                dbtransaction.addItemIntoTable({ text: "CMS Inspection", ReportTypeID: "6" }, 'ReportType', function () { console.log('ReportType inserted'); });
+
+
+                //Turbine data
+                dbtransaction.deleteAllItemfromTable('TurbineData', function () { });
+                dbtransaction.addItemIntoTable(
+                    {
+                        TurbineID: "17521",
+                        Country: "U.S.A",
+                        Site: "No Site Available",
+                        Type: "V81",
+                        TurbineDataID: "2"
+                    }, 'TurbineData', function () { }
+                );
+                dbtransaction.addItemIntoTable(
+                    {
+                        TurbineID: "17522",
+                        Country: "India",
+                        Site: "No Site Available",
+                        Type: "V82",
+                        TurbineDataID: "2"
+                    }, 'TurbineData', function () { }
+                );
+                dbtransaction.addItemIntoTable(
+                    {
+                        TurbineID: "17523",
+                        Country: "England",
+                        Site: "No Site Available",
+                        Type: "V83",
+                        TurbineDataID: "3"
+                    }, 'TurbineData', function () { }
+                );
+                dbtransaction.addItemIntoTable(
+                    {
+                        TurbineID: "17524",
+                        Country: "Russia",
+                        Site: "No Site Available",
+                        Type: "V42",
+                        TurbineDataID: "4"
+                    }, 'TurbineData', function () { }
+                );
+                dbtransaction.addItemIntoTable(
+                    {
+                        TurbineID: "17527",
+                        Country: "Germany",
+                        Site: "Germany",
+                        Type: "V80",
+                        TurbineDataID: "5"
+                    }, 'TurbineData', function () { }
+                );
+
+                //Turbine Run status
+                dbtransaction.deleteAllItemfromTable('TurbineRunStatus', function () { });
+                dbtransaction.addItemIntoTable({ text: "Run", TurbineRunStatusID: "1" }, 'TurbineRunStatus', function () { });
+                dbtransaction.addItemIntoTable({ text: "Stop", TurbineRunStatusID: "2" }, 'TurbineRunStatus', function () { });
+                dbtransaction.addItemIntoTable({ text: "Restrictions", TurbineRunStatusID: "3" }, 'TurbineRunStatus', function () { });
+                dbtransaction.addItemIntoTable({ text: "No power", TurbineRunStatusID: "6" }, 'TurbineRunStatus', function () { });
+                dbtransaction.addItemIntoTable({ text: "Pause", TurbineRunStatusID: "7" }, 'TurbineRunStatus', function () { });
+                dbtransaction.addItemIntoTable({ text: "Emergency Stop", TurbineRunStatusID: "8" }, 'TurbineRunStatus', function () { });
+
+                //ComponentUpTowerSolution data
+                dbtransaction.deleteAllItemfromTable('ComponentUpTowerSolution', function () { });
+                dbtransaction.addItemIntoTable({ text: "YES and up-tower recommended", ComponentUpTowerSolutionID: "1" }, 'ComponentUpTowerSolution', function () { });
+                dbtransaction.addItemIntoTable({ text: "YES and up-tower NOT recommended", ComponentUpTowerSolutionID: "2" }, 'ComponentUpTowerSolution', function () { });
+                dbtransaction.addItemIntoTable({ text: "NO, Component need to be exchanged", ComponentUpTowerSolutionID: "3" }, 'ComponentUpTowerSolution', function () { });
+                dbtransaction.addItemIntoTable({ text: "N/A", ComponentUpTowerSolutionID: "4" }, 'ComponentUpTowerSolution', function () { });
+
+                //Blade Manfacturer data
+                dbtransaction.deleteAllItemfromTable('BladeManufacturer', function () { });
+                dbtransaction.addItemIntoTable({ text: "LM Wind Power", BladeManufacturerID: "1" }, 'BladeManufacturer', function () { });
+                dbtransaction.addItemIntoTable({ text: "Vestas Blades", BladeManufacturerID: "2" }, 'BladeManufacturer', function () { });
+                dbtransaction.addItemIntoTable({ text: "AL – AeroLaminates", BladeManufacturerID: "3" }, 'BladeManufacturer', function () { });
+
+
+                //Blade Manfacturer data
+                dbtransaction.deleteAllItemfromTable('BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "20,5", BladeLengthID: "1" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "23,0", BladeLengthID: "2" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "25,0", BladeLengthID: "3" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "32,0", BladeLengthID: "4" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "39,0", BladeLengthID: "5" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "44", BladeLengthID: "6" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "49", BladeLengthID: "7" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "AL23,8", BladeLengthID: "8" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "AL26,8", BladeLengthID: "9" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "AL31,8", BladeLengthID: "10" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "AL35,8", BladeLengthID: "11" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "AL40,8", BladeLengthID: "12" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "LM19,1", BladeLengthID: "13" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "LM21,5", BladeLengthID: "14" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "LM23,2", BladeLengthID: "15" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "LM23,5", BladeLengthID: "16" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "LM25,2", BladeLengthID: "17" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "LM25,5", BladeLengthID: "18" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "LM26,0", BladeLengthID: "19" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "LM26,1", BladeLengthID: "20" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "LM29,0", BladeLengthID: "21" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "LM29,1", BladeLengthID: "22" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "LM31,2", BladeLengthID: "23" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "LM35,0", BladeLengthID: "24" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "LM35.0 P2", BladeLengthID: "25" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "LM38,8", BladeLengthID: "26" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "LM44,8", BladeLengthID: "27" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "LM54,0", BladeLengthID: "28" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "N/A", BladeLengthID: "29" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "10,5", BladeLengthID: "30" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "11,5", BladeLengthID: "31" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "13,0", BladeLengthID: "32" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "17,0", BladeLengthID: "33" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "19,0", BladeLengthID: "34" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "LM40,1", BladeLengthID: "35" }, 'BladeLength', function () { });
+                dbtransaction.addItemIntoTable({ text: "55", BladeLengthID: "36" }, 'BladeLength', function () { });
+
+                //Blade Manfacturer data
+                dbtransaction.deleteAllItemfromTable('BladeColor', function () { });
+                dbtransaction.addItemIntoTable({ text: "Ral 7035 Light Gray", BladeColorID: "3" }, 'BladeColor', function () { });
+                dbtransaction.addItemIntoTable({ text: "Ral 7040 Gray", BladeColorID: "4" }, 'BladeColor', function () { });
+                dbtransaction.addItemIntoTable({ text: "Ral 9010 White", BladeColorID: "5" }, 'BladeColor', function () { });
+                dbtransaction.addItemIntoTable({ text: "N/A", BladeColorID: "6" }, 'BladeColor', function () { });
+                dbtransaction.addItemIntoTable({ text: "Ral 7040 Gray / Ral 3020 Red Tip", BladeColorID: "7" }, 'BladeColor', function () { });
+                dbtransaction.addItemIntoTable({ text: "Ral 7035 Light Gray / Ral 3020 Red Stripes", BladeColorID: "8" }, 'BladeColor', function () { });
+                dbtransaction.addItemIntoTable({ text: "Ral 7040 Gray / Ral 3020 Red Stripes", BladeColorID: "9" }, 'BladeColor', function () { });
+                dbtransaction.addItemIntoTable({ text: "Ral 7035 Light Gray / Ral 3020 Red Tip", BladeColorID: "11" }, 'BladeColor', function () { });
+                dbtransaction.addItemIntoTable({ text: "Ral 9010 White / Ral 2009 Orange Stripes", BladeColorID: "12" }, 'BladeColor', function () { });
+                dbtransaction.addItemIntoTable({ text: "Ral 9010 White / Ral 2009 Orange Tip", BladeColorID: "13" }, 'BladeColor', function () { });
+
+
+                //BladeDamagePlacement
+                dbtransaction.deleteAllItemfromTable('BladeDamagePlacement', function () { });
+                dbtransaction.addItemIntoTable({ text: "Internal", BladeDamagePlacementID: "1" }, 'BladeDamagePlacement', function () { });
+                dbtransaction.addItemIntoTable({ text: "External", BladeDamagePlacementID: "2" }, 'BladeDamagePlacement', function () { });
+
+                //BladeEdge
+                dbtransaction.deleteAllItemfromTable('BladeEdge', function () { });
+                dbtransaction.addItemIntoTable({ text: "Leading Edge", BladeEdgeID: "1" }, 'BladeEdge', function () { });
+                dbtransaction.addItemIntoTable({ text: "Trailing Edge", BladeEdgeID: "2" }, 'BladeEdge', function () { });
+                dbtransaction.addItemIntoTable({ text: "N/A", BladeEdgeID: "3" }, 'BladeEdge', function () { });
+                dbtransaction.addItemIntoTable({ text: "Tip", BladeEdgeID: "4" }, 'BladeEdge', function () { });
+                dbtransaction.addItemIntoTable({ text: "Leeward Side (low pressure side)", BladeEdgeID: "5" }, 'BladeEdge', function () { });
+                dbtransaction.addItemIntoTable({ text: "Windward Side (pressure side)", BladeEdgeID: "6" }, 'BladeEdge', function () { });
+
+                //BladeInspectionData
+                dbtransaction.deleteAllItemfromTable('BladeInspectionData', function () { });
+                dbtransaction.addItemIntoTable({ text: "Bad bonding - knocking test", BladeInspectionDataID: "1" }, 'BladeInspectionData', function () { });
+                dbtransaction.addItemIntoTable({ text: "Bubbles", BladeInspectionDataID: "2" }, 'BladeInspectionData', function () { });
+                dbtransaction.addItemIntoTable({ text: "Cast", BladeInspectionDataID: "3" }, 'BladeInspectionData', function () { });
+                dbtransaction.addItemIntoTable({ text: "Chipped coat", BladeInspectionDataID: "4" }, 'BladeInspectionData', function () { });
+                dbtransaction.addItemIntoTable({ text: "Coat fault", BladeInspectionDataID: "5" }, 'BladeInspectionData', function () { });
+                dbtransaction.addItemIntoTable({ text: "Cracks", BladeInspectionDataID: "6" }, 'BladeInspectionData', function () { });
+                dbtransaction.addItemIntoTable({ text: "Damaged laminate", BladeInspectionDataID: "7" }, 'BladeInspectionData', function () { });
+                dbtransaction.addItemIntoTable({ text: "Erosion", BladeInspectionDataID: "8" }, 'BladeInspectionData', function () { });
+                dbtransaction.addItemIntoTable({ text: "LE tape damaged", BladeInspectionDataID: "9" }, 'BladeInspectionData', function () { });
+                dbtransaction.addItemIntoTable({ text: "LE tape sealer damaged", BladeInspectionDataID: "10" }, 'BladeInspectionData', function () { });
+                dbtransaction.addItemIntoTable({ text: "Lightning damage → comment", BladeInspectionDataID: "11" }, 'BladeInspectionData', function () { });
+                dbtransaction.addItemIntoTable({ text: "Lightning hit – receptor → comment", BladeInspectionDataID: "12" }, 'BladeInspectionData', function () { });
+                dbtransaction.addItemIntoTable({ text: "Noise", BladeInspectionDataID: "13" }, 'BladeInspectionData', function () { });
+                dbtransaction.addItemIntoTable({ text: "Oil in blade", BladeInspectionDataID: "14" }, 'BladeInspectionData', function () { });
+                dbtransaction.addItemIntoTable({ text: "Rub Mark", BladeInspectionDataID: "15" }, 'BladeInspectionData', function () { });
+                dbtransaction.addItemIntoTable({ text: "Scratch", BladeInspectionDataID: "16" }, 'BladeInspectionData', function () { });
+                dbtransaction.addItemIntoTable({ text: "Water in blade tip", BladeInspectionDataID: "17" }, 'BladeInspectionData', function () { });
+                dbtransaction.addItemIntoTable({ text: "N/A", BladeInspectionDataID: "18" }, 'BladeInspectionData', function () { });
+                dbtransaction.addItemIntoTable({ text: "Tip brake damage", BladeInspectionDataID: "19" }, 'BladeInspectionData', function () { });
+                dbtransaction.addItemIntoTable({ text: "Tip wire", BladeInspectionDataID: "20" }, 'BladeInspectionData', function () { });
+
+                //FaultCodeCause
+                dbtransaction.deleteAllItemfromTable('FaultCodeCause', function () { });
+                dbtransaction.addItemIntoTable({ text: "N/A", FaultCodeCauseID: "7" }, 'FaultCodeCause', function () { });
+                dbtransaction.addItemIntoTable({ text: "After Commissioning", FaultCodeCauseID: "1" }, 'FaultCodeCause', function () { });
+                dbtransaction.addItemIntoTable({ text: "Installation", FaultCodeCauseID: "2" }, 'FaultCodeCause', function () { });
+                dbtransaction.addItemIntoTable({ text: "Off Loading", FaultCodeCauseID: "4" }, 'FaultCodeCause', function () { });
+                dbtransaction.addItemIntoTable({ text: "Production", FaultCodeCauseID: "5" }, 'FaultCodeCause', function () { });
+                dbtransaction.addItemIntoTable({ text: "Transport", FaultCodeCauseID: "6" }, 'FaultCodeCause', function () { });
+
+                //FaultCodeType
+                dbtransaction.deleteAllItemfromTable('FaultCodeType', function () { });
+                dbtransaction.addItemIntoTable({ text: "N/A", FaultCodeTypeID: "18" }, 'FaultCodeType', function () { });
+                dbtransaction.addItemIntoTable({ text: "Tip break damage", FaultCodeTypeID: "19" }, 'FaultCodeType', function () { });
+                dbtransaction.addItemIntoTable({ text: "Tip wire", FaultCodeTypeID: "20" }, 'FaultCodeType', function () { });
+                dbtransaction.addItemIntoTable({ text: "Bad bonding - knocking test", FaultCodeTypeID: "1" }, 'FaultCodeType', function () { });
+                dbtransaction.addItemIntoTable({ text: "Bubbles", FaultCodeTypeID: "2" }, 'FaultCodeType', function () { });
+                dbtransaction.addItemIntoTable({ text: "Cast", FaultCodeTypeID: "3" }, 'FaultCodeType', function () { });
+                dbtransaction.addItemIntoTable({ text: "Chipped coat", FaultCodeTypeID: "4" }, 'FaultCodeType', function () { });
+                dbtransaction.addItemIntoTable({ text: "Coat fault", FaultCodeTypeID: "5" }, 'FaultCodeType', function () { });
+                dbtransaction.addItemIntoTable({ text: "Cracks", FaultCodeTypeID: "6" }, 'FaultCodeType', function () { });
+                dbtransaction.addItemIntoTable({ text: "Damaged laminate", FaultCodeTypeID: "7" }, 'FaultCodeType', function () { });
+                dbtransaction.addItemIntoTable({ text: "Erosion", FaultCodeTypeID: "8" }, 'FaultCodeType', function () { });
+                dbtransaction.addItemIntoTable({ text: "LE tape damaged", FaultCodeTypeID: "9" }, 'FaultCodeType', function () { });
+                dbtransaction.addItemIntoTable({ text: "LE tape sealer damaged", FaultCodeTypeID: "10" }, 'FaultCodeType', function () { });
+                dbtransaction.addItemIntoTable({ text: "Lightning damage- comment", FaultCodeTypeID: "11" }, 'FaultCodeType', function () { });
+                dbtransaction.addItemIntoTable({ text: "Lightning hit – receptor - comment", FaultCodeTypeID: "12" }, 'FaultCodeType', function () { });
+                dbtransaction.addItemIntoTable({ text: "Noise", FaultCodeTypeID: "13" }, 'FaultCodeType', function () { });
+                dbtransaction.addItemIntoTable({ text: "Oil in blade", FaultCodeTypeID: "14" }, 'FaultCodeType', function () { });
+                dbtransaction.addItemIntoTable({ text: "Rub Mark", FaultCodeTypeID: "15" }, 'FaultCodeType', function () { });
+                dbtransaction.addItemIntoTable({ text: "Scratch", FaultCodeTypeID: "16" }, 'FaultCodeType', function () { });
+                dbtransaction.addItemIntoTable({ text: "Water in blade tip", FaultCodeTypeID: "17" }, 'FaultCodeType', function () { });
+
+                //FaultCodeArea
+                dbtransaction.deleteAllItemfromTable('FaultCodeArea', function () { });
+                dbtransaction.addItemIntoTable({ text: "N/A", FaultCodeAreaID: "8" }, 'FaultCodeArea', function () { });
+                dbtransaction.addItemIntoTable({ text: "Leeward Side (low pressure side)", FaultCodeAreaID: "9" }, 'FaultCodeArea', function () { });
+                dbtransaction.addItemIntoTable({ text: "Windward Side (pressure side)", FaultCodeAreaID: "10" }, 'FaultCodeArea', function () { });
+                dbtransaction.addItemIntoTable({ text: "General", FaultCodeAreaID: "1" }, 'FaultCodeArea', function () { });
+                dbtransaction.addItemIntoTable({ text: "Leading Edge", FaultCodeAreaID: "2" }, 'FaultCodeArea', function () { });
+                dbtransaction.addItemIntoTable({ text: "Leading Edge Tape", FaultCodeAreaID: "3" }, 'FaultCodeArea', function () { });
+                dbtransaction.addItemIntoTable({ text: "Root End", FaultCodeAreaID: "5" }, 'FaultCodeArea', function () { });
+                dbtransaction.addItemIntoTable({ text: "Tip End", FaultCodeAreaID: "6" }, 'FaultCodeArea', function () { });
+                dbtransaction.addItemIntoTable({ text: "Trailing Edge", FaultCodeAreaID: "7" }, 'FaultCodeArea', function () { });
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="button" value="Generate Dummy Data" id="btnDummy" />
+    <input type="button" value="Get Dummy Data" id="btnGet" />
+</body>
+</html>

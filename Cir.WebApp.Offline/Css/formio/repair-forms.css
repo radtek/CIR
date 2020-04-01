@@ -1,0 +1,36 @@
+﻿.top-label-input-table label.control-label + div,
+.top-label-input-table label.control-label,
+.top-label-input label.control-label + div,
+.top-label-input label.control-label {
+    float: none;
+    /* position: static; */
+    font-size: 16px !important;
+    color: #333;
+    width: 100%;
+}
+
+.top-label-input-table label.control-label,
+.top-label-input label.control-label {
+    position: static;
+}
+
+.top-label-input textarea,
+.top-label-input-table input,
+.top-label-input input {
+    border: 1px solid #ccc;
+}
+
+.top-label-input label.control-label + div,
+.top-label-input label.control-label {
+    width: 40%;
+}
+
+.submit-label {
+    background-color: white;
+    padding: 20px;
+    font-family: 'Roboto Light', 'Roboto Regular', 'Roboto';
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16px;
+    text-align: left;
+}

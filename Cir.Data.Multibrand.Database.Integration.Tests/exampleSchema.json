@@ -1,0 +1,770 @@
+{
+    "components": [
+        {
+            "type": "panel",
+            "input": false,
+            "title": "Wind Turbine Data",
+            "theme": "default",
+            "components": [
+                {
+                    "clearOnHide": false,
+                    "key": "pageWTDFieldset",
+                    "input": false,
+                    "tableView": false,
+                    "legend": "Wind Turbine Data",
+                    "components": [
+                        {
+                            "input": true,
+                            "tableView": true,
+                            "label": "Report Type",
+                            "key": "ddlReportType",
+                            "placeholder": "",
+                            "data": {
+                                "values": [
+                                    {
+                                        "value": "1",
+                                        "label": "Inspection",
+                                        "$$hashKey": "object:25455"
+                                    },
+                                    {
+                                        "value": "2",
+                                        "label": "Failure",
+                                        "$$hashKey": "object:25456"
+                                    },
+                                    {
+                                        "value": "3",
+                                        "label": "Repair",
+                                        "$$hashKey": "object:25457"
+                                    },
+                                    {
+                                        "value": "4",
+                                        "label": "Replacement",
+                                        "$$hashKey": "object:25458"
+                                    },
+                                    {
+                                        "value": "5",
+                                        "label": "Retrofit",
+                                        "$$hashKey": "object:25459"
+                                    },
+                                    {
+                                        "value": "6",
+                                        "label": "CMS Inspection",
+                                        "$$hashKey": "object:25460"
+                                    }
+                                ],
+                                "json": "",
+                                "url": "",
+                                "resource": "",
+                                "custom": ""
+                            },
+                            "dataSrc": "values",
+                            "valueProperty": "",
+                            "defaultValue": "2",
+                            "refreshOn": "",
+                            "filter": "",
+                            "authenticate": false,
+                            "template": "<span>{{ item.label }}</span>",
+                            "multiple": false,
+                            "protected": false,
+                            "unique": false,
+                            "persistent": true,
+                            "hidden": false,
+                            "clearOnHide": true,
+                            "validate": {
+                                "required": false
+                            },
+                            "type": "select",
+                            "tags": [],
+                            "conditional": {
+                                "show": "",
+                                "when": null,
+                                "eq": ""
+                            },
+                            "properties": {
+                                "": ""
+                            },
+                            "lockKey": true,
+                            "tooltip": "If a component has failed, always select “Failure” as primary. “Failure” reports are used for statistics and notifications to supplier.",
+                            "$$hashKey": "object:25157"
+                        },                                
+                        {
+                            "input": true,
+                            "tableView": true,
+                            "inputType": "text",
+                            "inputMask": "",
+                            "label": "Bearing 1",
+                            "key": "txtBearing1",
+                            "placeholder": "",
+                            "prefix": "",
+                            "suffix": "",
+                            "multiple": false,
+                            "defaultValue": "",
+                            "protected": false,
+                            "unique": false,
+                            "persistent": true,
+                            "hidden": false,
+                            "clearOnHide": true,
+                            "validate": {
+                                "required": false,
+                                "minLength": "",
+                                "maxLength": "",
+                                "pattern": "",
+                                "custom": "",
+                                "customPrivate": false
+                            },
+                            "conditional": {
+                                "show": "",
+                                "when": null,
+                                "eq": ""
+                            },
+                            "type": "textfield",
+                            "tags": [],
+                            "properties": {
+                                "": ""
+                            },
+                            "lockKey": true,
+                            "$$hashKey": "object:41490"
+                        },
+                        {
+                            "input": true,
+                            "tableView": true,
+                            "inputType": "text",
+                            "inputMask": "",
+                            "label": "Bearing 2",
+                            "key": "txtBearing2",
+                            "placeholder": "",
+                            "prefix": "",
+                            "suffix": "",
+                            "multiple": false,
+                            "defaultValue": "",
+                            "protected": false,
+                            "unique": false,
+                            "persistent": true,
+                            "hidden": false,
+                            "clearOnHide": true,
+                            "validate": {
+                                "required": false,
+                                "minLength": "",
+                                "maxLength": "",
+                                "pattern": "",
+                                "custom": "",
+                                "customPrivate": false
+                            },
+                            "conditional": {
+                                "show": "",
+                                "when": null,
+                                "eq": ""
+                            },
+                            "type": "textfield",
+                            "tags": [],
+                            "properties": {
+                                "": ""
+                            },
+                            "lockKey": true,
+                            "$$hashKey": "object:41491"
+                        },
+                        {
+                            "input": true,
+                            "tableView": true,
+                            "inputType": "text",
+                            "inputMask": "",
+                            "label": "Bearing 3",
+                            "key": "txtBearing3",
+                            "placeholder": "",
+                            "prefix": "",
+                            "suffix": "",
+                            "multiple": false,
+                            "defaultValue": "",
+                            "protected": false,
+                            "unique": false,
+                            "persistent": true,
+                            "hidden": false,
+                            "clearOnHide": true,
+                            "validate": {
+                                "required": false,
+                                "minLength": "",
+                                "maxLength": "",
+                                "pattern": "",
+                                "custom": "",
+                                "customPrivate": false
+                            },
+                            "conditional": {
+                                "show": "",
+                                "when": null,
+                                "eq": ""
+                            },
+                            "type": "textfield",
+                            "tags": [],
+                            "properties": {
+                                "": ""
+                            },
+                            "lockKey": true,
+                            "$$hashKey": "object:41492"
+                        },
+                        {
+                            "input": true,
+                            "tableView": true,
+                            "inputType": "text",
+                            "inputMask": "",
+                            "label": "Oil Sump",
+                            "key": "txtOilSump",
+                            "placeholder": "",
+                            "prefix": "",
+                            "suffix": "",
+                            "multiple": false,
+                            "defaultValue": "",
+                            "protected": false,
+                            "unique": false,
+                            "persistent": true,
+                            "hidden": false,
+                            "clearOnHide": true,
+                            "validate": {
+                                "required": false,
+                                "minLength": "",
+                                "maxLength": "",
+                                "pattern": "",
+                                "custom": "",
+                                "customPrivate": false
+                            },
+                            "conditional": {
+                                "show": "",
+                                "when": null,
+                                "eq": ""
+                            },
+                            "type": "textfield",
+                            "tags": [],
+                            "properties": {
+                                "": ""
+                            },
+                            "lockKey": true,
+                            "$$hashKey": "object:41493"
+                        }
+                    ],
+                    "type": "panel",
+                    "breadcrumb": "default",
+                    "tags": [],
+                    "conditional": {
+                        "show": "",
+                        "when": null,
+                        "eq": ""
+                    },
+                    "properties": {
+                        "": ""
+                    },
+                    "customClass": "expandable-panel collapsed",
+                    "$$hashKey": "object:41478"
+                },
+                {
+                    "clearOnHide": false,
+                    "key": "page2Panel5",
+                    "input": false,
+                    "title": "Leakage /Droplets",
+                    "theme": "default",
+                    "tableView": false,
+                    "components": [
+                        {
+                            "input": true,
+                            "inputType": "checkbox",
+                            "tableView": true,
+                            "label": "LSS NR-end",
+                            "datagridLabel": true,
+                            "key": "chkLSSNREnd",
+                            "defaultValue": false,
+                            "protected": false,
+                            "persistent": true,
+                            "hidden": false,
+                            "name": "",
+                            "value": "",
+                            "clearOnHide": true,
+                            "validate": {
+                                "required": false
+                            },
+                            "type": "checkbox",
+                            "hideLabel": true,
+                            "tags": [],
+                            "conditional": {
+                                "show": "",
+                                "when": null,
+                                "eq": ""
+                            },
+                            "properties": {
+                                "": ""
+                            },
+                            "lockKey": true,
+                            "style": {
+                                "margin-left": "15px"
+                            },
+                            "$$hashKey": "object:41817"
+                        },
+                        {
+                            "input": true,
+                            "inputType": "checkbox",
+                            "tableView": true,
+                            "label": "MS NR-end",
+                            "datagridLabel": true,
+                            "key": "chkIMSNREnd",
+                            "defaultValue": false,
+                            "protected": false,
+                            "persistent": true,
+                            "hidden": false,
+                            "name": "",
+                            "value": "",
+                            "clearOnHide": true,
+                            "validate": {
+                                "required": false
+                            },
+                            "type": "checkbox",
+                            "hideLabel": true,
+                            "tags": [],
+                            "conditional": {
+                                "show": "",
+                                "when": null,
+                                "eq": ""
+                            },
+                            "properties": {
+                                "": ""
+                            },
+                            "style": {
+                                "margin-left": "15px"
+                            },
+                            "lockKey": true,
+                            "$$hashKey": "object:41818"
+                        },
+                        {
+                            "input": true,
+                            "inputType": "checkbox",
+                            "tableView": true,
+                            "label": "IMS R-end",
+                            "datagridLabel": true,
+                            "key": "chkIMSREnd",
+                            "defaultValue": false,
+                            "protected": false,
+                            "persistent": true,
+                            "hidden": false,
+                            "name": "",
+                            "value": "",
+                            "clearOnHide": true,
+                            "validate": {
+                                "required": false
+                            },
+                            "type": "checkbox",
+                            "hideLabel": true,
+                            "tags": [],
+                            "conditional": {
+                                "show": "",
+                                "when": null,
+                                "eq": ""
+                            },
+                            "properties": {
+                                "": ""
+                            },
+                            "style": {
+                                "margin-left": "15px"
+                            },
+                            "lockKey": true,
+                            "$$hashKey": "object:41819"
+                        },
+                        {
+                            "input": true,
+                            "inputType": "checkbox",
+                            "tableView": true,
+                            "label": "HSS NR-end",
+                            "datagridLabel": true,
+                            "key": "chkHSSNREnd",
+                            "defaultValue": false,
+                            "protected": false,
+                            "persistent": true,
+                            "hidden": false,
+                            "name": "",
+                            "value": "",
+                            "clearOnHide": true,
+                            "validate": {
+                                "required": false
+                            },
+                            "type": "checkbox",
+                            "hideLabel": true,
+                            "tags": [],
+                            "conditional": {
+                                "show": "",
+                                "when": null,
+                                "eq": ""
+                            },
+                            "properties": {
+                                "": ""
+                            },
+                            "style": {
+                                "margin-left": "15px"
+                            },
+                            "lockKey": true,
+                            "$$hashKey": "object:41820"
+                        },
+                        {
+                            "input": true,
+                            "inputType": "checkbox",
+                            "tableView": true,
+                            "label": "HSS R-end",
+                            "datagridLabel": true,
+                            "key": "chkHSSREnd",
+                            "defaultValue": false,
+                            "protected": false,
+                            "persistent": true,
+                            "hidden": false,
+                            "name": "",
+                            "value": "",
+                            "clearOnHide": true,
+                            "validate": {
+                                "required": false
+                            },
+                            "type": "checkbox",
+                            "hideLabel": true,
+                            "tags": [],
+                            "conditional": {
+                                "show": "",
+                                "when": null,
+                                "eq": ""
+                            },
+                            "properties": {
+                                "": ""
+                            },
+                            "style": {
+                                "margin-left": "15px"
+                            },
+                            "lockKey": true,
+                            "$$hashKey": "object:41821"
+                        },
+                        {
+                            "input": true,
+                            "inputType": "checkbox",
+                            "tableView": true,
+                            "label": "Pitch Tube",
+                            "datagridLabel": true,
+                            "key": "chkPitchTube",
+                            "defaultValue": false,
+                            "protected": false,
+                            "persistent": true,
+                            "hidden": false,
+                            "name": "",
+                            "value": "",
+                            "clearOnHide": true,
+                            "validate": {
+                                "required": false
+                            },
+                            "type": "checkbox",
+                            "hideLabel": true,
+                            "tags": [],
+                            "conditional": {
+                                "show": "",
+                                "when": null,
+                                "eq": ""
+                            },
+                            "properties": {
+                                "": ""
+                            },
+                            "style": {
+                                "margin-left": "15px"
+                            },
+                            "lockKey": true,
+                            "$$hashKey": "object:41822"
+                        },
+                        {
+                            "input": true,
+                            "inputType": "checkbox",
+                            "tableView": true,
+                            "label": "Split Lines",
+                            "datagridLabel": true,
+                            "key": "chkSpliLines",
+                            "defaultValue": false,
+                            "protected": false,
+                            "persistent": true,
+                            "hidden": false,
+                            "name": "",
+                            "value": "",
+                            "clearOnHide": true,
+                            "validate": {
+                                "required": false
+                            },
+                            "type": "checkbox",
+                            "hideLabel": true,
+                            "tags": [],
+                            "conditional": {
+                                "show": "",
+                                "when": null,
+                                "eq": ""
+                            },
+                            "properties": {
+                                "": ""
+                            },
+                            "style": {
+                                "margin-left": "15px"
+                            },
+                            "lockKey": true,
+                            "$$hashKey": "object:41823"
+                        },
+                        {
+                            "input": true,
+                            "inputType": "checkbox",
+                            "tableView": true,
+                            "label": "Hose and Piping",
+                            "datagridLabel": true,
+                            "key": "chkHoseandPiping",
+                            "defaultValue": false,
+                            "protected": false,
+                            "persistent": true,
+                            "hidden": false,
+                            "name": "",
+                            "value": "",
+                            "clearOnHide": true,
+                            "validate": {
+                                "required": false
+                            },
+                            "type": "checkbox",
+                            "hideLabel": true,
+                            "tags": [],
+                            "conditional": {
+                                "show": "",
+                                "when": null,
+                                "eq": ""
+                            },
+                            "properties": {
+                                "": ""
+                            },
+                            "style": {
+                                "margin-left": "15px"
+                            },
+                            "lockKey": true,
+                            "$$hashKey": "object:41824"
+                        },
+                        {
+                            "input": true,
+                            "inputType": "checkbox",
+                            "tableView": true,
+                            "label": "Input Shaft",
+                            "datagridLabel": true,
+                            "key": "chkInputShaft",
+                            "defaultValue": false,
+                            "protected": false,
+                            "persistent": true,
+                            "hidden": false,
+                            "name": "",
+                            "value": "",
+                            "clearOnHide": true,
+                            "validate": {
+                                "required": false
+                            },
+                            "type": "checkbox",
+                            "hideLabel": true,
+                            "tags": [],
+                            "conditional": {
+                                "show": "",
+                                "when": null,
+                                "eq": ""
+                            },
+                            "properties": {
+                                "": ""
+                            },
+                            "style": {
+                                "margin-left": "15px"
+                            },
+                            "lockKey": true,
+                            "$$hashKey": "object:41825"
+                        },
+                        {
+                            "input": true,
+                            "inputType": "checkbox",
+                            "tableView": true,
+                            "label": "Aux. - HSS/PTO",
+                            "datagridLabel": true,
+                            "key": "chkAuxHSSPTO",
+                            "defaultValue": false,
+                            "protected": false,
+                            "persistent": true,
+                            "hidden": false,
+                            "name": "",
+                            "value": "",
+                            "clearOnHide": true,
+                            "validate": {
+                                "required": false
+                            },
+                            "type": "checkbox",
+                            "hideLabel": true,
+                            "tags": [],
+                            "conditional": {
+                                "show": "",
+                                "when": null,
+                                "eq": ""
+                            },
+                            "properties": {
+                                "": ""
+                            },
+                            "style": {
+                                "margin-left": "15px"
+                            },
+                            "lockKey": true,
+                            "$$hashKey": "object:41826"
+                        }
+                    ],
+                    "type": "panel",
+                    "breadcrumb": "default",
+                    "tags": [],
+                    "conditional": {
+                        "show": "",
+                        "when": null,
+                        "eq": ""
+                    },
+                    "properties": {
+                        "": ""
+                    },
+                    "customClass": "expandable-panel collapsed",
+                    "$$hashKey": "object:41806"
+                },
+                {
+                    "clearOnHide": false,
+                    "input": false,
+                    "tableView": false,
+                    "key": "undefinedColumns2",
+                    "columns": [
+                        {
+                            "components": [
+                                {
+                                    "tableView": true,
+                                    "key": "undefinedColumns2CirNavigation",
+                                    "protected": false,
+                                    "unique": false,
+                                    "persistent": true,
+                                    "type": "cirNavigation",
+                                    "$$hashKey": "object:6574"
+                                }
+                            ],
+                            "width": 6,
+                            "offset": 0,
+                            "push": 0,
+                            "pull": 0,
+                            "$$hashKey": "object:6027"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "tableView": true,
+                                    "key": "undefinedColumns2SubmitForm",
+                                    "protected": false,
+                                    "unique": false,
+                                    "persistent": true,
+                                    "type": "submitForm",
+                                    "$$hashKey": "object:18885"
+                                }
+                            ],
+                            "width": 6,
+                            "offset": 0,
+                            "push": 0,
+                            "pull": 0,
+                            "$$hashKey": "object:18369"
+                        }
+                    ],
+                    "type": "columns",
+                    "$$hashKey": "object:6022",
+                    "tags": [],
+                    "conditional": {
+                        "show": "",
+                        "when": null,
+                        "eq": ""
+                    },
+                    "properties": {
+                        "": ""
+                    }
+                }
+            ]
+        },
+        {
+            "type": "panel",
+            "title": "Images",
+            "components": [
+                {
+                    "tableView": true,
+                    "label": "Upload Images",
+                    "key": "page3UploadImages",
+                    "description": "Drag files here or click to upload",
+                    "protected": false,
+                    "unique": false,
+                    "persistent": true,
+                    "type": "imageUploader",
+                    "$$hashKey": "object:6894"
+                },
+                {
+                    "clearOnHide": false,
+                    "input": false,
+                    "tableView": false,
+                    "key": "undefinedColumns3",
+                    "columns": [
+                        {
+                            "components": [
+                                {
+                                    "tableView": true,
+                                    "key": "undefinedColumns3CirNavigation",
+                                    "protected": false,
+                                    "unique": false,
+                                    "persistent": true,
+                                    "type": "cirNavigation",
+                                    "isNew": true,
+                                    "$$hashKey": "object:6371"
+                                }
+                            ],
+                            "width": 6,
+                            "offset": 0,
+                            "push": 0,
+                            "pull": 0,
+                            "$$hashKey": "object:18917"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "tableView": true,
+                                    "key": "undefinedColumns3SubmitForm",
+                                    "protected": false,
+                                    "unique": false,
+                                    "persistent": true,
+                                    "type": "submitForm",
+                                    "$$hashKey": "object:19221"
+                                }
+                            ],
+                            "width": 6,
+                            "offset": 0,
+                            "push": 0,
+                            "pull": 0,
+                            "$$hashKey": "object:19203"
+                        }
+                    ],
+                    "type": "columns",
+                    "$$hashKey": "object:18912",
+                    "tags": [],
+                    "conditional": {
+                        "show": "",
+                        "when": null,
+                        "eq": ""
+                    },
+                    "properties": {
+                        "": ""
+                    }
+                }
+            ],
+            "input": false,
+            "key": "page3",
+            "$$hashKey": "object:6582",
+            "clearOnHide": false,
+            "theme": "default",
+            "tableView": false,
+            "breadcrumb": "default",
+            "tags": [],
+            "conditional": {
+                "show": "",
+                "when": null,
+                "eq": ""
+            },
+            "properties": {
+                "": ""
+            }
+        }
+    ],
+    "display": "wizard",
+    "page": 0,
+    "numPages": 3
+}

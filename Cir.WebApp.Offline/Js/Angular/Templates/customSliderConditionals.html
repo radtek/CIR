@@ -1,0 +1,18 @@
+<ng-form>
+    <div class="form-group">
+        <label for="disabledBindConditional" form-builder-tooltip="Key on which disabled conditional will be evaluated">Disabled Bind Conditional</label>
+        <input type="text" class="form-control" id="disabledBindConditional" name="disabledBindConditional" ng-model="component.conditionals.disabledBindConditional" value="{{ component.conditionals.disabledBindConditional }}">
+    </div>
+    <div class="form-group">
+        <label for="disabledConditional" form-builder-tooltip="Expression to evaluate for conditional disabled field. Set disabled property. Input and data are provided.">Disabled Conditional</label>
+        <textarea class="form-control" id="disabledConditional" name="disabledConditional" ng-model="component.conditionals.disabledConditional" placeholder="disabled = true;" rows="3">{{ component.conditionals.disabledConditional }}</textarea>
+    </div>
+    <div class="form-group">
+        <label for="defaultValueBindConditional" form-builder-tooltip="Key on which default value conditional will be evaluated">Default Value Bind Conditional</label>
+        <input type="text" class="form-control" id="defaultValueBindConditional" name="defaultValueBindConditional" ng-model="component.conditionals.defaultValueBindConditional" value="{{ component.conditionals.defaultValueBindConditional }}">
+    </div>
+    <div class="form-group">
+        <label for="defaultValueConditional" form-builder-tooltip="Expression to evaluate for conditional default value. Set value property. Data is provided.">Default Value Conditional</label>
+        <textarea class="form-control" id="defaultValueConditional" name="defaultValueConditional" ng-model="component.conditionals.defaultValueConditional" placeholder="value = 1;" rows="3">{{ component.conditionals.defaultValueConditional }}</textarea>
+    </div>
+</ng-form>

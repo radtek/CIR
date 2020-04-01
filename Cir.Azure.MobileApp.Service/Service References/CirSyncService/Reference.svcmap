@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b96cc56f-5194-41db-878d-7afac24e14b3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://dkrdstowerdp01/Cir.Sync.Services/SyncService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SyncService2.wsdl" MetadataType="Wsdl" ID="e5a1de91-26e5-4d68-b8ca-3b28cc3ea779" SourceId="1" SourceUrl="http://dkrdstowerdp01/Cir.Sync.Services/SyncService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="SyncService9.xsd" MetadataType="Schema" ID="ef5cb9ef-3114-4085-88cb-58c60b51cd17" SourceId="1" SourceUrl="http://dkrdstowerdp01/Cir.Sync.Services/SyncService.svc?xsd=xsd8" />
+    <MetadataFile FileName="SyncService91.xsd" MetadataType="Schema" ID="522fc616-e868-40fc-887e-562631d4b049" SourceId="1" SourceUrl="http://dkrdstowerdp01/Cir.Sync.Services/SyncService.svc?xsd=xsd6" />
+    <MetadataFile FileName="SyncService92.xsd" MetadataType="Schema" ID="84e233cd-814d-428d-ac71-51387dca5cb7" SourceId="1" SourceUrl="http://dkrdstowerdp01/Cir.Sync.Services/SyncService.svc?xsd=xsd5" />
+    <MetadataFile FileName="SyncService93.xsd" MetadataType="Schema" ID="160b7fbe-c92d-477f-aeca-5280b2e996c6" SourceId="1" SourceUrl="http://dkrdstowerdp01/Cir.Sync.Services/SyncService.svc?xsd=xsd4" />
+    <MetadataFile FileName="SyncService94.xsd" MetadataType="Schema" ID="11bacd27-5b04-436c-bce4-9a65c7a080c7" SourceId="1" SourceUrl="http://dkrdstowerdp01/Cir.Sync.Services/SyncService.svc?xsd=xsd3" />
+    <MetadataFile FileName="SyncService95.xsd" MetadataType="Schema" ID="eb2724da-1876-493f-a2f6-1b0cf5a6ba45" SourceId="1" SourceUrl="http://dkrdstowerdp01/Cir.Sync.Services/SyncService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SyncService96.xsd" MetadataType="Schema" ID="945c3fa4-bb47-4a44-8c41-5130ee816828" SourceId="1" SourceUrl="http://dkrdstowerdp01/Cir.Sync.Services/SyncService.svc?xsd=xsd9" />
+    <MetadataFile FileName="SyncService97.xsd" MetadataType="Schema" ID="2253c913-cccc-418f-a7c4-d42887bbac0c" SourceId="1" SourceUrl="http://dkrdstowerdp01/Cir.Sync.Services/SyncService.svc?xsd=xsd7" />
+    <MetadataFile FileName="SyncService98.xsd" MetadataType="Schema" ID="912b0919-aabc-4f17-9e09-8d87b6b448a0" SourceId="1" SourceUrl="http://dkrdstowerdp01/Cir.Sync.Services/SyncService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SyncService1.disco" MetadataType="Disco" ID="cfc4e66c-3a78-492b-9ed0-495feeb02cfa" SourceId="1" SourceUrl="http://dkrdstowerdp01/Cir.Sync.Services/SyncService.svc?disco" />
+    <MetadataFile FileName="SyncService99.xsd" MetadataType="Schema" ID="aa421d1d-005f-452b-bda6-7530f5276675" SourceId="1" SourceUrl="http://dkrdstowerdp01/Cir.Sync.Services/SyncService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SyncService21.wsdl" MetadataType="Wsdl" ID="09e43449-43e6-47d6-a39a-8daeb1f5c218" SourceId="1" SourceUrl="http://dkrdstowerdp01/Cir.Sync.Services/SyncService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,16 @@
+SOURCES=AssemblyInfoMSDotNet20.cs DynamicQueryEngine.cs OracleSpecificCreator.cs
+
+REFERENCES=SD.LLBLGen.Pro.ORMSupportClasses.NET20.dll,System.Data.OracleClient.dll
+REFDIR=..\ORMSupportClasses\DotNET2.0\bin\
+
+REFERENCESDEBUG=SD.LLBLGen.Pro.ORMSupportClasses.dll,System.Data.OracleClient.dll
+REFDIRDEBUG=..\ORMSupportClasses\bin\debug\
+
+all : $(SOURCES)
+	csc /t:library /out:DotNET2.0\bin\SD.LLBLGen.Pro.DQE.OracleMS.NET20.dll /doc:DotNET2.0\bin\SD.LLBLGen.Pro.DQE.OracleMS.NET20.xml /o /d:MS,TRACE /lib:$(REFDIR) /r:$(REFERENCES) $(SOURCES)
+
+debug : $(SOURCES)
+	csc /t:library /debug /out:DotNET2.0\bin\SD.LLBLGen.Pro.DQE.OracleMS.NET20.dll /d:MS,TRACE,DEBUG /lib:$(REFDIRDEBUG) /r:$(REFERENCESDEBUG) $(SOURCES)
+
+clean:
+	del /Q DotNET2.0\bin\SD.LLBLGen.Pro.DQE.OracleMS.NET20.*

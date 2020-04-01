@@ -1,0 +1,28 @@
+<div class="slider-wrapper form-group">
+    <label class="slider-label control-label" ng-class="{'field-required': isRequired(component)}" ng-if="$ctrl.showLabel">{{ $ctrl.component.label }}</label>
+    <div class="slider-buttons">
+        <div class="custom-slider">
+            <div class="line"></div>
+
+            <div class="radio-wrapper" ng-repeat="n in [0,1,2,3,4,5]">
+                <label>
+                    <input name="{{ $ctrl.component.key }}"
+                           class="slider-radio item{{n}}"
+                           ng-model="$ctrl.value"
+                           ng-change="$ctrl.onCheck(n)" type="radio"
+                           ng-checked="n == $ctrl.value || n==$ctrl.data[$ctrl.component.key]"
+                           ng-required="isRequired($ctrl.component)" value="{{n}}"
+                           ng-disabled="$ctrl.component.disabled">
+                    <div class="stack" style="display:table;">
+                        <div class="pin item{{n}}">
+                            <div class="text-rotation">
+                                <span>{{n}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>

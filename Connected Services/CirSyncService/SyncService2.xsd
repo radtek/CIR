@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dkrdstowerdp01/Cir.Sync.Services/SyncService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.CIR" />
+  <xs:import schemaLocation="http://dkrdstowerdp01/Cir.Sync.Services/SyncService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="Manufacturer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Contact" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="ManufacturerType" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="To" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Manufacturer" nillable="true" type="tns:Manufacturer" />
+  <xs:complexType name="ManufacturerList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ManufacturerType" type="xs:int" />
+      <xs:element minOccurs="0" name="Manufacturers" nillable="true" type="tns:ArrayOfManufacturer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ManufacturerList" nillable="true" type="tns:ManufacturerList" />
+  <xs:complexType name="ArrayOfManufacturer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Manufacturer" nillable="true" type="tns:Manufacturer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfManufacturer" nillable="true" type="tns:ArrayOfManufacturer" />
+  <xs:complexType name="Hotlist">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HotItemDisplay" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HotItemId" type="xs:long" />
+      <xs:element minOccurs="0" name="ManufacturerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="VestasItemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VestasItemNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Hotlist" nillable="true" type="tns:Hotlist" />
+  <xs:complexType name="ArrayOfHotlist">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Hotlist" nillable="true" type="tns:Hotlist" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHotlist" nillable="true" type="tns:ArrayOfHotlist" />
+  <xs:complexType name="CirDefectCategorization">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cirdataid" type="xs:long" />
+      <xs:element minOccurs="0" name="cirid" type="xs:long" />
+      <xs:element minOccurs="0" name="componenttype" type="xs:int" />
+      <xs:element minOccurs="0" name="filedata" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="filename" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="initials" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="path" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CirDefectCategorization" nillable="true" type="tns:CirDefectCategorization" />
+  <xs:complexType name="CirAttachments">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CirAttachmentId" type="xs:long" />
+      <xs:element minOccurs="0" name="CirId" type="xs:long" />
+      <xs:element minOccurs="0" name="Created" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Filename" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StringData" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CirAttachments" nillable="true" type="tns:CirAttachments" />
+  <xs:complexType name="ArrayOfCirAttachments">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CirAttachments" nillable="true" type="tns:CirAttachments" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCirAttachments" nillable="true" type="tns:ArrayOfCirAttachments" />
+  <xs:complexType name="ArrayOfCirMasterData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CirMasterData" nillable="true" type="tns:CirMasterData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCirMasterData" nillable="true" type="tns:ArrayOfCirMasterData" />
+  <xs:complexType name="CirMasterData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MasterKeyValue" nillable="true" type="tns:ArrayOfMasterKeyValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CirMasterData" nillable="true" type="tns:CirMasterData" />
+  <xs:complexType name="ArrayOfMasterKeyValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MasterKeyValue" nillable="true" type="tns:MasterKeyValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMasterKeyValue" nillable="true" type="tns:ArrayOfMasterKeyValue" />
+  <xs:complexType name="MasterKeyValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="keyType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MasterKeyValue" nillable="true" type="tns:MasterKeyValue" />
+  <xs:complexType name="ArrayOfCirMasterTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CirMasterTable" nillable="true" type="tns:CirMasterTable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCirMasterTable" nillable="true" type="tns:ArrayOfCirMasterTable" />
+  <xs:complexType name="CirMasterTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CirMasterTable" nillable="true" type="tns:CirMasterTable" />
+  <xs:complexType name="ArrayOfCirCIMCaseTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CirCIMCaseTable" nillable="true" type="tns:CirCIMCaseTable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCirCIMCaseTable" nillable="true" type="tns:ArrayOfCirCIMCaseTable" />
+  <xs:complexType name="CirCIMCaseTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="desc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="label" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="value" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CirCIMCaseTable" nillable="true" type="tns:CirCIMCaseTable" />
+  <xs:complexType name="SearchAttributes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrentPageNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="RecordsPerPage" type="xs:int" />
+      <xs:element minOccurs="0" name="SortColumnIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="SortDirection" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalRecordCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchAttributes" nillable="true" type="tns:SearchAttributes" />
+  <xs:complexType name="ArrayOfComponentInspectionReportType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ComponentInspectionReportType" nillable="true" type="tns:ComponentInspectionReportType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComponentInspectionReportType" nillable="true" type="tns:ArrayOfComponentInspectionReportType" />
+  <xs:complexType name="ComponentInspectionReportType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComponentInspectionReportType" nillable="true" type="tns:ComponentInspectionReportType" />
+  <xs:complexType name="ArrayOfStandardTexts">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StandardTexts" nillable="true" type="tns:StandardTexts" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStandardTexts" nillable="true" type="tns:ArrayOfStandardTexts" />
+  <xs:complexType name="StandardTexts">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CallFunction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ComponentInspectionReportTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Created" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Modified" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StatusMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StandardTexts" nillable="true" type="tns:StandardTexts" />
+  <xs:complexType name="Bir">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BirCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BirDataID" type="xs:long" />
+      <xs:element minOccurs="0" name="BladeSerialNos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CirIDs" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.CIR" minOccurs="0" name="ComponentInspectionReport" nillable="true" type="q1:ComponentInspectionReport" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.CIR" minOccurs="0" name="ComponentInspectionReportDetails" nillable="true" type="q2:ArrayOfComponentInspectionReport" />
+      <xs:element minOccurs="0" name="ConclusionsAndRecommendations" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Created" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:BirFile" />
+      <xs:element minOccurs="0" name="Modified" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RawMaterials" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RepairingSolutions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RevisionNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="Search" nillable="true" type="tns:SearchAttributes" />
+      <xs:element minOccurs="0" name="TurbineID" type="xs:long" />
+      <xs:element minOccurs="0" name="strCreated" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Bir" nillable="true" type="tns:Bir" />
+  <xs:complexType name="BirFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DownloadUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileBytes" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BirFile" nillable="true" type="tns:BirFile" />
+  <xs:complexType name="ArrayOfBir">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Bir" nillable="true" type="tns:Bir" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBir" nillable="true" type="tns:ArrayOfBir" />
+  <xs:complexType name="Gir">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnalysisOfMeasurments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AnalysisOfPicture" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CirIDs" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClassificationOfDamage" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.CIR" minOccurs="0" name="ComponentInspectionReport" nillable="true" type="q3:ComponentInspectionReport" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.CIR" minOccurs="0" name="ComponentInspectionReportDetails" nillable="true" type="q4:ArrayOfComponentInspectionReport" />
+      <xs:element minOccurs="0" name="ConclusionsAndRecommendations" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Created" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:GirFile" />
+      <xs:element minOccurs="0" name="GeneralSerialNos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GirCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GirDataID" type="xs:long" />
+      <xs:element minOccurs="0" name="Modified" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RevisionNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="Search" nillable="true" type="tns:SearchAttributes" />
+      <xs:element minOccurs="0" name="TurbineID" type="xs:long" />
+      <xs:element minOccurs="0" name="strCreated" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Gir" nillable="true" type="tns:Gir" />
+  <xs:complexType name="GirFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DownloadUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileBytes" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GirFile" nillable="true" type="tns:GirFile" />
+  <xs:complexType name="ArrayOfGir">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Gir" nillable="true" type="tns:Gir" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGir" nillable="true" type="tns:ArrayOfGir" />
+  <xs:complexType name="Gbx">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Analysis" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CMSAnalysis" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CirIDs" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.CIR" minOccurs="0" name="ComponentInspectionReport" nillable="true" type="q5:ComponentInspectionReport" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.CIR" minOccurs="0" name="ComponentInspectionReportDetails" nillable="true" type="q6:ArrayOfComponentInspectionReport" />
+      <xs:element minOccurs="0" name="ConclusionsAndRecommendations" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Created" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:GbxFile" />
+      <xs:element minOccurs="0" name="GbxCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GbxDataID" type="xs:long" />
+      <xs:element minOccurs="0" name="GearboxSerialNos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Modified" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OilAnalysis" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RevisionNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="Search" nillable="true" type="tns:SearchAttributes" />
+      <xs:element minOccurs="0" name="TurbineID" type="xs:long" />
+      <xs:element minOccurs="0" name="strCreated" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Gbx" nillable="true" type="tns:Gbx" />
+  <xs:complexType name="GbxFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DownloadUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileBytes" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GbxFile" nillable="true" type="tns:GbxFile" />
+  <xs:complexType name="ArrayOfGbx">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Gbx" nillable="true" type="tns:Gbx" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGbx" nillable="true" type="tns:ArrayOfGbx" />
+  <xs:complexType name="LogList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrentPageNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="Data" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LogFromDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LogToDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordsPerPage" type="xs:int" />
+      <xs:element minOccurs="0" name="SortColumnIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="SortDirection" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalRecordCount" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LogList" nillable="true" type="tns:LogList" />
+  <xs:complexType name="ArrayOfFeedbackType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FeedbackType" nillable="true" type="tns:FeedbackType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFeedbackType" nillable="true" type="tns:ArrayOfFeedbackType" />
+  <xs:complexType name="FeedbackType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FeedbackType" nillable="true" type="tns:FeedbackType" />
+  <xs:complexType name="Feedback">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Created" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Enviroment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FeedbackType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FeedbackTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Modified" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Feedback" nillable="true" type="tns:Feedback" />
+  <xs:complexType name="ArrayOfFeedback">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Feedback" nillable="true" type="tns:Feedback" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFeedback" nillable="true" type="tns:ArrayOfFeedback" />
+  <xs:complexType name="ArrayOfSeverity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Severity" nillable="true" type="tns:Severity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSeverity" nillable="true" type="tns:ArrayOfSeverity" />
+  <xs:complexType name="Severity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Severity" nillable="true" type="tns:Severity" />
+  <xs:complexType name="ArrayOfServiceInformations">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiceInformations" nillable="true" type="tns:ServiceInformations" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServiceInformations" nillable="true" type="tns:ArrayOfServiceInformations" />
+  <xs:complexType name="ServiceInformations">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Created" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="IsExpired" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Modified" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SeverityId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SeverityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StrFromDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StrToDate" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceInformations" nillable="true" type="tns:ServiceInformations" />
+  <xs:complexType name="ArrayOfCirViewData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CirViewData" nillable="true" type="tns:CirViewData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCirViewData" nillable="true" type="tns:ArrayOfCirViewData" />
+  <xs:complexType name="CirViewData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Created" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FieldMapping" nillable="true" type="tns:ArrayOfFieldItem" />
+      <xs:element minOccurs="0" name="Fields" nillable="true" type="tns:CirViewFields" />
+      <xs:element minOccurs="0" name="Filter" nillable="true" type="tns:ViewFilter" />
+      <xs:element minOccurs="0" name="GBXInspectionApplicable" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GeneralInspectionApplicable" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="InspectionApplicable" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QuickFilter" nillable="true" type="tns:ViewQuickFilter" />
+      <xs:element minOccurs="0" name="QuickFilterId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QuickFilterList" nillable="true" type="tns:ArrayOfViewQuickFilter" />
+      <xs:element minOccurs="0" name="ResultsPerPage" type="xs:int" />
+      <xs:element minOccurs="0" name="Sort" nillable="true" type="tns:ViewSorter" />
+      <xs:element minOccurs="0" name="Type" type="tns:CirViewData.ViewType" />
+      <xs:element minOccurs="0" name="ViewDetailList" nillable="true" type="tns:ArrayOfCirViewDDList" />
+      <xs:element minOccurs="0" name="ViewId" type="xs:int" />
+      <xs:element minOccurs="0" name="error" type="xs:int" />
+      <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CirViewData" nillable="true" type="tns:CirViewData" />
+  <xs:complexType name="ArrayOfFieldItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FieldItem" nillable="true" type="tns:FieldItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFieldItem" nillable="true" type="tns:ArrayOfFieldItem" />
+  <xs:complexType name="FieldItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ColumnDisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColumnName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FieldItem" nillable="true" type="tns:FieldItem" />
+  <xs:complexType name="CirViewFields">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FieldItems" nillable="true" type="tns:ArrayOfFieldItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CirViewFields" nillable="true" type="tns:CirViewFields" />
+  <xs:complexType name="ViewFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FilterItems" nillable="true" type="tns:ArrayOfViewFilterItem" />
+      <xs:element minOccurs="0" name="MatchAll" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewFilter" nillable="true" type="tns:ViewFilter" />
+  <xs:complexType name="ArrayOfViewFilterItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ViewFilterItem" nillable="true" type="tns:ViewFilterItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfViewFilterItem" nillable="true" type="tns:ArrayOfViewFilterItem" />
+  <xs:complexType name="ViewFilterItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FieldItem" nillable="true" type="tns:FieldItem" />
+      <xs:element minOccurs="0" name="Match" type="tns:ViewFilter.MatchType" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewFilterItem" nillable="true" type="tns:ViewFilterItem" />
+  <xs:simpleType name="ViewFilter.MatchType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Equal">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NotEqual">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="In">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NotIn">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Contains">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ViewFilter.MatchType" nillable="true" type="tns:ViewFilter.MatchType" />
+  <xs:complexType name="ViewQuickFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FieldItem" nillable="true" type="tns:FieldItem" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewQuickFilter" nillable="true" type="tns:ViewQuickFilter" />
+  <xs:complexType name="ArrayOfViewQuickFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ViewQuickFilter" nillable="true" type="tns:ViewQuickFilter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfViewQuickFilter" nillable="true" type="tns:ArrayOfViewQuickFilter" />
+  <xs:complexType name="ViewSorter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ascending" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FieldItem" nillable="true" type="tns:FieldItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewSorter" nillable="true" type="tns:ViewSorter" />
+  <xs:simpleType name="CirViewData.ViewType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Public">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Private">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="System">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MigrationError">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CirViewData.ViewType" nillable="true" type="tns:CirViewData.ViewType" />
+  <xs:complexType name="ArrayOfCirViewDDList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CirViewDDList" nillable="true" type="tns:CirViewDDList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCirViewDDList" nillable="true" type="tns:ArrayOfCirViewDDList" />
+  <xs:complexType name="CirViewDDList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GBXInspectionApplicable" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GeneralInspectionApplicable" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="InspectionAvailable" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ViewId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CirViewDDList" nillable="true" type="tns:CirViewDDList" />
+  <xs:complexType name="CIRList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CimCase" type="xs:long" />
+      <xs:element minOccurs="0" name="CirId" type="xs:long" />
+      <xs:element minOccurs="0" name="CirName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ComponentType" type="xs:long" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Created" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CurrentPageNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="Data" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Modified" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordsPerPage" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportType" type="xs:long" />
+      <xs:element minOccurs="0" name="RunStatus" type="xs:long" />
+      <xs:element minOccurs="0" name="SBU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiteName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SortColumnIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="SortDirection" type="xs:int" />
+      <xs:element minOccurs="0" name="State" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalRecordCount" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalRecordCountApprove" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalRecordCountReject" type="xs:int" />
+      <xs:element minOccurs="0" name="TurbineNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="TurbineType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ViewId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CIRList" nillable="true" type="tns:CIRList" />
+  <xs:complexType name="CirDataDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CIMCaseNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CirDataId" type="xs:long" />
+      <xs:element minOccurs="0" name="CirId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CirState" type="xs:int" />
+      <xs:element minOccurs="0" name="ComponentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Filename" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Locked" type="xs:int" />
+      <xs:element minOccurs="0" name="LockedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PdfDataUri" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Progress" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TurbineNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TurbineType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="modifiedBy" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CirDataDetail" nillable="true" type="tns:CirDataDetail" />
+  <xs:complexType name="CirDataActionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="error" type="xs:int" />
+      <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CirDataActionResponse" nillable="true" type="tns:CirDataActionResponse" />
+  <xs:complexType name="ArrayOfCirLogs">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CirLogs" nillable="true" type="tns:CirLogs" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCirLogs" nillable="true" type="tns:ArrayOfCirLogs" />
+  <xs:complexType name="CirLogs">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CirDataId" type="xs:long" />
+      <xs:element minOccurs="0" name="CirLogId" type="xs:long" />
+      <xs:element minOccurs="0" name="Initials" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Type" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CirLogs" nillable="true" type="tns:CirLogs" />
+  <xs:complexType name="CirDataDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CIMCaseNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="CIRstate" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="CirDataId" type="xs:long" />
+      <xs:element minOccurs="0" name="CirId" type="xs:long" />
+      <xs:element minOccurs="0" name="ComponentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Filename" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TurbineNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TurbineType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CirDataDetails" nillable="true" type="tns:CirDataDetails" />
+  <xs:complexType name="CirCommentHistorys">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CirCommentHistoryId" type="xs:long" />
+      <xs:element minOccurs="0" name="CirDataId" type="xs:long" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Initials" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" type="xs:unsignedByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CirCommentHistorys" nillable="true" type="tns:CirCommentHistorys" />
+  <xs:complexType name="ArrayOfCirCommentHistorys">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CirCommentHistorys" nillable="true" type="tns:CirCommentHistorys" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCirCommentHistorys" nillable="true" type="tns:ArrayOfCirCommentHistorys" />
+  <xs:complexType name="ArrayOfCirRevision">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CirRevision" nillable="true" type="tns:CirRevision" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCirRevision" nillable="true" type="tns:ArrayOfCirRevision" />
+  <xs:complexType name="CirRevision">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CirDataId" type="xs:long" />
+      <xs:element minOccurs="0" name="CirId" type="xs:long" />
+      <xs:element minOccurs="0" name="EditedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EditedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TemplatedRevisionId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CirRevision" nillable="true" type="tns:CirRevision" />
+</xs:schema>

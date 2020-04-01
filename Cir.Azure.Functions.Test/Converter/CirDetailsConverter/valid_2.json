@@ -1,0 +1,71 @@
+﻿{
+  "cirSubmissionData": {
+    "cirId": 4567,
+    "id": "id_2",
+    "state": "state_2",
+    "imageReferences": [
+      {
+        "imageId": "imageId_1",
+        "url": "url_1"
+      },
+      {
+        "imageId": "imageId_2",
+        "url": "url_2"
+      },
+      {
+        "imageId": "imageId_3",
+        "url": "url_3"
+      }
+    ],
+    "data": {
+      "txtTurbineNumber": 55,
+      "txtLocalturbineId": "txtLocalturbineId_2",
+      "ddlBladeLength": "25",
+      "txtBladeSerialNumber": "txtBladeSerialNumber_2",
+      "dtCommissioningdate": "dtCommissioningdate_2",
+      "dtInspectionDate": "dtInspectionDate_2",
+      "txtMKversion": "txtMKversion_2",
+      "txtSBURecommendation": "txtSBURecommendation_2",
+      "imagecomponentKey": {
+        "uploadedImagesCache": [
+          {
+            "imageId": "imageId_1",
+            "damageSeverity": 1
+          },
+          {
+            "imageId": "imageId_2",
+            "damageSeverity": 2
+          },
+          {
+            "imageId": "imageId_3",
+            "damageSeverity": 3
+          }
+        ],
+        "sections": {
+          "section1": {
+            "side": "side_1",
+            "images": [
+              {
+                "imageId": "imageId_1",
+                "number": 1
+              },
+              {
+                "imageId": "imageId_2",
+                "number": 2
+              }
+            ]
+          },
+          "section12": {
+            "side": "side_2",
+            "images": [
+              {
+                "imageId": "imageId_3",
+                "number": 1
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

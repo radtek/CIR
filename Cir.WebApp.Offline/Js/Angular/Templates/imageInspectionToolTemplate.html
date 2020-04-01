@@ -1,0 +1,549 @@
+﻿<div id="tool-tpl" class="inspection-tool-renderer" style="background-color:white;margin-top:20px; ">
+    <span ng-show="!$ctrl.hasTemplate">This control doesn't have any preview.</span>
+    <div class="alert alert-danger" ng-show="!$ctrl.validator.validations.allAssigned">There are some unassigned images. Please assign, or remove them.</div>
+    <div class="alert alert-danger" ng-show="!$ctrl.validator.validations.allSaved">Please save the unsaved images.</div>
+    <div class="alert alert-danger" ng-show="!$ctrl.validator.validations.hasPlate || !$ctrl.validator.validations.hasReason">Plate image is required. If you don't have a plate image, please provide a reason.</div>
+    <div ng-show="$ctrl.hasTemplate">
+        <div class="inspection-tool">
+            <div class="row">
+                <div class="col-lg-6">
+                    <label class="control-label">{{ $ctrl.component.leftLabel }}</label>
+                    <div class="pull-right">
+                        <i class="glyphicon glyphicon-trash" ng-click="$ctrl.removeSelected()"></i>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <label class="control-label">{{ $ctrl.component.rightLabel }}</label>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-lg-6">
+                    <div class="files-area-container" droppable-file-area>
+                        <div ng-show="!$ctrl.images.length">
+                            <div class="title">Drag & drop or</div>
+                            <div class="button">
+                                <input id="choose-images" type="file" accept="{{$ctrl.imageTypes}}" on-file-change="$ctrl.onFilesSelected()" multiple />
+                                <button class="btn select-files-button" ng-click="$ctrl.redirectToFilePicker($event)">SELECT FILES</button>
+                            </div>
+                        </div>
+                        <div ng-show="$ctrl.images.length">
+                            <div ng-click="$ctrl.toggleUnassignedImgs()" class="assigned-unassigned-toggle">
+                                <img ng-if="$ctrl.unassignedImgsVisible" src="../../../Images/dropdown-arrow-expanded.png" />
+                                <img ng-if="!$ctrl.unassignedImgsVisible" src="../../../Images/dropdown-arrow-collapsed.png" />
+                                <span>UNASSIGNED</span>
+                            </div>
+                            <div ng-show="$ctrl.unassignedImgsVisible" class="images-section" id="unassigned">
+                                <div class="uploaded-image-wrapper"
+                                     ng-repeat="image in $ctrl.images track by $index"
+                                     ng-class="{ 'active': image.checked }"
+                                     ng-if="image.region === -1 && image.imageId !== $ctrl.plateImageId">
+                                    <div class="uploaded-image severity-{{ image.damageSeverity === -1 ? 0 : image.damageSeverity }}">
+                                        <div class="triangle"></div>
+                                        <img ng-src="{{ image.src }}"
+                                             ng-style="$ctrl.cursorStyle"
+                                             ng-mouseenter="$ctrl.onCursorImageEnter(image)"
+                                             ng-mouseleave="$ctrl.onCursorImageLeave()"
+                                             data-id="{{ image.imageId }}" ng-click="$ctrl.openImagePreview($event,image.imageId)"
+                                             draggable-element />
+                                        <div class="checkbox">
+                                            <label style="font-size: .8em">
+                                                <input type="checkbox" value="" ng-click="$ctrl.toggleImageChecked($event, image.imageId)" ng-checked="image.checked" />
+                                                <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                                &nbsp;
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <span class="title big">{{ image.imageName }}</span>
+                                    <span class="title">{{ image.uploadedAt }}</span>
+                                </div>
+                                <div class="uploaded-image-wrapper add-button-wrap" ng-show="$ctrl.images.length">
+                                    <a class="material-button add-button blue" ng-click="$ctrl.redirectToFilePicker($event)"></a>
+                                </div>
+                            </div>
+                            <div ng-click="$ctrl.toggleAssignedImgs()" class="assigned-unassigned-toggle">
+                                <img ng-if="$ctrl.assignedImgsVisible" src="../../../Images/dropdown-arrow-expanded.png" />
+                                <img ng-if="!$ctrl.assignedImgsVisible" src="../../../Images/dropdown-arrow-collapsed.png" />
+                                <span>ASSIGNED</span>
+                            </div>
+                            <div ng-show="$ctrl.assignedImgsVisible" id="sectionTree"  class="images-section">
+                                <div ng-click="$ctrl.toggleAssignedSections($event)" id="RootTE" style="margin-left:15px;" class="assigned-unassigned-toggle">
+                                    <img ng-if="$ctrl.assignedRootTEImgsVisible" src="../../../Images/dropdown-arrow-expanded.png" />
+                                    <img ng-if="!$ctrl.assignedRootTEImgsVisible" src="../../../Images/dropdown-arrow-collapsed.png" />
+                                    <span>Root - TE</span>
+                                </div>
+                                <div ng-show="$ctrl.assignedRootTEImgsVisible" id="region1" sortable-container="[$ctrl.images]" class="images-section">
+                                    <div class="uploaded-image-wrapper ImageThumbBlade csr-grab  ui-sortable"
+                                         ng-repeat="image in $ctrl.images"
+                                         ng-class="{ 'active': image.checked }"
+                                         ng-if="image.region == 1">
+                                        <!--ng-if="image.region > -1 || image.imageId === $ctrl.plateImageId">-->
+                                        <div class="uploaded-image severity-{{ image.damageSeverity }}">
+                                            <div class="triangle"></div>
+                                            <img ng-src="{{ image.src }}"
+                                                 ng-style="$ctrl.cursorStyle"
+                                                 ng-mouseenter="$ctrl.onCursorImageEnter(image)"
+                                                 ng-mouseleave="$ctrl.onCursorImageLeave()"
+                                                 data-id="{{ image.imageId }}" ng-click="$ctrl.openImagePreview($event,image.imageId)"
+                                                 draggable-element />
+                                            <div class="checkbox">                                                   
+                                                <label style="font-size: .8em">
+                                                    <input type="checkbox" value="" ng-click="$ctrl.toggleImageChecked($event, image.imageId)" ng-checked="image.checked" />
+                                                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                                    &nbsp;
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="ImageNameplus">
+                                            <span class="title big Imagenumberclass">{{ image.imageSectionOrder }}.</span>
+                                            <span class="title big ImageNameclass">{{ image.imageName }}</span>
+                                        </div>
+                                        <span class="title">{{ image.uploadedAt }}</span>
+                                    </div>
+
+                                </div>
+
+                                <div ng-click="$ctrl.toggleAssignedSections($event)" id="RootLW" style="margin-left:15px;" class="assigned-unassigned-toggle">
+                                    <img ng-if="$ctrl.assignedRootLWImgsVisible" src="../../../Images/dropdown-arrow-expanded.png" />
+                                    <img ng-if="!$ctrl.assignedRootLWImgsVisible" src="../../../Images/dropdown-arrow-collapsed.png" />
+                                    <span>Root - LW</span>
+                                </div>
+                                <div ng-show="$ctrl.assignedRootLWImgsVisible" id="region2" sortable-container="[$ctrl.images]" class="images-section">
+                                    <div class="uploaded-image-wrapper  ImageThumbBlade csr-grab  ui-sortable"
+                                         ng-repeat="image in $ctrl.images"
+                                         ng-class="{ 'active': image.checked }"
+                                         ng-if="image.region == 2">
+                                        <!--ng-if="image.region > -1 || image.imageId === $ctrl.plateImageId">-->
+                                        <div class="uploaded-image severity-{{ image.damageSeverity }}">
+                                            <div class="triangle"></div>
+                                            <img ng-src="{{ image.src }}"
+                                                 ng-style="$ctrl.cursorStyle"
+                                                 ng-mouseenter="$ctrl.onCursorImageEnter(image)"
+                                                 ng-mouseleave="$ctrl.onCursorImageLeave()"
+                                                 data-id="{{ image.imageId }}" ng-click="$ctrl.openImagePreview($event,image.imageId)"
+                                                 draggable-element />
+                                            <div class="checkbox">
+                                                <label style="font-size: .8em">
+                                                    <input type="checkbox" value="" ng-click="$ctrl.toggleImageChecked($event, image.imageId)" ng-checked="image.checked" />
+                                                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                                    &nbsp;
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="ImageNameplus">
+                                            <span class="title big Imagenumberclass">{{ image.imageSectionOrder }}.</span>
+                                            <span class="title big ImageNameclass">{{ image.imageName }}</span>
+                                        </div>
+                                        <span class="title">{{ image.uploadedAt }}</span>
+                                    </div>
+                                </div>
+
+                                <div ng-click="$ctrl.toggleAssignedSections($event)" id="RootLE" style="margin-left:15px;" class="assigned-unassigned-toggle">
+                                    <img ng-if="$ctrl.assignedRootLEImgsVisible" src="../../../Images/dropdown-arrow-expanded.png" />
+                                    <img ng-if="!$ctrl.assignedRootLEImgsVisible" src="../../../Images/dropdown-arrow-collapsed.png" />
+                                    <span>Root - LE</span>
+                                </div>
+                                <div ng-show="$ctrl.assignedRootLEImgsVisible" id="region3" sortable-container="[$ctrl.images]" class="images-section">
+                                    <div class="uploaded-image-wrapper  ImageThumbBlade csr-grab  ui-sortable"
+                                         ng-repeat="image in $ctrl.images"
+                                         ng-class="{ 'active': image.checked }"
+                                         ng-if="image.region == 3">
+                                        <div class="uploaded-image severity-{{ image.damageSeverity }}">
+                                            <div class="triangle"></div>
+                                            <img ng-src="{{ image.src }}"
+                                                 ng-style="$ctrl.cursorStyle"
+                                                 ng-mouseenter="$ctrl.onCursorImageEnter(image)"
+                                                 ng-mouseleave="$ctrl.onCursorImageLeave()"
+                                                 data-id="{{ image.imageId }}" ng-click="$ctrl.openImagePreview($event,image.imageId)"
+                                                 draggable-element />
+                                            <div class="checkbox">
+                                                <label style="font-size: .8em">
+                                                    <input type="checkbox" value="" ng-click="$ctrl.toggleImageChecked($event, image.imageId)" ng-checked="image.checked" />
+                                                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                                    &nbsp;
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="ImageNameplus">
+                                            <span class="title big Imagenumberclass">{{ image.imageSectionOrder }}.</span>
+                                            <span class="title big ImageNameclass">{{ image.imageName }}</span>
+                                        </div>
+                                        <span class="title">{{ image.uploadedAt }}</span>
+                                    </div>
+                                </div>
+
+                                <div ng-click="$ctrl.toggleAssignedSections($event)" id="RootWW" style="margin-left:15px;" class="assigned-unassigned-toggle">
+                                    <img ng-if="$ctrl.assignedRootWWImgsVisible" src="../../../Images/dropdown-arrow-expanded.png" />
+                                    <img ng-if="!$ctrl.assignedRootWWImgsVisible" src="../../../Images/dropdown-arrow-collapsed.png" />
+                                    <span>Root - WW</span>
+                                </div>
+                                <div ng-show="$ctrl.assignedRootWWImgsVisible" id="region4" sortable-container="[$ctrl.images]" class="images-section">
+                                    <div class="uploaded-image-wrapper  ImageThumbBlade csr-grab  ui-sortable"
+                                         ng-repeat="image in $ctrl.images"
+                                         ng-class="{ 'active': image.checked }"
+                                         ng-if="image.region == 4">
+                                        <div class="uploaded-image severity-{{ image.damageSeverity }}">
+                                            <div class="triangle"></div>
+                                            <img ng-src="{{ image.src }}"
+                                                 ng-style="$ctrl.cursorStyle"
+                                                 ng-mouseenter="$ctrl.onCursorImageEnter(image)"
+                                                 ng-mouseleave="$ctrl.onCursorImageLeave()"
+                                                 data-id="{{ image.imageId }}" ng-click="$ctrl.openImagePreview($event,image.imageId)"
+                                                 draggable-element />
+                                            <div class="checkbox">
+                                                <label style="font-size: .8em">
+                                                    <input type="checkbox" value="" ng-click="$ctrl.toggleImageChecked($event, image.imageId)" ng-checked="image.checked" />
+                                                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                                    &nbsp;
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="ImageNameplus">
+                                            <span class="title big Imagenumberclass">{{ image.imageSectionOrder }}.</span>
+                                            <span class="title big ImageNameclass">{{ image.imageName }}</span>
+                                        </div>
+                                        <span class="title">{{ image.uploadedAt }}</span>
+                                    </div>
+                                </div>
+
+                                <div ng-click="$ctrl.toggleAssignedSections($event)" id="MidTE" style="margin-left:15px;" class="assigned-unassigned-toggle">
+                                    <img ng-if="$ctrl.assignedMidTEImgsVisible" src="../../../Images/dropdown-arrow-expanded.png" />
+                                    <img ng-if="!$ctrl.assignedMidTEImgsVisible" src="../../../Images/dropdown-arrow-collapsed.png" />
+                                    <span>Mid - TE</span>
+                                </div>
+                                <div ng-show="$ctrl.assignedMidTEImgsVisible" id="region5" sortable-container="[$ctrl.images]" class="images-section">
+                                    <div class="uploaded-image-wrapper  ImageThumbBlade csr-grab  ui-sortable"
+                                         ng-repeat="image in $ctrl.images"
+                                         ng-class="{ 'active': image.checked }"
+                                         ng-if="image.region == 5">
+                                        <div class="uploaded-image severity-{{ image.damageSeverity }}">
+                                            <div class="triangle"></div>
+                                            <img ng-src="{{ image.src }}"
+                                                 ng-style="$ctrl.cursorStyle"
+                                                 ng-mouseenter="$ctrl.onCursorImageEnter(image)"
+                                                 ng-mouseleave="$ctrl.onCursorImageLeave()"
+                                                 data-id="{{ image.imageId }}" ng-click="$ctrl.openImagePreview($event,image.imageId)"
+                                                 draggable-element />
+                                            <div class="checkbox">
+                                                <label style="font-size: .8em">
+                                                    <input type="checkbox" value="" ng-click="$ctrl.toggleImageChecked($event, image.imageId)" ng-checked="image.checked" />
+                                                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                                    &nbsp;
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="ImageNameplus">
+                                            <span class="title big Imagenumberclass">{{ image.imageSectionOrder }}.</span>
+                                            <span class="title big ImageNameclass">{{ image.imageName }}</span>
+                                        </div>
+                                        <span class="title">{{ image.uploadedAt }}</span>
+                                    </div>
+                                </div>
+
+                                <div ng-click="$ctrl.toggleAssignedSections($event)" id="MidLW" style="margin-left:15px;" class="assigned-unassigned-toggle">
+                                    <img ng-if="$ctrl.assignedMidLWImgsVisible" src="../../../Images/dropdown-arrow-expanded.png" />
+                                    <img ng-if="!$ctrl.assignedMidLWImgsVisible" src="../../../Images/dropdown-arrow-collapsed.png" />
+                                    <span>Mid - LW</span>
+                                </div>
+                                <div ng-show="$ctrl.assignedMidLWImgsVisible" id="region6" sortable-container="[$ctrl.images]" class="images-section">
+                                    <div class="uploaded-image-wrapper  ImageThumbBlade csr-grab  ui-sortable"
+                                         ng-repeat="image in $ctrl.images"
+                                         ng-class="{ 'active': image.checked }"
+                                         ng-if="image.region == 6">
+                                        <div class="uploaded-image severity-{{ image.damageSeverity }}">
+                                            <div class="triangle"></div>
+                                            <img ng-src="{{ image.src }}"
+                                                 ng-style="$ctrl.cursorStyle"
+                                                 ng-mouseenter="$ctrl.onCursorImageEnter(image)"
+                                                 ng-mouseleave="$ctrl.onCursorImageLeave()"
+                                                 data-id="{{ image.imageId }}" ng-click="$ctrl.openImagePreview($event,image.imageId)"
+                                                 draggable-element />
+                                            <div class="checkbox">
+                                                <label style="font-size: .8em">
+                                                    <input type="checkbox" value="" ng-click="$ctrl.toggleImageChecked($event, image.imageId)" ng-checked="image.checked" />
+                                                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                                    &nbsp;
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="ImageNameplus">
+                                            <span class="title big Imagenumberclass">{{ image.imageSectionOrder }}.</span>
+                                            <span class="title big ImageNameclass">{{ image.imageName }}</span>
+                                        </div>
+                                        <span class="title">{{ image.uploadedAt }}</span>
+                                    </div>
+                                </div>
+
+                                <div ng-click="$ctrl.toggleAssignedSections($event)" id="MidLE" style="margin-left:15px;" class="assigned-unassigned-toggle">
+                                    <img ng-if="$ctrl.assignedMidLEImgsVisible" src="../../../Images/dropdown-arrow-expanded.png" />
+                                    <img ng-if="!$ctrl.assignedMidLEImgsVisible" src="../../../Images/dropdown-arrow-collapsed.png" />
+                                    <span>Mid - LE</span>
+                                </div>
+                                <div ng-show="$ctrl.assignedMidLEImgsVisible" id="region7" sortable-container="[$ctrl.images]" class="images-section">
+                                    <div class="uploaded-image-wrapper  ImageThumbBlade csr-grab  ui-sortable"
+                                         ng-repeat="image in $ctrl.images"
+                                         ng-class="{ 'active': image.checked }"
+                                         ng-if="image.region == 7">
+                                        <div class="uploaded-image severity-{{ image.damageSeverity }}">
+                                            <div class="triangle"></div>
+                                            <img ng-src="{{ image.src }}"
+                                                 ng-style="$ctrl.cursorStyle"
+                                                 ng-mouseenter="$ctrl.onCursorImageEnter(image)"
+                                                 ng-mouseleave="$ctrl.onCursorImageLeave()"
+                                                 data-id="{{ image.imageId }}" ng-click="$ctrl.openImagePreview($event,image.imageId)"
+                                                 draggable-element />
+                                            <div class="checkbox">
+                                                <label style="font-size: .8em">
+                                                    <input type="checkbox" value="" ng-click="$ctrl.toggleImageChecked($event, image.imageId)" ng-checked="image.checked" />
+                                                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                                    &nbsp;
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="ImageNameplus">
+                                            <span class="title big Imagenumberclass">{{ image.imageSectionOrder }}.</span>
+                                            <span class="title big ImageNameclass">{{ image.imageName }}</span>
+                                        </div>
+                                        <span class="title">{{ image.uploadedAt }}</span>
+                                    </div>
+                                </div>
+
+                                <div ng-click="$ctrl.toggleAssignedSections($event)" id="MidWW" style="margin-left:15px;" class="assigned-unassigned-toggle">
+                                    <img ng-if="$ctrl.assignedMidWWImgsVisible" src="../../../Images/dropdown-arrow-expanded.png" />
+                                    <img ng-if="!$ctrl.assignedMidWWImgsVisible" src="../../../Images/dropdown-arrow-collapsed.png" />
+                                    <span>Mid - WW</span>
+                                </div>
+                                <div ng-show="$ctrl.assignedMidWWImgsVisible" id="region8" sortable-container="[$ctrl.images]" class="images-section">
+                                    <div class="uploaded-image-wrapper  ImageThumbBlade csr-grab  ui-sortable"
+                                         ng-repeat="image in $ctrl.images"
+                                         ng-class="{ 'active': image.checked }"
+                                         ng-if="image.region == 8">
+                                        <div class="uploaded-image severity-{{ image.damageSeverity }}">
+                                            <div class="triangle"></div>
+                                            <img ng-src="{{ image.src }}"
+                                                 ng-style="$ctrl.cursorStyle"
+                                                 ng-mouseenter="$ctrl.onCursorImageEnter(image)"
+                                                 ng-mouseleave="$ctrl.onCursorImageLeave()"
+                                                 data-id="{{ image.imageId }}" ng-click="$ctrl.openImagePreview($event,image.imageId)"
+                                                 draggable-element />
+                                            <div class="checkbox">
+                                                <label style="font-size: .8em">
+                                                    <input type="checkbox" value="" ng-click="$ctrl.toggleImageChecked($event, image.imageId)" ng-checked="image.checked" />
+                                                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                                    &nbsp;
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="ImageNameplus">
+                                            <span class="title big Imagenumberclass">{{ image.imageSectionOrder }}.</span>
+                                            <span class="title big ImageNameclass">{{ image.imageName }}</span>
+                                        </div>
+                                        <span class="title">{{ image.uploadedAt }}</span>
+                                    </div>
+                                </div>
+
+                                <div ng-click="$ctrl.toggleAssignedSections($event)" id="TipTE" style="margin-left:15px;" class="assigned-unassigned-toggle">
+                                    <img ng-if="$ctrl.assignedTipTEImgsVisible" src="../../../Images/dropdown-arrow-expanded.png" />
+                                    <img ng-if="!$ctrl.assignedTipTEImgsVisible" src="../../../Images/dropdown-arrow-collapsed.png" />
+                                    <span>Tip - TE</span>
+                                </div>
+                                <div ng-show="$ctrl.assignedTipTEImgsVisible" id="region9" sortable-container="[$ctrl.images]" class="images-section">
+                                    <div class="uploaded-image-wrapper  ImageThumbBlade csr-grab  ui-sortable"
+                                         ng-repeat="image in $ctrl.images"
+                                         ng-class="{ 'active': image.checked }"
+                                         ng-if="image.region == 9">
+                                        <div class="uploaded-image severity-{{ image.damageSeverity }}">
+                                            <div class="triangle"></div>
+                                            <img ng-src="{{ image.src }}"
+                                                 ng-style="$ctrl.cursorStyle"
+                                                 ng-mouseenter="$ctrl.onCursorImageEnter(image)"
+                                                 ng-mouseleave="$ctrl.onCursorImageLeave()"
+                                                 data-id="{{ image.imageId }}" ng-click="$ctrl.openImagePreview($event,image.imageId)"
+                                                 draggable-element />
+                                            <div class="checkbox">
+                                                <label style="font-size: .8em">
+                                                    <input type="checkbox" value="" ng-click="$ctrl.toggleImageChecked($event, image.imageId)" ng-checked="image.checked" />
+                                                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                                    &nbsp;
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="ImageNameplus">
+                                            <span class="title big Imagenumberclass">{{ image.imageSectionOrder }}.</span>
+                                            <span class="title big ImageNameclass">{{ image.imageName }}</span>
+                                        </div>
+                                        <span class="title">{{ image.uploadedAt }}</span>
+                                    </div>
+                                </div>
+
+                                <div ng-click="$ctrl.toggleAssignedSections($event)" id="TipLW" style="margin-left:15px;" class="assigned-unassigned-toggle">
+                                    <img ng-if="$ctrl.assignedTipLWImgsVisible" src="../../../Images/dropdown-arrow-expanded.png" />
+                                    <img ng-if="!$ctrl.assignedTipLWImgsVisible" src="../../../Images/dropdown-arrow-collapsed.png" />
+                                    <span>Tip - LW</span>
+                                </div>
+                                <div ng-show="$ctrl.assignedTipLWImgsVisible" id="region10" sortable-container="[$ctrl.images]"  class="images-section">
+                                    <div class="uploaded-image-wrapper  ImageThumbBlade csr-grab  ui-sortable"
+                                         ng-repeat="image in $ctrl.images"
+                                         ng-class="{ 'active': image.checked }"
+                                         ng-if="image.region == 10">
+                                        <div class="uploaded-image severity-{{ image.damageSeverity }}">
+                                            <div class="triangle"></div>
+                                            <img ng-src="{{ image.src }}"
+                                                 ng-style="$ctrl.cursorStyle"
+                                                 ng-mouseenter="$ctrl.onCursorImageEnter(image)"
+                                                 ng-mouseleave="$ctrl.onCursorImageLeave()"
+                                                 data-id="{{ image.imageId }}" ng-click="$ctrl.openImagePreview($event,image.imageId)"
+                                                 draggable-element />
+                                            <div class="checkbox">
+                                                <label style="font-size: .8em">
+                                                    <input type="checkbox" value="" ng-click="$ctrl.toggleImageChecked($event, image.imageId)" ng-checked="image.checked" />
+                                                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                                    &nbsp;
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="ImageNameplus">
+                                            <span class="title big Imagenumberclass">{{ image.imageSectionOrder }}.</span>
+                                            <span class="title big ImageNameclass">{{ image.imageName }}</span>
+                                        </div>
+                                        <span class="title">{{ image.uploadedAt }}</span>
+                                    </div>
+                                </div>
+
+                                <div ng-click="$ctrl.toggleAssignedSections($event)" id="TipLE" style="margin-left:15px;" class="assigned-unassigned-toggle">
+                                    <img ng-if="$ctrl.assignedTipLEImgsVisible" src="../../../Images/dropdown-arrow-expanded.png" />
+                                    <img ng-if="!$ctrl.assignedTipLEImgsVisible" src="../../../Images/dropdown-arrow-collapsed.png" />
+                                    <span>Tip - LE</span>
+                                </div>
+                                <div ng-show="$ctrl.assignedTipLEImgsVisible" id="region11" sortable-container="[$ctrl.images]" class="images-section">
+                                    <div class="uploaded-image-wrapper  ImageThumbBlade csr-grab  ui-sortable"
+                                         ng-repeat="image in $ctrl.images"
+                                         ng-class="{ 'active': image.checked }"
+                                         ng-if="image.region == 11">
+                                        <div class="uploaded-image severity-{{ image.damageSeverity }}">
+                                            <div class="triangle"></div>
+                                            <img ng-src="{{ image.src }}"
+                                                 ng-style="$ctrl.cursorStyle"
+                                                 ng-mouseenter="$ctrl.onCursorImageEnter(image)"
+                                                 ng-mouseleave="$ctrl.onCursorImageLeave()"
+                                                 data-id="{{ image.imageId }}" ng-click="$ctrl.openImagePreview($event,image.imageId)"
+                                                 draggable-element />
+                                            <div class="checkbox">
+                                                <label style="font-size: .8em">
+                                                    <input type="checkbox" value="" ng-click="$ctrl.toggleImageChecked($event, image.imageId)" ng-checked="image.checked" />
+                                                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                                    &nbsp;
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="ImageNameplus">
+                                            <span class="title big Imagenumberclass">{{ image.imageSectionOrder }}.</span>
+                                            <span class="title big ImageNameclass">{{ image.imageName }}</span>
+                                        </div>
+                                        <span class="title">{{ image.uploadedAt }}</span>
+                                    </div>
+                                </div>
+
+                                <div ng-click="$ctrl.toggleAssignedSections($event)" id="TipWW" style="margin-left:15px;" class="assigned-unassigned-toggle">
+                                    <img ng-if="$ctrl.assignedTipWWImgsVisible" src="../../../Images/dropdown-arrow-expanded.png" />
+                                    <img ng-if="!$ctrl.assignedTipWWImgsVisible" src="../../../Images/dropdown-arrow-collapsed.png" />
+                                    <span>Tip - WW</span>
+                                </div>
+                                <div ng-show="$ctrl.assignedTipWWImgsVisible" id="region12" sortable-container="[$ctrl.images]" class="images-section">
+                                    <div class="uploaded-image-wrapper  ImageThumbBlade csr-grab  ui-sortable"
+                                         ng-repeat="image in $ctrl.images "
+                                         ng-class="{ 'active': image.checked }"
+                                         ng-if="image.region == 12">
+                                        <div class="uploaded-image severity-{{ image.damageSeverity }}">
+                                            <div class="triangle"></div>
+                                            <img ng-src="{{ image.src }}"
+                                                 ng-style="$ctrl.cursorStyle"
+                                                 ng-mouseenter="$ctrl.onCursorImageEnter(image)"
+                                                 ng-mouseleave="$ctrl.onCursorImageLeave()"
+                                                 data-id="{{ image.imageId }}" ng-click="$ctrl.openImagePreview($event,image.imageId)"
+                                                 draggable-element />
+                                            <div class="checkbox">
+                                                <label style="font-size: .8em">
+                                                    <input type="checkbox" value="" ng-click="$ctrl.toggleImageChecked($event, image.imageId)" ng-checked="image.checked" />
+                                                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                                    &nbsp;
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="ImageNameplus">
+                                            <span class="title big Imagenumberclass">{{ image.imageSectionOrder }}.</span>
+                                            <span class="title big ImageNameclass">{{ image.imageName }}</span>
+                                        </div>
+                                        <span class="title">{{ image.uploadedAt }}</span>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="droppable-area-container">
+                        <div class="reason" ng-show="!$ctrl.data.withPlatePicture">
+                            <ng-form name="reasonForm" novalidate>
+                                <div class="col-xs-12 form-group field-active"
+                                     ng-class="{ 'has-error': reasonForm.reason.$error.required && reasonForm.reason.$dirty }">
+                                    <label for="reason">Reason</label>
+                                    <input type="text"
+                                           id="reason"
+                                           name="reason"
+                                           class="form-control"
+                                           placeholder="Please provide a reason for the plate type picture absence."
+                                           ng-model="$ctrl.data.reason"
+                                           ng-blur="$ctrl.validateReason()"
+                                           ng-if="!$ctrl.data.withPlatePicture"
+                                           required>
+                                    <span class="text-danger ng-hide"
+                                          ng-show="reasonForm.reason.$dirty && reasonForm.reason.$error.required">Please provide a reason for the plate type picture absence.</span>
+                                </div>
+                            </ng-form>
+                        </div>
+                        <div class="plate" ng-show="$ctrl.data.withPlatePicture">
+                            <img ng-if="$ctrl.plateImage" ng-src="{{ $ctrl.plateImage }}" ng-click="$ctrl.openPreview($event)" />
+                        </div>
+                        <div class="slider-checkbox-wrapper" ng-click="$ctrl.togglePlatePicture()">
+                            <div class="slider-checkbox" ng-if="$ctrl.data.withPlatePicture">
+                                <div class="bullet"></div>
+                            </div>
+                            <div class="slider-checkbox alternate-slider" ng-if="!$ctrl.data.withPlatePicture">
+                                <div class="bullet alternate-bullet"></div>
+                            </div>
+                            <span ng-if="$ctrl.data.withPlatePicture">Plate type picture not possible</span>
+                            <span ng-if="!$ctrl.data.withPlatePicture">Plate type picture possible</span>
+                        </div>
+                        <div>
+                            <div id="canvas-wrapper">
+                                <canvas id="renderer-component-canvas"
+                                        ng-mousemove="$ctrl.highlight($event)"
+                                        ng-mouseleave="$ctrl.removeHighlighting()"
+                                        ng-click="$ctrl.openModal($event)"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal-wrapper" ng-class="{ 'open': $ctrl.modalOpenRequested }">
+    <image-edit-modal component="$ctrl.component"
+                      sides="$ctrl.sides"
+                      active="$ctrl.modalOpenRequested"
+                      activeid="$ctrl.activeImgId"
+                      colors="$ctrl.severityColors"
+                      images="$ctrl.images"
+                      onclose="$ctrl.closeModal()"
+                      onsaveimage="$ctrl.saveImage(model)"></image-edit-modal>
+</div>
+<div class="modal-wrapper" ng-class="{ 'open': $ctrl.imagePreviewOpenRequested }">
+    <image-inspection-preview active-image="$ctrl.activeImageSrc"
+                              on-close="$ctrl.closePreview()"
+                              ng-show="$ctrl.imagePreviewOpenRequested"></image-inspection-preview>
+</div>

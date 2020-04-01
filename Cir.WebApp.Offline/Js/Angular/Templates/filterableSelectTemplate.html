@@ -1,0 +1,20 @@
+﻿<div class="filterable-select">
+    <input type="text" 
+           class="form-control"
+           ng-model="$ctrl.value"
+           ng-change="$ctrl.onChangeInput()"
+           ng-click="$ctrl.toggleSelectBox()"
+           ng-keydown="$ctrl.onKeyDown($event)"
+           ng-focus="$ctrl.focus()"
+           ng-blur="$ctrl.closeSelectBox()"/>
+    <div class="arrow-wrapper" ng-class="{ 'input-focused': $ctrl.isFocused }" ng-click="$ctrl.toggleSelectBox()">
+        <i ng-class="{ 'down': !$ctrl.itemsVisible, 'up': $ctrl.itemsVisible }">
+            &diams;
+        </i>
+    </div>
+    <div class="item-list" ng-class="{ 'active-items': $ctrl.itemsVisible }">
+        <div ng-show="$ctrl.itemsVisible"
+             ng-repeat="item in $ctrl.filteredItems" 
+             ng-mousedown="$ctrl.chooseValue(item)">{{item}}</div>
+    </div>
+</div>

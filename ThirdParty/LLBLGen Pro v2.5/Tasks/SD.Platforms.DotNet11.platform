@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<platform xmlns="http://sd/llblgen/pro/platformDefinition.xsd" name =".NET 1.1">
+	<aspects>
+		<aspect name="supportsPartialClasses" value="false"/>
+	</aspects>
+</platform>

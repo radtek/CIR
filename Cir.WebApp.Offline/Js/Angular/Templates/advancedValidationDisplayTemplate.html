@@ -1,0 +1,19 @@
+﻿<div>
+    <div class="form-group">
+        <label for="validationType">Control for validation</label>
+        <select class="form-control"
+                ng-model="$ctrl.model.controlId"
+                ng-options="item for item in $ctrl.existedComponents"></select>
+    </div>
+
+    <div class="form-group">
+        <label for="validationApi">Api URL</label>
+        <input id="validationApi" ng-model="$ctrl.model.apiUrl" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="validationErrorMessage">Error Message</label>
+        <input id="validationErrorMessage" ng-model="$ctrl.model.errorMessage" class="form-control">
+    </div>
+</div>
+

@@ -1,0 +1,2458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://schemas.microsoft.com/ws/2005/02/mex/bindings" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SyncService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_ISyncService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://schemas.microsoft.com/ws/2005/02/mex/bindings" location="http://dkrdstowerdt01/Cir.Sync.Services/SyncService.svc?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://dkrdstowerdt01/Cir.Sync.Services/SyncService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://dkrdstowerdt01/Cir.Sync.Services/SyncService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://dkrdstowerdt01/Cir.Sync.Services/SyncService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.AdvanceSearch" />
+      <xsd:import schemaLocation="http://dkrdstowerdt01/Cir.Sync.Services/SyncService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.CIR" />
+      <xsd:import schemaLocation="http://dkrdstowerdt01/Cir.Sync.Services/SyncService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DataContracts" />
+      <xsd:import schemaLocation="http://dkrdstowerdt01/Cir.Sync.Services/SyncService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.Models" />
+      <xsd:import schemaLocation="http://dkrdstowerdt01/Cir.Sync.Services/SyncService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/" />
+      <xsd:import schemaLocation="http://dkrdstowerdt01/Cir.Sync.Services/SyncService.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://dkrdstowerdt01/Cir.Sync.Services/SyncService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.DAL" />
+      <xsd:import schemaLocation="http://dkrdstowerdt01/Cir.Sync.Services/SyncService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Cir.Sync.Services.ErrorHandling" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISyncService_DoAdvanceSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoAdvanceSearch" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_DoAdvanceSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoAdvanceSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_LoadProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadProfile" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_LoadProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_DeleteProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProfile" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_DeleteProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProfile" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_ValidateTurbineNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateTurbineNumber" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_ValidateTurbineNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateTurbineNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_ValidateGetTurbineData_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateGetTurbineData" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_ValidateGetTurbineData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateGetTurbineDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_ValidateCIMCaseNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateCIMCaseNumber" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_ValidateCIMCaseNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateCIMCaseNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_ValidateServiceReportNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateServiceReportNumber" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_ValidateServiceReportNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateServiceReportNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_ValidateServiceNotificationNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateServiceNotificationNumber" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_ValidateServiceNotificationNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateServiceNotificationNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_UnlockCirDataByCirID_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnlockCirDataByCirID" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_UnlockCirDataByCirID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnlockCirDataByCirIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_LockCirDataByCirID_InputMessage">
+    <wsdl:part name="parameters" element="tns:LockCirDataByCirID" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_LockCirDataByCirID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LockCirDataByCirIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCirStateByCirIDs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCirStateByCirIDs" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCirStateByCirIDs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCirStateByCirIDsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetManufacturer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetManufacturer" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetManufacturer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetManufacturerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetManufacturerList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetManufacturerList" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetManufacturerList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetManufacturerListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_DeleteManufacturer_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteManufacturer" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_DeleteManufacturer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteManufacturerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveManufacturer_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveManufacturer" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveManufacturer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveManufacturerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetHotlist_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHotlist" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetHotlist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHotlistResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetAllHotlist_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllHotlist" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetAllHotlist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllHotlistResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveHotList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveHotList" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveHotList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveHotListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_DeleteHotList_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteHotList" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_DeleteHotList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteHotListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_UploadDefectCategotization_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDefectCategotization" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_UploadDefectCategotization_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDefectCategotizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveAttachment_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAttachment" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveAttachment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetAttachments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttachments" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetAttachments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttachmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_DeleteAttachment_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAttachment" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_DeleteAttachment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetAttachment_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttachment" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetAttachment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SqlToCosmosDBMigrationLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:SqlToCosmosDBMigrationLog" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SqlToCosmosDBMigrationLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SqlToCosmosDBMigrationLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetBirMigrationData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBirMigrationData" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetBirMigrationData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBirMigrationDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetGirMigrationData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGirMigrationData" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetGirMigrationData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGirMigrationDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveGirDataDetailstoCosmosDb_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveGirDataDetailstoCosmosDb" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveGirDataDetailstoCosmosDb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveGirDataDetailstoCosmosDbResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GenerateNewGIRReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateNewGIRReport" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GenerateNewGIRReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateNewGIRReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetGBXirMigrationData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGBXirMigrationData" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetGBXirMigrationData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGBXirMigrationDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveGBXirDataDetailstoCosmosDb_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveGBXirDataDetailstoCosmosDb" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveGBXirDataDetailstoCosmosDb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveGBXirDataDetailstoCosmosDbResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GenerateNewGBXIRReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateNewGBXIRReport" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GenerateNewGBXIRReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateNewGBXIRReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetNotifications_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotifications" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetNotifications_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotificationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveFirstNotificationDataDetailstoCosmosDb_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveFirstNotificationDataDetailstoCosmosDb" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveFirstNotificationDataDetailstoCosmosDb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveFirstNotificationDataDetailstoCosmosDbResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetSecondNotificationList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSecondNotificationList" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetSecondNotificationList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSecondNotificationListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveSecondNotificationDataDetailstoCosmosDb_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSecondNotificationDataDetailstoCosmosDb" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveSecondNotificationDataDetailstoCosmosDb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSecondNotificationDataDetailstoCosmosDbResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetRejectNotificationList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRejectNotificationList" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetRejectNotificationList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRejectNotificationListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveRejectNotificationDataDetailstoCosmosDb_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveRejectNotificationDataDetailstoCosmosDb" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveRejectNotificationDataDetailstoCosmosDb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveRejectNotificationDataDetailstoCosmosDbResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SendMail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendMail" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SendMail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SendMails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendMails" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SendMails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendMailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SendCirNotificationMails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendCirNotificationMails" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SendCirNotificationMails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendCirNotificationMailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetMasterData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMasterData" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetMasterData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMasterDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetMasterDataForCIRReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMasterDataForCIRReport" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetMasterDataForCIRReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMasterDataForCIRReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCirPDFData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCirPDFData" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCirPDFData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCirPDFDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetMasterDataByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMasterDataByName" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetMasterDataByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMasterDataByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCIMCaseData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCIMCaseData" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCIMCaseData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCIMCaseDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveCIRData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCIRData" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveCIRData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCIRDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_UpdatePDFData_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePDFData" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_UpdatePDFData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePDFDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCIRDatabyCIRID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCIRDatabyCIRID" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCIRDatabyCIRID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCIRDatabyCIRIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_CirQuickSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:CirQuickSearch" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_CirQuickSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CirQuickSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetComponentInspectionReportType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetComponentInspectionReportType" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetComponentInspectionReportType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetComponentInspectionReportTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetStandardText_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStandardText" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetStandardText_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStandardTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetStandardTextbyID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStandardTextbyID" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetStandardTextbyID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStandardTextbyIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveStandardTextData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveStandardTextData" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveStandardTextData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveStandardTextDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_BirSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:BirSearch" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_BirSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BirSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_DeleteBir_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBir" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_DeleteBir_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBirResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_BirFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:BirFile" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_BirFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BirFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetBirDataByCirID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBirDataByCirID" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetBirDataByCirID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBirDataByCirIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetRelatedCirsByCirId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelatedCirsByCirId" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetRelatedCirsByCirId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelatedCirsByCirIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveBirData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveBirData" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveBirData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveBirDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCirDataIdByCirID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCirDataIdByCirID" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCirDataIdByCirID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCirDataIdByCirIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GirSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GirSearch" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GirSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GirSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_DeleteGir_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGir" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_DeleteGir_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGirResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GirFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GirFile" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GirFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GirFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetGirDataByCirID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGirDataByCirID" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetGirDataByCirID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGirDataByCirIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveGirData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveGirData" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveGirData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveGirDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GBXirSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GBXirSearch" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GBXirSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GBXirSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_DeleteGBXir_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGBXir" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_DeleteGBXir_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGBXirResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GBXirFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GBXirFile" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GBXirFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GBXirFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetGBXirDataByCirID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGBXirDataByCirID" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetGBXirDataByCirID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGBXirDataByCirIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveGBXirData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveGBXirData" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveGBXirData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveGBXirDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_Log_InputMessage">
+    <wsdl:part name="parameters" element="tns:Log" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_Log_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLog" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetFeedbackType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFeedbackType" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetFeedbackType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFeedbackTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveFeedback_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveFeedback" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveFeedback_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveFeedbackResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetAllFeedbacks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllFeedbacks" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetAllFeedbacks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllFeedbacksResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_DeleteFeedback_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFeedback" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_DeleteFeedback_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFeedbackResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetSeverity_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSeverity" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetSeverity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSeverityResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetServiceInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceInformation" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetServiceInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetServiceInformationbyID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceInformationbyID" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetServiceInformationbyID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceInformationbyIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveServiceInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveServiceInformation" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveServiceInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveServiceInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetAllView_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllView" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetAllView_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetAllViewList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllViewList" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetAllViewList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllViewListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetView_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetView" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetView_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_CreateView_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateView" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_CreateView_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_DeleteView_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteView" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_DeleteView_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCirList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCirList" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCirList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCirListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_CirProcess_InputMessage">
+    <wsdl:part name="parameters" element="tns:CirProcess" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_CirProcess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CirProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SetApproved_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetApproved" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SetApproved_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetApprovedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_LockUnlockCir_InputMessage">
+    <wsdl:part name="parameters" element="tns:LockUnlockCir" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_LockUnlockCir_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LockUnlockCirResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCirDataDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCirDataDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCirDataDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCirDataDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCIRLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCIRLog" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCIRLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCIRLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCirDataDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCirDataDetail" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCirDataDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCirDataDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveCirCommentHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCirCommentHistory" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveCirCommentHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCirCommentHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCirCommentHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCirCommentHistory" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCirCommentHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCirCommentHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCirCommentHistoryByCirId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCirCommentHistoryByCirId" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCirCommentHistoryByCirId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCirCommentHistoryByCirIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GenerateBIRReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateBIRReport" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GenerateBIRReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateBIRReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GenerateNewBIRReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateNewBIRReport" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GenerateNewBIRReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateNewBIRReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GenerateGIRReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateGIRReport" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GenerateGIRReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateGIRReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GenerateGBXIRReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateGBXIRReport" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GenerateGBXIRReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateGBXIRReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetBirPDF_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBirPDF" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetBirPDF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBirPDFResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetGirPDF_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGirPDF" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetGirPDF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGirPDFResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetGBXirPDF_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGBXirPDF" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetGBXirPDF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGBXirPDFResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SendFirstNotification_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendFirstNotification" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SendFirstNotification_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendFirstNotificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_IsValidServiceReportNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsValidServiceReportNumber" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_IsValidServiceReportNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsValidServiceReportNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_IsValidNotificationNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsValidNotificationNumber" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_IsValidNotificationNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsValidNotificationNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveCIRPdf_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCIRPdf" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveCIRPdf_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCIRPdfResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveCIRPdfGIR_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCIRPdfGIR" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveCIRPdfGIR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCIRPdfGIRResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveCIRPdfGBX_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCIRPdfGBX" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveCIRPdfGBX_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCIRPdfGBXResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCIRPdf_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCIRPdf" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCIRPdf_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCIRPdfResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCIRPdfForSQL_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCIRPdfForSQL" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCIRPdfForSQL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCIRPdfForSQLResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCIRPdfGIR_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCIRPdfGIR" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCIRPdfGIR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCIRPdfGIRResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCIRPdfGBX_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCIRPdfGBX" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCIRPdfGBX_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCIRPdfGBXResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCIRPdfZip_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCIRPdfZip" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCIRPdfZip_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCIRPdfZipResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCIRPdfZipGIR_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCIRPdfZipGIR" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCIRPdfZipGIR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCIRPdfZipGIRResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCIRPdfZipGBX_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCIRPdfZipGBX" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCIRPdfZipGBX_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCIRPdfZipGBXResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_RenderCirReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:RenderCirReport" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_RenderCirReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RenderCirReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetBIRViewId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBIRViewId" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetBIRViewId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBIRViewIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetGIRViewId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGIRViewId" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetGIRViewId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGIRViewIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetGBXIRViewId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGBXIRViewId" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetGBXIRViewId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGBXIRViewIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_ResendSecondMails_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResendSecondMails" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_ResendSecondMails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResendSecondMailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetMigrationCirList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMigrationCirList" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetMigrationCirList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMigrationCirListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveBirDataDetailstoCosmosDb_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveBirDataDetailstoCosmosDb" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SaveBirDataDetailstoCosmosDb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveBirDataDetailstoCosmosDbResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCirRevision_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCirRevision" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCirRevision_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCirRevisionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCirRevisionData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCirRevisionData" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetCirRevisionData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCirRevisionDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetBrandList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBrandList" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetBrandList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBrandListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISyncService">
+    <wsdl:operation name="DoAdvanceSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/DoAdvanceSearch" message="tns:ISyncService_DoAdvanceSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/DoAdvanceSearchResponse" message="tns:ISyncService_DoAdvanceSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/LoadProfile" message="tns:ISyncService_LoadProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/LoadProfileResponse" message="tns:ISyncService_LoadProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/DeleteProfile" message="tns:ISyncService_DeleteProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/DeleteProfileResponse" message="tns:ISyncService_DeleteProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/SaveProfile" message="tns:ISyncService_SaveProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/SaveProfileResponse" message="tns:ISyncService_SaveProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateTurbineNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/ValidateTurbineNumber" message="tns:ISyncService_ValidateTurbineNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/ValidateTurbineNumberResponse" message="tns:ISyncService_ValidateTurbineNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGetTurbineData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/ValidateGetTurbineData" message="tns:ISyncService_ValidateGetTurbineData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/ValidateGetTurbineDataResponse" message="tns:ISyncService_ValidateGetTurbineData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCIMCaseNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/ValidateCIMCaseNumber" message="tns:ISyncService_ValidateCIMCaseNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/ValidateCIMCaseNumberResponse" message="tns:ISyncService_ValidateCIMCaseNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateServiceReportNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/ValidateServiceReportNumber" message="tns:ISyncService_ValidateServiceReportNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/ValidateServiceReportNumberResponse" message="tns:ISyncService_ValidateServiceReportNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateServiceNotificationNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/ValidateServiceNotificationNumber" message="tns:ISyncService_ValidateServiceNotificationNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/ValidateServiceNotificationNumberResponse" message="tns:ISyncService_ValidateServiceNotificationNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnlockCirDataByCirID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/UnlockCirDataByCirID" message="tns:ISyncService_UnlockCirDataByCirID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/UnlockCirDataByCirIDResponse" message="tns:ISyncService_UnlockCirDataByCirID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LockCirDataByCirID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/LockCirDataByCirID" message="tns:ISyncService_LockCirDataByCirID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/LockCirDataByCirIDResponse" message="tns:ISyncService_LockCirDataByCirID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCirStateByCirIDs">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetCirStateByCirIDs" message="tns:ISyncService_GetCirStateByCirIDs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetCirStateByCirIDsResponse" message="tns:ISyncService_GetCirStateByCirIDs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManufacturer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetManufacturer" message="tns:ISyncService_GetManufacturer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetManufacturerResponse" message="tns:ISyncService_GetManufacturer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManufacturerList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetManufacturerList" message="tns:ISyncService_GetManufacturerList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetManufacturerListResponse" message="tns:ISyncService_GetManufacturerList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteManufacturer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/DeleteManufacturer" message="tns:ISyncService_DeleteManufacturer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/DeleteManufacturerResponse" message="tns:ISyncService_DeleteManufacturer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveManufacturer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/SaveManufacturer" message="tns:ISyncService_SaveManufacturer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/SaveManufacturerResponse" message="tns:ISyncService_SaveManufacturer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHotlist">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetHotlist" message="tns:ISyncService_GetHotlist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetHotlistResponse" message="tns:ISyncService_GetHotlist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllHotlist">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetAllHotlist" message="tns:ISyncService_GetAllHotlist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetAllHotlistResponse" message="tns:ISyncService_GetAllHotlist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveHotList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/SaveHotList" message="tns:ISyncService_SaveHotList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/SaveHotListResponse" message="tns:ISyncService_SaveHotList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHotList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/DeleteHotList" message="tns:ISyncService_DeleteHotList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/DeleteHotListResponse" message="tns:ISyncService_DeleteHotList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadDefectCategotization">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/UploadDefectCategotization" message="tns:ISyncService_UploadDefectCategotization_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/UploadDefectCategotizationResponse" message="tns:ISyncService_UploadDefectCategotization_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAttachment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/SaveAttachment" message="tns:ISyncService_SaveAttachment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/SaveAttachmentResponse" message="tns:ISyncService_SaveAttachment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachments">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetAttachments" message="tns:ISyncService_GetAttachments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetAttachmentsResponse" message="tns:ISyncService_GetAttachments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAttachment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/DeleteAttachment" message="tns:ISyncService_DeleteAttachment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/DeleteAttachmentResponse" message="tns:ISyncService_DeleteAttachment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetAttachment" message="tns:ISyncService_GetAttachment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetAttachmentResponse" message="tns:ISyncService_GetAttachment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SqlToCosmosDBMigrationLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/SqlToCosmosDBMigrationLog" message="tns:ISyncService_SqlToCosmosDBMigrationLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/SqlToCosmosDBMigrationLogResponse" message="tns:ISyncService_SqlToCosmosDBMigrationLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBirMigrationData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetBirMigrationData" message="tns:ISyncService_GetBirMigrationData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetBirMigrationDataResponse" message="tns:ISyncService_GetBirMigrationData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGirMigrationData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetGirMigrationData" message="tns:ISyncService_GetGirMigrationData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetGirMigrationDataResponse" message="tns:ISyncService_GetGirMigrationData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveGirDataDetailstoCosmosDb">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/SaveGirDataDetailstoCosmosDb" message="tns:ISyncService_SaveGirDataDetailstoCosmosDb_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/SaveGirDataDetailstoCosmosDbResponse" message="tns:ISyncService_SaveGirDataDetailstoCosmosDb_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateNewGIRReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GenerateNewGIRReport" message="tns:ISyncService_GenerateNewGIRReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GenerateNewGIRReportResponse" message="tns:ISyncService_GenerateNewGIRReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGBXirMigrationData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetGBXirMigrationData" message="tns:ISyncService_GetGBXirMigrationData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetGBXirMigrationDataResponse" message="tns:ISyncService_GetGBXirMigrationData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveGBXirDataDetailstoCosmosDb">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/SaveGBXirDataDetailstoCosmosDb" message="tns:ISyncService_SaveGBXirDataDetailstoCosmosDb_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/SaveGBXirDataDetailstoCosmosDbResponse" message="tns:ISyncService_SaveGBXirDataDetailstoCosmosDb_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateNewGBXIRReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GenerateNewGBXIRReport" message="tns:ISyncService_GenerateNewGBXIRReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GenerateNewGBXIRReportResponse" message="tns:ISyncService_GenerateNewGBXIRReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotifications">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetNotifications" message="tns:ISyncService_GetNotifications_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetNotificationsResponse" message="tns:ISyncService_GetNotifications_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveFirstNotificationDataDetailstoCosmosDb">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/SaveFirstNotificationDataDetailstoCosmosDb" message="tns:ISyncService_SaveFirstNotificationDataDetailstoCosmosDb_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/SaveFirstNotificationDataDetailstoCosmosDbResponse" message="tns:ISyncService_SaveFirstNotificationDataDetailstoCosmosDb_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSecondNotificationList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetSecondNotificationList" message="tns:ISyncService_GetSecondNotificationList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetSecondNotificationListResponse" message="tns:ISyncService_GetSecondNotificationList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSecondNotificationDataDetailstoCosmosDb">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/SaveSecondNotificationDataDetailstoCosmosDb" message="tns:ISyncService_SaveSecondNotificationDataDetailstoCosmosDb_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/SaveSecondNotificationDataDetailstoCosmosDbResponse" message="tns:ISyncService_SaveSecondNotificationDataDetailstoCosmosDb_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRejectNotificationList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetRejectNotificationList" message="tns:ISyncService_GetRejectNotificationList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetRejectNotificationListResponse" message="tns:ISyncService_GetRejectNotificationList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveRejectNotificationDataDetailstoCosmosDb">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/SaveRejectNotificationDataDetailstoCosmosDb" message="tns:ISyncService_SaveRejectNotificationDataDetailstoCosmosDb_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/SaveRejectNotificationDataDetailstoCosmosDbResponse" message="tns:ISyncService_SaveRejectNotificationDataDetailstoCosmosDb_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/SendMail" message="tns:ISyncService_SendMail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/SendMailResponse" message="tns:ISyncService_SendMail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/SendMails" message="tns:ISyncService_SendMails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/SendMailsResponse" message="tns:ISyncService_SendMails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendCirNotificationMails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/SendCirNotificationMails" message="tns:ISyncService_SendCirNotificationMails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/SendCirNotificationMailsResponse" message="tns:ISyncService_SendCirNotificationMails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMasterData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetMasterData" message="tns:ISyncService_GetMasterData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetMasterDataResponse" message="tns:ISyncService_GetMasterData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMasterDataForCIRReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetMasterDataForCIRReport" message="tns:ISyncService_GetMasterDataForCIRReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetMasterDataForCIRReportResponse" message="tns:ISyncService_GetMasterDataForCIRReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCirPDFData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetCirPDFData" message="tns:ISyncService_GetCirPDFData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetCirPDFDataResponse" message="tns:ISyncService_GetCirPDFData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMasterDataByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetMasterDataByName" message="tns:ISyncService_GetMasterDataByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetMasterDataByNameResponse" message="tns:ISyncService_GetMasterDataByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCIMCaseData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetCIMCaseData" message="tns:ISyncService_GetCIMCaseData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetCIMCaseDataResponse" message="tns:ISyncService_GetCIMCaseData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCIRData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/SaveCIRData" message="tns:ISyncService_SaveCIRData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/SaveCIRDataResponse" message="tns:ISyncService_SaveCIRData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePDFData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/UpdatePDFData" message="tns:ISyncService_UpdatePDFData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/UpdatePDFDataResponse" message="tns:ISyncService_UpdatePDFData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCIRDatabyCIRID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetCIRDatabyCIRID" message="tns:ISyncService_GetCIRDatabyCIRID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetCIRDatabyCIRIDResponse" message="tns:ISyncService_GetCIRDatabyCIRID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CirQuickSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/CirQuickSearch" message="tns:ISyncService_CirQuickSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/CirQuickSearchResponse" message="tns:ISyncService_CirQuickSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComponentInspectionReportType">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetComponentInspectionReportType" message="tns:ISyncService_GetComponentInspectionReportType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetComponentInspectionReportTypeResponse" message="tns:ISyncService_GetComponentInspectionReportType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStandardText">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetStandardText" message="tns:ISyncService_GetStandardText_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetStandardTextResponse" message="tns:ISyncService_GetStandardText_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStandardTextbyID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetStandardTextbyID" message="tns:ISyncService_GetStandardTextbyID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetStandardTextbyIDResponse" message="tns:ISyncService_GetStandardTextbyID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveStandardTextData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/SaveStandardTextData" message="tns:ISyncService_SaveStandardTextData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/SaveStandardTextDataResponse" message="tns:ISyncService_SaveStandardTextData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BirSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/BirSearch" message="tns:ISyncService_BirSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/BirSearchResponse" message="tns:ISyncService_BirSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBir">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/DeleteBir" message="tns:ISyncService_DeleteBir_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/DeleteBirResponse" message="tns:ISyncService_DeleteBir_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BirFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/BirFile" message="tns:ISyncService_BirFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/BirFileResponse" message="tns:ISyncService_BirFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBirDataByCirID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetBirDataByCirID" message="tns:ISyncService_GetBirDataByCirID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetBirDataByCirIDResponse" message="tns:ISyncService_GetBirDataByCirID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRelatedCirsByCirId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetRelatedCirsByCirId" message="tns:ISyncService_GetRelatedCirsByCirId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetRelatedCirsByCirIdResponse" message="tns:ISyncService_GetRelatedCirsByCirId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveBirData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/SaveBirData" message="tns:ISyncService_SaveBirData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/SaveBirDataResponse" message="tns:ISyncService_SaveBirData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCirDataIdByCirID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetCirDataIdByCirID" message="tns:ISyncService_GetCirDataIdByCirID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetCirDataIdByCirIDResponse" message="tns:ISyncService_GetCirDataIdByCirID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GirSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GirSearch" message="tns:ISyncService_GirSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GirSearchResponse" message="tns:ISyncService_GirSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGir">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/DeleteGir" message="tns:ISyncService_DeleteGir_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/DeleteGirResponse" message="tns:ISyncService_DeleteGir_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GirFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GirFile" message="tns:ISyncService_GirFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GirFileResponse" message="tns:ISyncService_GirFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGirDataByCirID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetGirDataByCirID" message="tns:ISyncService_GetGirDataByCirID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetGirDataByCirIDResponse" message="tns:ISyncService_GetGirDataByCirID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveGirData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/SaveGirData" message="tns:ISyncService_SaveGirData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/SaveGirDataResponse" message="tns:ISyncService_SaveGirData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GBXirSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GBXirSearch" message="tns:ISyncService_GBXirSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GBXirSearchResponse" message="tns:ISyncService_GBXirSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGBXir">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/DeleteGBXir" message="tns:ISyncService_DeleteGBXir_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/DeleteGBXirResponse" message="tns:ISyncService_DeleteGBXir_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GBXirFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GBXirFile" message="tns:ISyncService_GBXirFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GBXirFileResponse" message="tns:ISyncService_GBXirFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGBXirDataByCirID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetGBXirDataByCirID" message="tns:ISyncService_GetGBXirDataByCirID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetGBXirDataByCirIDResponse" message="tns:ISyncService_GetGBXirDataByCirID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveGBXirData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/SaveGBXirData" message="tns:ISyncService_SaveGBXirData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/SaveGBXirDataResponse" message="tns:ISyncService_SaveGBXirData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Log">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/Log" message="tns:ISyncService_Log_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/LogResponse" message="tns:ISyncService_Log_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetLog" message="tns:ISyncService_GetLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetLogResponse" message="tns:ISyncService_GetLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFeedbackType">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetFeedbackType" message="tns:ISyncService_GetFeedbackType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetFeedbackTypeResponse" message="tns:ISyncService_GetFeedbackType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveFeedback">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/SaveFeedback" message="tns:ISyncService_SaveFeedback_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/SaveFeedbackResponse" message="tns:ISyncService_SaveFeedback_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFeedbacks">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetAllFeedbacks" message="tns:ISyncService_GetAllFeedbacks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetAllFeedbacksResponse" message="tns:ISyncService_GetAllFeedbacks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFeedback">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/DeleteFeedback" message="tns:ISyncService_DeleteFeedback_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/DeleteFeedbackResponse" message="tns:ISyncService_DeleteFeedback_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSeverity">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetSeverity" message="tns:ISyncService_GetSeverity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetSeverityResponse" message="tns:ISyncService_GetSeverity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceInformation">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetServiceInformation" message="tns:ISyncService_GetServiceInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetServiceInformationResponse" message="tns:ISyncService_GetServiceInformation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceInformationbyID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetServiceInformationbyID" message="tns:ISyncService_GetServiceInformationbyID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetServiceInformationbyIDResponse" message="tns:ISyncService_GetServiceInformationbyID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveServiceInformation">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/SaveServiceInformation" message="tns:ISyncService_SaveServiceInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/SaveServiceInformationResponse" message="tns:ISyncService_SaveServiceInformation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllView">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetAllView" message="tns:ISyncService_GetAllView_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetAllViewResponse" message="tns:ISyncService_GetAllView_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllViewList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetAllViewList" message="tns:ISyncService_GetAllViewList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetAllViewListResponse" message="tns:ISyncService_GetAllViewList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetView">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetView" message="tns:ISyncService_GetView_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetViewResponse" message="tns:ISyncService_GetView_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateView">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/CreateView" message="tns:ISyncService_CreateView_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/CreateViewResponse" message="tns:ISyncService_CreateView_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteView">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/DeleteView" message="tns:ISyncService_DeleteView_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/DeleteViewResponse" message="tns:ISyncService_DeleteView_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCirList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetCirList" message="tns:ISyncService_GetCirList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetCirListResponse" message="tns:ISyncService_GetCirList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CirProcess">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/CirProcess" message="tns:ISyncService_CirProcess_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/CirProcessResponse" message="tns:ISyncService_CirProcess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetApproved">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/SetApproved" message="tns:ISyncService_SetApproved_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/SetApprovedResponse" message="tns:ISyncService_SetApproved_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LockUnlockCir">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/LockUnlockCir" message="tns:ISyncService_LockUnlockCir_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/LockUnlockCirResponse" message="tns:ISyncService_LockUnlockCir_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCirDataDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetCirDataDetails" message="tns:ISyncService_GetCirDataDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetCirDataDetailsResponse" message="tns:ISyncService_GetCirDataDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCIRLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetCIRLog" message="tns:ISyncService_GetCIRLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetCIRLogResponse" message="tns:ISyncService_GetCIRLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCirDataDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetCirDataDetail" message="tns:ISyncService_GetCirDataDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetCirDataDetailResponse" message="tns:ISyncService_GetCirDataDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCirCommentHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/SaveCirCommentHistory" message="tns:ISyncService_SaveCirCommentHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/SaveCirCommentHistoryResponse" message="tns:ISyncService_SaveCirCommentHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCirCommentHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetCirCommentHistory" message="tns:ISyncService_GetCirCommentHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetCirCommentHistoryResponse" message="tns:ISyncService_GetCirCommentHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCirCommentHistoryByCirId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetCirCommentHistoryByCirId" message="tns:ISyncService_GetCirCommentHistoryByCirId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetCirCommentHistoryByCirIdResponse" message="tns:ISyncService_GetCirCommentHistoryByCirId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateBIRReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GenerateBIRReport" message="tns:ISyncService_GenerateBIRReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GenerateBIRReportResponse" message="tns:ISyncService_GenerateBIRReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateNewBIRReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GenerateNewBIRReport" message="tns:ISyncService_GenerateNewBIRReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GenerateNewBIRReportResponse" message="tns:ISyncService_GenerateNewBIRReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateGIRReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GenerateGIRReport" message="tns:ISyncService_GenerateGIRReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GenerateGIRReportResponse" message="tns:ISyncService_GenerateGIRReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateGBXIRReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GenerateGBXIRReport" message="tns:ISyncService_GenerateGBXIRReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GenerateGBXIRReportResponse" message="tns:ISyncService_GenerateGBXIRReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBirPDF">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetBirPDF" message="tns:ISyncService_GetBirPDF_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetBirPDFResponse" message="tns:ISyncService_GetBirPDF_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGirPDF">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetGirPDF" message="tns:ISyncService_GetGirPDF_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetGirPDFResponse" message="tns:ISyncService_GetGirPDF_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGBXirPDF">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetGBXirPDF" message="tns:ISyncService_GetGBXirPDF_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetGBXirPDFResponse" message="tns:ISyncService_GetGBXirPDF_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendFirstNotification">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/SendFirstNotification" message="tns:ISyncService_SendFirstNotification_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/SendFirstNotificationResponse" message="tns:ISyncService_SendFirstNotification_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsValidServiceReportNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/IsValidServiceReportNumber" message="tns:ISyncService_IsValidServiceReportNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/IsValidServiceReportNumberResponse" message="tns:ISyncService_IsValidServiceReportNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsValidNotificationNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/IsValidNotificationNumber" message="tns:ISyncService_IsValidNotificationNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/IsValidNotificationNumberResponse" message="tns:ISyncService_IsValidNotificationNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCIRPdf">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/SaveCIRPdf" message="tns:ISyncService_SaveCIRPdf_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/SaveCIRPdfResponse" message="tns:ISyncService_SaveCIRPdf_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCIRPdfGIR">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/SaveCIRPdfGIR" message="tns:ISyncService_SaveCIRPdfGIR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/SaveCIRPdfGIRResponse" message="tns:ISyncService_SaveCIRPdfGIR_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCIRPdfGBX">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/SaveCIRPdfGBX" message="tns:ISyncService_SaveCIRPdfGBX_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/SaveCIRPdfGBXResponse" message="tns:ISyncService_SaveCIRPdfGBX_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCIRPdf">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetCIRPdf" message="tns:ISyncService_GetCIRPdf_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetCIRPdfResponse" message="tns:ISyncService_GetCIRPdf_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCIRPdfForSQL">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetCIRPdfForSQL" message="tns:ISyncService_GetCIRPdfForSQL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetCIRPdfForSQLResponse" message="tns:ISyncService_GetCIRPdfForSQL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCIRPdfGIR">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetCIRPdfGIR" message="tns:ISyncService_GetCIRPdfGIR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetCIRPdfGIRResponse" message="tns:ISyncService_GetCIRPdfGIR_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCIRPdfGBX">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetCIRPdfGBX" message="tns:ISyncService_GetCIRPdfGBX_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetCIRPdfGBXResponse" message="tns:ISyncService_GetCIRPdfGBX_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCIRPdfZip">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetCIRPdfZip" message="tns:ISyncService_GetCIRPdfZip_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetCIRPdfZipResponse" message="tns:ISyncService_GetCIRPdfZip_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCIRPdfZipGIR">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetCIRPdfZipGIR" message="tns:ISyncService_GetCIRPdfZipGIR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetCIRPdfZipGIRResponse" message="tns:ISyncService_GetCIRPdfZipGIR_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCIRPdfZipGBX">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetCIRPdfZipGBX" message="tns:ISyncService_GetCIRPdfZipGBX_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetCIRPdfZipGBXResponse" message="tns:ISyncService_GetCIRPdfZipGBX_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RenderCirReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/RenderCirReport" message="tns:ISyncService_RenderCirReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/RenderCirReportResponse" message="tns:ISyncService_RenderCirReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBIRViewId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetBIRViewId" message="tns:ISyncService_GetBIRViewId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetBIRViewIdResponse" message="tns:ISyncService_GetBIRViewId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGIRViewId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetGIRViewId" message="tns:ISyncService_GetGIRViewId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetGIRViewIdResponse" message="tns:ISyncService_GetGIRViewId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGBXIRViewId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetGBXIRViewId" message="tns:ISyncService_GetGBXIRViewId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetGBXIRViewIdResponse" message="tns:ISyncService_GetGBXIRViewId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResendSecondMails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/ResendSecondMails" message="tns:ISyncService_ResendSecondMails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/ResendSecondMailsResponse" message="tns:ISyncService_ResendSecondMails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMigrationCirList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetMigrationCirList" message="tns:ISyncService_GetMigrationCirList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetMigrationCirListResponse" message="tns:ISyncService_GetMigrationCirList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveBirDataDetailstoCosmosDb">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/SaveBirDataDetailstoCosmosDb" message="tns:ISyncService_SaveBirDataDetailstoCosmosDb_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/SaveBirDataDetailstoCosmosDbResponse" message="tns:ISyncService_SaveBirDataDetailstoCosmosDb_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCirRevision">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetCirRevision" message="tns:ISyncService_GetCirRevision_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetCirRevisionResponse" message="tns:ISyncService_GetCirRevision_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCirRevisionData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetCirRevisionData" message="tns:ISyncService_GetCirRevisionData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetCirRevisionDataResponse" message="tns:ISyncService_GetCirRevisionData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBrandList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetBrandList" message="tns:ISyncService_GetBrandList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetBrandListResponse" message="tns:ISyncService_GetBrandList_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_ISyncService" type="tns:ISyncService">
+    <wsp:PolicyReference URI="#WSHttpBinding_ISyncService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DoAdvanceSearch">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/DoAdvanceSearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadProfile">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/LoadProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProfile">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/DeleteProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProfile">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/SaveProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateTurbineNumber">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/ValidateTurbineNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGetTurbineData">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/ValidateGetTurbineData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCIMCaseNumber">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/ValidateCIMCaseNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateServiceReportNumber">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/ValidateServiceReportNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateServiceNotificationNumber">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/ValidateServiceNotificationNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnlockCirDataByCirID">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/UnlockCirDataByCirID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LockCirDataByCirID">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/LockCirDataByCirID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCirStateByCirIDs">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetCirStateByCirIDs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManufacturer">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetManufacturer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManufacturerList">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetManufacturerList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteManufacturer">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/DeleteManufacturer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveManufacturer">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/SaveManufacturer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHotlist">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetHotlist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllHotlist">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetAllHotlist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveHotList">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/SaveHotList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHotList">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/DeleteHotList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadDefectCategotization">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/UploadDefectCategotization" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAttachment">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/SaveAttachment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachments">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetAttachments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAttachment">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/DeleteAttachment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachment">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetAttachment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SqlToCosmosDBMigrationLog">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/SqlToCosmosDBMigrationLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBirMigrationData">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetBirMigrationData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGirMigrationData">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetGirMigrationData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveGirDataDetailstoCosmosDb">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/SaveGirDataDetailstoCosmosDb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateNewGIRReport">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GenerateNewGIRReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGBXirMigrationData">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetGBXirMigrationData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveGBXirDataDetailstoCosmosDb">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/SaveGBXirDataDetailstoCosmosDb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateNewGBXIRReport">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GenerateNewGBXIRReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNotifications">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetNotifications" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFirstNotificationDataDetailstoCosmosDb">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/SaveFirstNotificationDataDetailstoCosmosDb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSecondNotificationList">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetSecondNotificationList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSecondNotificationDataDetailstoCosmosDb">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/SaveSecondNotificationDataDetailstoCosmosDb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRejectNotificationList">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetRejectNotificationList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRejectNotificationDataDetailstoCosmosDb">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/SaveRejectNotificationDataDetailstoCosmosDb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMail">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/SendMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMails">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/SendMails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendCirNotificationMails">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/SendCirNotificationMails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMasterData">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetMasterData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMasterDataForCIRReport">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetMasterDataForCIRReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCirPDFData">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetCirPDFData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMasterDataByName">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetMasterDataByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCIMCaseData">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetCIMCaseData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCIRData">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/SaveCIRData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePDFData">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/UpdatePDFData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCIRDatabyCIRID">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetCIRDatabyCIRID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CirQuickSearch">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/CirQuickSearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComponentInspectionReportType">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetComponentInspectionReportType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStandardText">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetStandardText" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStandardTextbyID">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetStandardTextbyID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveStandardTextData">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/SaveStandardTextData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BirSearch">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/BirSearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBir">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/DeleteBir" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BirFile">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/BirFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBirDataByCirID">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetBirDataByCirID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRelatedCirsByCirId">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetRelatedCirsByCirId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveBirData">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/SaveBirData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCirDataIdByCirID">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetCirDataIdByCirID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GirSearch">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GirSearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGir">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/DeleteGir" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GirFile">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GirFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGirDataByCirID">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetGirDataByCirID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveGirData">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/SaveGirData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GBXirSearch">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GBXirSearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGBXir">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/DeleteGBXir" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GBXirFile">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GBXirFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGBXirDataByCirID">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetGBXirDataByCirID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveGBXirData">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/SaveGBXirData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Log">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/Log" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLog">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFeedbackType">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetFeedbackType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFeedback">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/SaveFeedback" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFeedbacks">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetAllFeedbacks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFeedback">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/DeleteFeedback" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSeverity">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetSeverity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceInformation">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetServiceInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceInformationbyID">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetServiceInformationbyID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveServiceInformation">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/SaveServiceInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllView">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetAllView" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllViewList">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetAllViewList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetView">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetView" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateView">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/CreateView" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteView">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/DeleteView" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCirList">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetCirList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CirProcess">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/CirProcess" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetApproved">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/SetApproved" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LockUnlockCir">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/LockUnlockCir" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCirDataDetails">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetCirDataDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCIRLog">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetCIRLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCirDataDetail">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetCirDataDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCirCommentHistory">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/SaveCirCommentHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCirCommentHistory">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetCirCommentHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCirCommentHistoryByCirId">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetCirCommentHistoryByCirId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateBIRReport">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GenerateBIRReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateNewBIRReport">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GenerateNewBIRReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateGIRReport">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GenerateGIRReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateGBXIRReport">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GenerateGBXIRReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBirPDF">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetBirPDF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGirPDF">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetGirPDF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGBXirPDF">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetGBXirPDF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendFirstNotification">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/SendFirstNotification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsValidServiceReportNumber">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/IsValidServiceReportNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsValidNotificationNumber">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/IsValidNotificationNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCIRPdf">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/SaveCIRPdf" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCIRPdfGIR">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/SaveCIRPdfGIR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCIRPdfGBX">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/SaveCIRPdfGBX" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCIRPdf">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetCIRPdf" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCIRPdfForSQL">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetCIRPdfForSQL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCIRPdfGIR">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetCIRPdfGIR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCIRPdfGBX">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetCIRPdfGBX" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCIRPdfZip">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetCIRPdfZip" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCIRPdfZipGIR">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetCIRPdfZipGIR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCIRPdfZipGBX">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetCIRPdfZipGBX" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RenderCirReport">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/RenderCirReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBIRViewId">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetBIRViewId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGIRViewId">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetGIRViewId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGBXIRViewId">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetGBXIRViewId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResendSecondMails">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/ResendSecondMails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMigrationCirList">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetMigrationCirList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveBirDataDetailstoCosmosDb">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/SaveBirDataDetailstoCosmosDb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCirRevision">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetCirRevision" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCirRevisionData">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetCirRevisionData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBrandList">
+      <soap12:operation soapAction="http://tempuri.org/ISyncService/GetBrandList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SyncService">
+    <wsdl:port name="WSHttpBinding_ISyncService" binding="tns:WSHttpBinding_ISyncService">
+      <soap12:address location="http://dkrdstowerdt01/Cir.Sync.Services/SyncService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://dkrdstowerdt01/Cir.Sync.Services/SyncService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="MetadataExchangeHttpBinding_ISyncService" binding="i0:MetadataExchangeHttpBinding_ISyncService">
+      <soap12:address location="http://dkrdstowerdt01/Cir.Sync.Services/SyncService.svc/mex" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://dkrdstowerdt01/Cir.Sync.Services/SyncService.svc/mex</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

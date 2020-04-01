@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="517f978d25c34d208c0111157ac624ae" Name="Diagram1" ZoomLevel="100">
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.ComponentInspectionReportTransformer" Width="1.5" PointX="11.25" PointY="60" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.ComponentInspectionReportSkiiPFailedComponent" Width="1.5" PointX="13.5" PointY="141" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.ComponentInspectionReportSkiiPNewComponent" Width="1.5" PointX="13.5" PointY="144" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.TurbineData" Width="1.5" PointX="5.75" PointY="5.75" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.ComponentInspectionReportGeneral" Width="1.5" PointX="17.25" PointY="58.125" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.ComponentInspectionReportMainBearing" Width="1.5" PointX="11.25" PointY="66" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.DynamicTableInput" Width="1.5" PointX="7.75" PointY="5.75" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.CirStandardTexts" Width="1.5" PointX="9" PointY="39.5" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.ComponentInspectionReportType" Width="1.5" PointX="6.75" PointY="54.625" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK__CirStanda__Compo__49E4BD9F" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportType_ComponentInspectionReportType" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.CirSystemLog" Width="1.5" PointX="2.75" PointY="9.75" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.CirSyncLog" Width="1.5" PointX="9.75" PointY="5.75" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.BirData" Width="1.5" PointX="0.75" PointY="6" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.BirWordDocument" Width="1.5" PointX="3" PointY="6.875" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK__BirWordDo__BirDa__48F09966" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.CirFieldMappings" Width="1.5" PointX="9.75" PointY="8.75" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.CirLog" Width="1.5" PointX="11.75" PointY="4.75" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.CirAttachment" Width="1.5" PointX="4.75" PointY="11.75" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.CirCommentHistory" Width="1.5" PointX="11.75" PointY="7.75" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.BearingType" Width="1.5" PointX="18" PointY="53.75" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.BladeColor" Width="1.5" PointX="9" PointY="51.5" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.BladeLength" Width="1.5" PointX="9" PointY="47.875" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.EditHistory" Width="1.5" PointX="11.75" PointY="11.75" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.HotItem" Width="1.5" PointX="9" PointY="43.625" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.PDF" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.ReceiptNotification" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.RejectNotification" Width="1.5" PointX="3" PointY="62.5" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.ReportType" Width="1.5" PointX="6.75" PointY="65.625" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.SBUNotification" Width="1.5" PointX="6" PointY="60.625" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.SBURejectNotification" Width="1.5" PointX="3" PointY="84.625" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.SecondNotification" Width="1.5" PointX="3" PointY="88.125" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_BearingType_BearingType" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_BladeColor_BladeColor" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_BladeLength_BladeLength" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_HotItem_ComponentInspectionReportType" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ReportType_ReportType" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.SBU" Width="1.5" PointX="0.75" PointY="60.5" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_RejectNotification_SBU" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_SBUNotification_SBU" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_SBURejectNotification_SBU" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_SecondNotification_SBU" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.CountryISO" Width="1.5" PointX="0.75" PointY="55.75" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_CountryISO_CountryISO" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_SBUNotification_CountryISO" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.CirMailArchive" Width="1.5" PointX="13.75" PointY="3.75" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.BladeManufacturer" Width="1.5" PointX="13.75" PointY="6.75" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.GearboxManufacturer" Width="1.5" PointX="15" PointY="73.125" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.GeneratorManufacturer" Width="1.5" PointX="15" PointY="68.625" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.MainBearingManufacturer" Width="1.5" PointX="9" PointY="70.125" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.TurbineManufacturer" Width="1.5" PointX="4.5" PointY="72" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.TurbineMatrix" Width="1.5" PointX="6.75" PointY="69.125" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportGeneral_GearboxManufacturer" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportGeneral_GeneratorManufacturer" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportMainBearing_MainBearingManufacturer" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportMainBearing_MainBearingManufacturer1" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_GearboxManufacturer_GearboxManufacturer" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_GeneratorManufacturer_GeneratorManufacturer" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_MainBearingManufacturer_MainBearingManufacturer" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_TurbineMatrix_TurbineManufacturer" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.Turbine" Width="1.5" PointX="4.5" PointY="68.875" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_TurbineMatrix_Turbine" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.TransformerManufacturer" Width="1.5" PointX="15" PointY="48.5" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportGeneral_TransformerManufacturer" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportTransformer_TransformerManufacturer" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_TransformerManufacturer_TransformerManufacturer" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.FeedbackType" Width="1.5" PointX="0.75" PointY="1.5" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.Severity" Width="1.5" PointX="5.75" PointY="2" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.ImageData" Width="1.5" PointX="11.25" PointY="134.25" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.CirFeedback" Width="1.5" PointX="3" PointY="1" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK__CirFeedba__Feedb__06EDCBDF" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK__CirFeedba__Feedb__08D61451" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.CirServiceInformation" Width="1.5" PointX="8" PointY="1" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_CirServiceInformation_SeverityId" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.ImageDataInfo" Width="1.5" PointX="11.25" PointY="137.625" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.ComponentInspectionReportSkiiP" Width="1.5" PointX="11.25" PointY="140.25" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportSkiiPFailedComponent_ComponentInspectionReportSkiiP" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportSkiiPNewComponent_ComponentInspectionReportSkiiP" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.ServiceReportNumberType" Width="1.5" PointX="6.75" PointY="51.25" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ServiceReportNumberType_ServiceReportNumberType" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.GenerateCIRId" Width="1.5" PointX="13.75" PointY="10.75" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.ComponentInspectionReportGearbox" Width="1.5" PointX="20.25" PointY="45" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportGearbox_BearingType" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportGearbox_BearingType1" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportGearbox_BearingType2" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportGearbox_BearingType3" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportGearbox_BearingType4" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_GearboxBearingsLocation6BearingTypeId" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportGearbox_GearboxManufacturer" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportGearbox_GeneratorManufacturer" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportGearbox_GeneratorManufacturer1" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.ComponentInspectionReportGenerator" Width="1.5" PointX="14.25" PointY="57.125" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportGenerator_GeneratorManufacturer" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.CirJson" Width="1.5" PointX="13.75" PointY="12.75" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.BladeDamagePlacement" Width="1.5" PointX="11.25" PointY="71.75" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.BladeEdge" Width="1.5" PointX="11.25" PointY="42" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.BladeInspectionData" Width="1.5" PointX="11.25" PointY="45.75" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_BladeDamagePlacement_BladeDamagePlacement" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_BladeEdge_BladeEdge" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_BladeInspectionData_BladeInspectionData" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.CIMCase" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.OtherManufacturer" Width="1.5" PointX="2.75" PointY="14.75" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.CIRMigrationLog" Width="1.5" PointX="10.375" PointY="14.75" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.FirstNotification" Width="1.5" PointX="3" PointY="56.75" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_FirstNotification_CountryISO" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_FirstNotification_SBU" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.ComponentInspectionReportBladeRepairRecord" Width="1.5" PointX="13.5" PointY="42.125" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.GirData" Width="1.5" PointX="12.375" PointY="16" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.GirWordDocument" Width="1.5" PointX="14.625" PointY="16.875" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK__GirWordDo__GirDa__3DF3E806" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.GBXirData" Width="1.5" PointX="16.375" PointY="4" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.GBXirWordDocument" Width="1.5" PointX="18.625" PointY="5" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK__GBXirWord__GBXir__26716430" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.CirView" Width="1.5" PointX="16.375" PointY="8.75" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.DynamicDecisionDetails" Width="1.5" PointX="16.375" PointY="12.75" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.DynamicControlTypes" Width="1.5" PointX="17.375" PointY="18.75" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.DynamicFieldsName" Width="1.5" PointX="19.625" PointY="18" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.DynamicFieldsValue" Width="1.5" PointX="21.875" PointY="18.625" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_DynamicFieldsName_ToTable" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_DynamicFieldsValue_ToTable" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.TemplateDynamicTableDef" Width="1.5" PointX="0.75" PointY="18.75" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.ComponentInspectionReportBladeDamage" Width="1.5" PointX="17.5" PointY="48.25" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportBladeDamage_BladeDamagePlacement" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportBladeDamage_BladeEdge" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportBladeDamage_BladeInspectionData" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.ComponentInspectionReportBlade" Width="1.5" PointX="23.25" PointY="50" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportBlade_BladeColor" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportBlade_BladeLength" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportBladeDamage_ComponentInspectionReportBlade" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportBladeRepairRecord_ComponentInspectionReportBlade" />
+        <EntityTypeShape EntityType="CIM_ComponentInspectionReportsModel.ComponentInspectionReport" Width="1.5" PointX="23" PointY="62.625" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReport_ComponentInspectionReportType1" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReport_CountryISO" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReport_ReportType" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReport_SBU" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReport_ServiceReportNumberType" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportBlade_ComponentInspectionReport" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportGearbox_ComponentInspectionReport" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportGeneral_ComponentInspectionReport" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportGenerator_ComponentInspectionReport" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportMainBearing_ComponentInspectionReport" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportSkiiP_ComponentInspectionReport" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ComponentInspectionReportTransformer_ComponentInspectionReport" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_DynamicDecisionDetails_ToTable" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ImageData_ComponentInspectionReportId" />
+        <AssociationConnector Association="CIM_ComponentInspectionReportsModel.FK_ImageData_ImageDataInfoId" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

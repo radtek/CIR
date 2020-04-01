@@ -1,0 +1,10 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Cir.Azure.Functions.Test.Converter.RepairListConverter.json
+{
+    class valid_2
+    {
+    }
+}

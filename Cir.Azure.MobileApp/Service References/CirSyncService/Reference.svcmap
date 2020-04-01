@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5fe6dcaa-2a9f-40ec-acd5-4201ebd7b588" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://dkrdstowerdd01/Cir.Sync.Services/SyncService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SyncService.xsd" MetadataType="Schema" ID="d1e5e7c6-ca96-4018-95df-a9176c3664a5" SourceId="1" SourceUrl="http://dkrdstowerdd01/Cir.Sync.Services/SyncService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SyncService4.xsd" MetadataType="Schema" ID="e7109896-d68f-4839-8de4-9c9172dad1e8" SourceId="1" SourceUrl="http://dkrdstowerdd01/Cir.Sync.Services/SyncService.svc?xsd=xsd4" />
+    <MetadataFile FileName="SyncService.disco" MetadataType="Disco" ID="aefb46b6-61f9-48a6-8e6e-9f48833ce594" SourceId="1" SourceUrl="http://dkrdstowerdd01/Cir.Sync.Services/SyncService.svc?disco" />
+    <MetadataFile FileName="SyncService3.xsd" MetadataType="Schema" ID="0739fc51-ad53-4567-a499-275c0df3cd76" SourceId="1" SourceUrl="http://dkrdstowerdd01/Cir.Sync.Services/SyncService.svc?xsd=xsd3" />
+    <MetadataFile FileName="SyncService1.xsd" MetadataType="Schema" ID="2f985068-c4f7-4dba-a831-b9ee0c813391" SourceId="1" SourceUrl="http://dkrdstowerdd01/Cir.Sync.Services/SyncService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SyncService2.xsd" MetadataType="Schema" ID="9aff6319-b019-4028-a559-e2c7d9150e87" SourceId="1" SourceUrl="http://dkrdstowerdd01/Cir.Sync.Services/SyncService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SyncService51.xsd" MetadataType="Schema" ID="df2886c5-959c-4ddb-9ac1-017c82c2edcf" SourceId="1" SourceUrl="http://dkrdstowerdd01/Cir.Sync.Services/SyncService.svc?xsd=xsd5" />
+    <MetadataFile FileName="SyncService.wsdl" MetadataType="Wsdl" ID="a6652d67-8b9d-4701-882f-b548733e7a9e" SourceId="1" SourceUrl="http://dkrdstowerdd01/Cir.Sync.Services/SyncService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="SyncService1.wsdl" MetadataType="Wsdl" ID="9de892a2-3158-44f5-b8c2-2ef66893fe53" SourceId="1" SourceUrl="http://dkrdstowerdd01/Cir.Sync.Services/SyncService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

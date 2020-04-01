@@ -1,0 +1,17 @@
+{
+  "data": {
+    "turbineId": 44,
+    "cirId": 123,
+    "cirGuid": "id_1",
+    "imageUrls": [
+      {
+        "id": "imageId_1",
+        "url": "url_1"
+      },
+      {
+        "id": "imageId_2",
+        "url": "url_2"
+      }
+    ]
+  }
+}

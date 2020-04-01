@@ -1,0 +1,28 @@
+<div class="slider-wrapper form-group">
+    <label class="slider-label control-label" ng-class="{'field-required': isRequired(component)}">{{ component.label }}</label>
+    <div class="slider-buttons">
+        <div class="custom-slider">
+            <div class="line"></div>
+
+            <div class="radio-wrapper" ng-repeat="n in [0,1,2,3,4,5]">
+                <label>
+                    <input name="{{ component.key }}" 
+                           class="slider-radio item{{n}}"                           
+                           ng-model="data[component.key]" type="radio" 
+                           checked value="{{n}}" 
+                           ng-required="isRequired(component)" ng-disabled="$component.disabled"
+                           custom-validator="component.validate.custom" >
+                    <div class="stack" style="display:table;">
+                        <div class="pin item{{n}}">
+                            <div class="text-rotation">
+                                <span>{{n}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+            </div>
+        </div>
+    </div>   
+   <p class="help-block" ng-show="formioForm[componentId].$error.custom">{{ component.customError | formioTranslate }}</p>
+    <div class="clearfix"></div>
+</div>
